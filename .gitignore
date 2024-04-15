@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# mkcert
+localhost-key.pem
+localhost.pem
