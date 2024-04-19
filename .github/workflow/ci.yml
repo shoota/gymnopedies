@@ -1,0 +1,26 @@
+name: PullRequest CI
+
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+      - name: Install Node.js and dependencies
+        uses: ./.github/actions/setupNode
+      - name: Lint
+        run: npm run lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+      - name: Install Node.js and dependencies
+        uses: ./.github/actions/setupNode
+      - name: Typecheck
+        run: npm run typecheck
