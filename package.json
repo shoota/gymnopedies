@@ -6,11 +6,13 @@
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
-  "author": "shoota",
+  "author": {
+    "name": "shoota"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shoota/gymnopedies"
+    "url": "git+https://github.com/shoota/gymnopedies.git"
   },
   "files": [
     "dist"
@@ -31,7 +33,8 @@
     "preview": "vite preview",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006 --https --ssl-ca ./localhost.pem --ssl-cert ./localhost.pem --ssl-key ./localhost-key.pem",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_4388496fa226214"
   },
   "dependencies": {
     "commitizen": "^4.3.0",
@@ -78,5 +81,9 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": "npx eslint --fix"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/shoota/gymnopedies/issues"
+  },
+  "homepage": "https://github.com/shoota/gymnopedies#readme"
 }
