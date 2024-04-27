@@ -1,3 +1,7 @@
-export const Hero = () => {
-  return <div>Example</div>
+
+type Props = {
+  message: string;
+}
+export const Hero = ({message}: Props) => {
+  return <div>{message}</div>
 }
