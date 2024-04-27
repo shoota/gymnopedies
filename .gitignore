@@ -27,3 +27,5 @@ dist-ssr
 # mkcert
 localhost-key.pem
 localhost.pem
+
+*storybook.log
