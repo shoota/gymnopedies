@@ -1,7 +1,6 @@
-
 type Props = {
-  message: string;
+  message: string
 }
-export const Hero = ({message}: Props) => {
+export const Hero = ({ message }: Props) => {
   return <div>{message}</div>
 }
