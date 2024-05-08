@@ -5,7 +5,7 @@ const meta = {
   title: "Hero",
   component: Hero,
   args: {
-    message: "Hello World",
+    image: { src: "/image/example.jpg" },
   },
 } satisfies Meta<typeof Hero>
 
