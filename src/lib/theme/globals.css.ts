@@ -72,11 +72,10 @@ export const global = css`
     font-size: 80%;
   }
   a {
-    color: ${colors.light};
+    color: ${colors.tone};
+    text-shadow: 0 0 4px ${colors.light};
     outline: none;
-    -webkit-text-decoration: none;
     text-decoration: none;
-    -webkit-transition: color 100ms ease-out;
     transition: color 100ms ease-out;
   }
   a h1,
