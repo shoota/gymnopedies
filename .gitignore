@@ -30,3 +30,4 @@ localhost-key.pem
 localhost.pem
 
 *storybook.log
+storybook-static
