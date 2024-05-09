@@ -5,6 +5,8 @@ const meta = {
   title: "Hero",
   component: Hero,
   args: {
+    title: "Hello Everyone, I'm a cat.",
+    description: "I'm a cat, and I'm here to say hello to you.",
     image: { src: "/image/example.jpg" },
   },
 } satisfies Meta<typeof Hero>
