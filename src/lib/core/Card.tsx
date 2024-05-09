@@ -1,18 +1,24 @@
 import styled from "@emotion/styled"
-import { ImgHTMLAttributes } from "react"
+import { ImgHTMLAttributes, ReactNode } from "react"
 import { colors } from "../theme/color"
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement>
 
-type Props = { image?: ImageProps }
-export const Card = ({ image }: Props) => {
+type Props = { title: string; description?: ReactNode; image?: ImageProps }
+export const Card = ({ title, description, image }: Props) => {
   return (
     <BasicCard>
-      <CardContainer>
+      <Container>
         <Picture>
           <Image {...image} />
         </Picture>
-      </CardContainer>
+        <ContentContainer>
+          <Content>
+            <Title>{title}</Title>
+            <div>{description}</div>
+          </Content>
+        </ContentContainer>
+      </Container>
     </BasicCard>
   )
 }
@@ -21,11 +27,12 @@ const BasicCard = styled.article`
   display: block;
 `
 
-const CardContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  background-color: ${colors.dark};
 `
 
 const Picture = styled.div`
@@ -61,3 +68,22 @@ const Image = styled.img<{ src?: string }>`
       filter 1s 0.4s;
   }
 `
+
+const ContentContainer = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto;
+  padding: 20px;
+  min-height: 0;
+`
+
+const Content = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto;
+  padding: 20px;
+  min-height: 0;
+`
+const Title = styled.h1``
