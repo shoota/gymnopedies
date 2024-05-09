@@ -75,7 +75,7 @@
     "prettier": "3.2.5",
     "storybook": "^8.0.9",
     "typescript": "^5.4.5",
-    "vite": "^5.2.0"
+    "vite": "^5.2.11"
   },
   "config": {
     "commitizen": {
