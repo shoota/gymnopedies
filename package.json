@@ -33,7 +33,7 @@
     "preview": "vite preview",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006 --https --ssl-ca ./localhost.pem --ssl-cert ./localhost.pem --ssl-key ./localhost-key.pem",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -s ./assets",
     "chromatic": "npx chromatic --project-token=chpt_4388496fa226214"
   },
   "dependencies": {
