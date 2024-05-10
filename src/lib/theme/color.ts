@@ -5,6 +5,7 @@ export const colors = {
   light: "#D6D6D6", // light of main
   dark: "#04252B",
   tone: "#CFD8DE", // light of default
+  link: "#D5CA86",
 }
 
 export const colorsRGB = {

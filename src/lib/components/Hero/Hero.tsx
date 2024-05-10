@@ -6,6 +6,16 @@ export const Hero = ({
   title,
   description,
   image,
+  imageCaption,
+  onClick,
 }: PropsWithChildren<Props>) => {
-  return <Card title={title} description={description} image={image} />
+  return (
+    <Card
+      title={title}
+      description={description}
+      image={image}
+      imageCaption={imageCaption}
+      onClick={onClick}
+    />
+  )
 }

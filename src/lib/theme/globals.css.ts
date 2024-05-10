@@ -16,7 +16,7 @@ export const global = css`
     color: ${colors.light};
     text-shadow: 0 0 4px ${colors.light};
     scrollbar-width: thin;
-    scrollbar-color: #0b8481 #04252b;
+    scrollbar-color: ${colors.default} ${colors.dark};
   }
 
   html ::selection,
@@ -72,11 +72,16 @@ export const global = css`
     font-size: 80%;
   }
   a {
-    color: ${colors.tone};
-    text-shadow: 0 0 4px ${colors.light};
+    color: ${colors.link};
     outline: none;
     text-decoration: none;
     transition: color 100ms ease-out;
+
+    :hover,
+    :focus {
+      color: #e3daa0;
+      text-shadow: 0 0 2px ${colors.link};
+    }
   }
   a h1,
   a h2,
@@ -85,10 +90,6 @@ export const global = css`
   a h5,
   a h6 {
     text-shadow: 0 0 2px ${colors.light};
-  }
-  a:hover,
-  a:focus {
-    color: #ffc69f;
   }
   ul,
   ol {
@@ -167,10 +168,6 @@ export const global = css`
   figure img {
     margin-bottom: 0;
     vertical-align: top;
-  }
-  figcaption {
-    padding: 10px;
-    background-color: rgba(62, 251, 251, 0.05);
   }
   hr {
     display: block;
