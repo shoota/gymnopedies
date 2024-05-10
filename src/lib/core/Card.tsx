@@ -1,16 +1,29 @@
 import styled from "@emotion/styled"
 import { ImgHTMLAttributes, ReactNode } from "react"
-import { colors } from "../theme/color"
+import { colors, colorsRGB } from "../theme/color"
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement>
 
-type Props = { title: string; description?: ReactNode; image?: ImageProps }
-export const Card = ({ title, description, image }: Props) => {
+type Props = {
+  title: string
+  description?: ReactNode
+  image?: ImageProps
+  imageCaption?: ReactNode
+  onClick?: () => void
+}
+export const Card = ({
+  title,
+  description,
+  image,
+  imageCaption,
+  onClick,
+}: Props) => {
   return (
-    <BasicCard>
+    <BasicCard onClick={onClick} isClickable={!!onClick}>
       <Container>
         <Picture>
           <Image {...image} />
+          <PictureCaption>{imageCaption}</PictureCaption>
         </Picture>
         <ContentContainer>
           <Content>
@@ -23,11 +36,14 @@ export const Card = ({ title, description, image }: Props) => {
   )
 }
 
-const BasicCard = styled.article`
+const BasicCard = styled.article<{ isClickable: boolean }>`
+  cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
   display: block;
 `
 
 const Container = styled.div`
+  border-radius: 8px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -35,8 +51,27 @@ const Container = styled.div`
   background-color: ${colors.dark};
 `
 
-const Picture = styled.div`
+const Picture = styled.figure`
+  position: relative;
   background-color: ${colors.main};
+  border-radius: 4px;
+  > img {
+    border-radius: 4px;
+  }
+`
+const PictureCaption = styled.figcaption`
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 0 6px;
+  height: 24px;
+  line-height: 24px;
+  width: auto;
+  font-size: 12px;
+  font-weight: bold;
+  color: ${colors.tone};
+  text-shadow: none;
+  background-color: rgb(${colorsRGB.dark}, 0.6);
 `
 
 const Image = styled.img<{ src?: string }>`
