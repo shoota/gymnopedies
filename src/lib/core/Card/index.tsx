@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { ComponentProps, ReactNode } from "react"
+import { ComponentProps, PropsWithChildren, ReactNode } from "react"
 import { colors } from "../../theme/color"
 import { Picture } from "../Picture"
 
@@ -15,15 +15,19 @@ export const Card = ({
   image,
   imageCaption,
   onClick,
-}: Props) => {
+  children,
+}: PropsWithChildren<Props>) => {
   return (
     <BasicCard onClick={onClick} isClickable={!!onClick}>
       <Container>
         <Picture image={image} imageCaption={imageCaption} />
         <ContentContainer>
+          <h1>{title}</h1>
+          <div>{description}</div>
+
           <Content>
-            <Title>{title}</Title>
-            <div>{description}</div>
+            <hr />
+            {children}
           </Content>
         </ContentContainer>
       </Container>
@@ -51,16 +55,8 @@ const ContentContainer = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: auto;
-  padding: 20px;
-  min-height: 0;
+  padding: 16px;
 `
-
 const Content = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: auto;
-  padding: 20px;
-  min-height: 0;
+  margin-top: 24px;
 `
-const Title = styled.h1``
