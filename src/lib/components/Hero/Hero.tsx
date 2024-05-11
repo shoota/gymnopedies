@@ -1,21 +1,20 @@
 import { ComponentProps, PropsWithChildren } from "react"
 import { Card } from "../../core"
 
-type Props = ComponentProps<typeof Card>
+type CardProps = ComponentProps<typeof Card>
+
+type Props = Pick<CardProps, "image" | "imageCaption" | "title">
 export const Hero = ({
   title,
-  description,
   image,
   imageCaption,
-  onClick,
 }: PropsWithChildren<Props>) => {
   return (
     <Card
       title={title}
-      description={description}
       image={image}
       imageCaption={imageCaption}
-      onClick={onClick}
+      transition={false}
     />
   )
 }

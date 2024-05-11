@@ -1,17 +1,19 @@
 import styled from "@emotion/styled"
 import { ImgHTMLAttributes, ReactNode } from "react"
 import { colors, colorsRGB } from "../../theme/color"
+import { css } from "@emotion/react"
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement>
 
 type Props = {
   image?: ImageProps
   imageCaption?: ReactNode
+  transition?: boolean
 }
-export const Picture = ({ image, imageCaption }: Props) => {
+export const Picture = ({ image, imageCaption, transition }: Props) => {
   return (
     <PictureContainer>
-      <Image {...image} />
+      <Image {...image} transition={transition} />
       <PictureCaption>{imageCaption}</PictureCaption>
     </PictureContainer>
   )
@@ -40,7 +42,17 @@ const PictureCaption = styled.figcaption`
   background-color: rgb(${colorsRGB.dark}, 0.6);
 `
 
-const Image = styled.img<{ src?: string }>`
+const imageTransition = css`
+  :hover,
+  :focus {
+    opacity: 1;
+    filter: grayscale(0.6);
+    transition:
+      opacity 1.2s,
+      filter 1s 0.4s;
+  }
+`
+const Image = styled.img<{ src?: string; transition?: boolean }>`
   box-sizing: content-box;
   display: block;
   vertical-align: top;
@@ -61,11 +73,5 @@ const Image = styled.img<{ src?: string }>`
   transition: opacity 0.6s;
   ${({ src }) => !!src && `background-image: url(${src})`};
 
-  :hover {
-    opacity: 1;
-    filter: grayscale(0.6);
-    transition:
-      opacity 1.2s,
-      filter 1s 0.4s;
-  }
+  ${({ transition }) => transition && imageTransition};
 `

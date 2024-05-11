@@ -4,7 +4,7 @@ import { colors } from "../../theme/color"
 import { Picture } from "../Picture"
 
 type Props = {
-  title: string
+  title?: string
   description?: ReactNode
   onClick?: () => void
 } & ComponentProps<typeof Picture>
@@ -12,23 +12,29 @@ type Props = {
 export const Card = ({
   title,
   description,
+  onClick,
   image,
   imageCaption,
-  onClick,
+  transition,
   children,
 }: PropsWithChildren<Props>) => {
   return (
     <BasicCard onClick={onClick} isClickable={!!onClick}>
       <Container>
-        <Picture image={image} imageCaption={imageCaption} />
+        <Picture
+          image={image}
+          imageCaption={imageCaption}
+          transition={transition}
+        />
         <ContentContainer>
-          <h1>{title}</h1>
-          <div>{description}</div>
-
-          <Content>
-            <hr />
-            {children}
-          </Content>
+          {title && <h1>{title}</h1>}
+          {description && <div>{description}</div>}
+          {children && (
+            <Content>
+              <hr />
+              {children}
+            </Content>
+          )}
         </ContentContainer>
       </Container>
     </BasicCard>

@@ -11,6 +11,7 @@ const meta = {
         Photo by <a>@shoota</a> in 2024
       </>
     ),
+    transition: false,
   },
 } satisfies Meta<typeof Picture>
 
