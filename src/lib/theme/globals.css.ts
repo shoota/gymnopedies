@@ -174,7 +174,7 @@ export const global = css`
     height: 0;
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: #7efcf6;
+    border-color: ${colors.default};
   }
   fieldset {
     border-style: solid;
@@ -238,15 +238,6 @@ export const global = css`
       border-color 100ms ease-out,
       background-color 100ms ease-out,
       box-shadow 100ms ease-out;
-  }
-  input::-webkit-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  input::-moz-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  input:-ms-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
   }
   textarea::-webkit-input-placeholder {
     color: rgba(255, 198, 159, 0.5);

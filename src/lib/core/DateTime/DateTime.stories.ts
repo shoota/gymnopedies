@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { DateTime } from "./DateTime"
+import { DateTime } from "."
 
 const meta = {
-  title: "DateTime",
+  title: "core/DateTime",
   component: DateTime,
   args: {
     dateString: "2021-10-01T00:00:00Z",
