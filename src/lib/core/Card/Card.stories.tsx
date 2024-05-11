@@ -1,6 +1,7 @@
 import { action } from "@storybook/addon-actions"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Card } from "."
+import { DateTime } from "../DateTime"
 
 const Content = () => (
   <>
@@ -34,3 +35,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+export const DateStamp: Story = {
+  args: {
+    children: (
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <DateTime dateString="2022-09-16" />
+      </div>
+    ),
+  },
+}
