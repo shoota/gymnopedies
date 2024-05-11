@@ -159,7 +159,6 @@ export const global = css`
     padding: 5px 8px;
   }
   tr {
-    -webkit-transition: background-color 100ms ease-out;
     transition: background-color 100ms ease-out;
   }
   img {
@@ -230,32 +229,10 @@ export const global = css`
     line-height: 30px;
     color: #ffc69f;
     background-color: transparent;
-    -webkit-transition:
-      border-color 100ms ease-out,
-      background-color 100ms ease-out,
-      box-shadow 100ms ease-out;
     transition:
       border-color 100ms ease-out,
       background-color 100ms ease-out,
       box-shadow 100ms ease-out;
-  }
-  textarea::-webkit-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  textarea::-moz-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  textarea:-ms-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  select::-webkit-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  select::-moz-placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  select:-ms-input-placeholder {
-    color: rgba(255, 198, 159, 0.5);
   }
   input::placeholder,
   textarea::placeholder,
@@ -281,33 +258,6 @@ export const global = css`
     box-shadow: none;
     cursor: auto;
   }
-  input:disabled::-webkit-input-placeholder {
-    color: #0b8481;
-  }
-  input:disabled::-moz-placeholder {
-    color: #0b8481;
-  }
-  input:disabled:-ms-input-placeholder {
-    color: #0b8481;
-  }
-  textarea:disabled::-webkit-input-placeholder {
-    color: #0b8481;
-  }
-  textarea:disabled::-moz-placeholder {
-    color: #0b8481;
-  }
-  textarea:disabled:-ms-input-placeholder {
-    color: #0b8481;
-  }
-  select:disabled::-webkit-input-placeholder {
-    color: #0b8481;
-  }
-  select:disabled::-moz-placeholder {
-    color: #0b8481;
-  }
-  select:disabled:-ms-input-placeholder {
-    color: #0b8481;
-  }
   input:disabled::placeholder,
   textarea:disabled::placeholder,
   select:disabled::placeholder {
@@ -320,13 +270,6 @@ export const global = css`
   button,
   input {
     overflow: visible;
-  }
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
   }
   progress {
     vertical-align: baseline;
