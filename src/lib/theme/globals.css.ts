@@ -75,12 +75,11 @@ export const global = css`
     color: ${colors.link};
     outline: none;
     text-decoration: none;
-    transition: color 100ms ease-out;
 
     :hover,
     :focus {
-      color: #e3daa0;
-      text-shadow: 0 0 2px ${colors.link};
+      color: ${colors.link};
+      text-shadow: 0 0 4px ${colors.link};
     }
   }
   a h1,
