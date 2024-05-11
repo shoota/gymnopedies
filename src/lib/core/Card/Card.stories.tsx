@@ -35,6 +35,12 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+export const JP: Story = {
+  args: {
+    title: "こんにちは。猫です。",
+    description: "私は猫ですが、こんにちはをあなたに言いに来ました。",
+  },
+}
 
 export const DateStamp: Story = {
   args: {
