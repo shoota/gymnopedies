@@ -5,6 +5,7 @@ import { Picture } from "../Picture"
 
 type Props = {
   title?: string
+  heading?: ReactNode
   description?: ReactNode
   onClick?: () => void
 } & ComponentProps<typeof Picture>
@@ -13,6 +14,7 @@ export const Card = ({
   title,
   description,
   onClick,
+  heading,
   image,
   imageCaption,
   transition,
@@ -21,6 +23,7 @@ export const Card = ({
   return (
     <BasicCard onClick={onClick} isClickable={!!onClick}>
       <Container>
+        {heading && <Head>{heading}</Head>}
         <Picture
           image={image}
           imageCaption={imageCaption}
@@ -54,6 +57,11 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${colors.dark};
+`
+
+const Head = styled.span`
+  margin: 6px 0 12px 0;
+  text-decoration: underline;
 `
 
 const ContentContainer = styled.div`

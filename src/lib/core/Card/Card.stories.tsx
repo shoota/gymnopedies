@@ -19,6 +19,7 @@ const meta = {
   component: Card,
   args: {
     title: "Hello Everyone, I'm a cat.",
+    heading: "YYYY-MM-DD (E)",
     description: "I'm a cat, and I'm here to say hello to you.",
     image: { src: "/image/example.jpg" },
     imageCaption: (
