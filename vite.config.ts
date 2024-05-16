@@ -13,6 +13,18 @@ export default defineConfig({
       entry: resolve(__dirname, "src/lib/index.ts"),
       name: "index",
       fileName: "index",
+      formats: ["es", "umd"],
+    },
+    rollupOptions: {
+      external: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          "@emotion/react": "EmotionReact",
+          "@emotion/styled": "EmotionStyled",
+        },
+      },
     },
   },
 })
