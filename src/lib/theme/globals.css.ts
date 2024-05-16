@@ -15,7 +15,7 @@ export const global = css`
     font-size: 16px;
     line-height: 1.3;
     color: ${colors.light};
-    text-shadow: 0 0 4px ${colors.light};
+    text-shadow: 0 0 2px ${colors.light};
     scrollbar-width: thin;
     scrollbar-color: ${colors.default} ${colors.dark};
     font-family: "Merriweather", "Times New Roman", "YuMincho",
@@ -36,7 +36,7 @@ export const global = css`
     font-weight: bold;
     color: ${colors.light};
     letter-spacing: 0.5px;
-    text-shadow: 0 0 8px ${colors.light};
+    text-shadow: 0 0 4px ${colors.light};
   }
   h1 a,
   h2 a,
@@ -44,7 +44,7 @@ export const global = css`
   h4 a,
   h5 a,
   h6 a {
-    text-shadow: 0 0 8px ${colors.light};
+    text-shadow: 0 0 4px ${colors.light};
   }
   h1 {
     font-size: 1.75rem;
@@ -117,10 +117,10 @@ export const global = css`
     display: block;
     border-width: 1px 0 1px 0;
     border-style: solid;
-    border-color: #05c6c1;
+    border-color: ${colors.light};
     padding: 20px;
     font-size: 0.9rem;
-    background-color: rgba(62, 251, 251, 0.05);
+    text-shadow: 0 0 2px ${colors.light};
   }
   blockquote {
     border-left: 6px solid #00f8f8;
