@@ -165,8 +165,6 @@ export const global = css`
   }
   img {
     max-width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 0 16px ${colors.light};
   }
   figure img {
     margin-bottom: 0;
