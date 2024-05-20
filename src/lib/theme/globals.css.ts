@@ -14,8 +14,8 @@ export const global = css`
     background-color: ${colors.base};
     font-size: 16px;
     line-height: 1.3;
-    color: ${colors.light};
-    text-shadow: 0 0 2px ${colors.light};
+    color: ${colors.default};
+    text-shadow: 0 0 2px ${colors.default};
     scrollbar-width: thin;
     scrollbar-color: ${colors.default} ${colors.dark};
     font-family: "Merriweather", "Times New Roman", "YuMincho",
