@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import { colors } from "./color"
+import { colors, colorsRGB } from "./color"
 export const global = css`
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
   *,
@@ -116,11 +116,10 @@ export const global = css`
   pre {
     display: block;
     border-width: 1px 0 1px 0;
-    border-style: solid;
-    border-color: ${colors.light};
     padding: 20px;
     font-size: 0.9rem;
-    text-shadow: 0 0 2px ${colors.light};
+    text-shadow: none;
+    box-shadow: 0px 0px 12px ${colors.default} inset;
   }
   blockquote {
     border-left: 6px solid #00f8f8;
@@ -128,33 +127,34 @@ export const global = css`
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(62, 251, 251, 0.05);
+    background-color: rgba(${colorsRGB.default}, 0.05);
   }
   blockquote p:last-of-type {
     margin-bottom: 0;
   }
   table {
     border-collapse: separate;
-    border-spacing: 5px;
-    width: 100%;
+    border-spacing: 4px;
     text-align: left;
+    text-shadow: none;
   }
   thead tr {
-    background-color: rgba(62, 251, 251, 0.15);
+    background-color: rgba(${colorsRGB.default}, 0.15);
   }
   thead th,
   thead td {
-    border-bottom: 1px solid #f66901;
+    border-bottom: 1px solid ${colors.link};
   }
   tbody tr {
-    background-color: rgba(62, 251, 251, 0.05);
+    background-color: rgba(${colorsRGB.default}, 0.05);
   }
   tbody tr:hover,
   tbody tr:focus {
-    background-color: rgba(62, 251, 251, 0.1);
+    color: ${colors.link};
+    background-color: rgba(${colorsRGB.default}, 0.1);
   }
   tbody td {
-    border-bottom: 1px solid #0b8481;
+    border-bottom: 1px solid ${colors.light};
   }
   th,
   td {
@@ -176,6 +176,7 @@ export const global = css`
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: ${colors.default};
+    margin: 1.25rem 0;
   }
   fieldset {
     border-style: solid;
@@ -218,63 +219,9 @@ export const global = css`
   [type="submit"]:disabled {
     cursor: auto;
   }
-  input,
-  textarea,
-  select {
-    display: block;
-    outline: none;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-color: ${colors.light};
-    padding: 5px 10px;
-    width: 100%;
-    line-height: 30px;
-    color: #ffc69f;
-    background-color: transparent;
-    transition:
-      border-color 100ms ease-out,
-      background-color 100ms ease-out,
-      box-shadow 100ms ease-out;
-  }
-  input::placeholder,
-  textarea::placeholder,
-  select::placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  input:hover,
-  textarea:hover,
-  select:hover,
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: #ffc69f;
-    background-color: rgba(163, 45, 8, 0.3);
-    box-shadow: 0 0 2px #a32d08;
-  }
-  input:disabled,
-  textarea:disabled,
-  select:disabled {
-    border-color: #0b8481;
-    color: #05c6c1;
-    background-color: transparent;
-    box-shadow: none;
-    cursor: auto;
-  }
-  input:disabled::placeholder,
-  textarea:disabled::placeholder,
-  select:disabled::placeholder {
-    color: #0b8481;
-  }
-  option {
-    color: #ffc69f;
-    background-color: #a32d08;
-  }
   button,
   input {
     overflow: visible;
-  }
-  progress {
-    vertical-align: baseline;
   }
   h1,
   h2,
