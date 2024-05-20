@@ -116,11 +116,10 @@ export const global = css`
   pre {
     display: block;
     border-width: 1px 0 1px 0;
-    border-style: solid;
-    border-color: ${colors.light};
     padding: 20px;
     font-size: 0.9rem;
-    text-shadow: 0 0 2px ${colors.light};
+    text-shadow: none;
+    box-shadow: 0px 0px 12px ${colors.default} inset;
   }
   blockquote {
     border-left: 6px solid #00f8f8;
