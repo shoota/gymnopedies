@@ -5,22 +5,22 @@ type Story = StoryObj<typeof meta>
 const Component = () => (
   <div>
     <h1>
-      Heading1 <a>link</a>
+      Heading1 <a href="#">link</a>
     </h1>
     <h2>
-      Heading2 <a>link</a>
+      Heading2 <a href="#">link</a>
     </h2>
     <h3>
-      Heading3 <a>link</a>
+      Heading3 <a href="#">link</a>
     </h3>
     <h4>
-      Heading4 <a>link</a>
+      Heading4 <a href="#">link</a>
     </h4>
     <h5>
-      Heading5 <a>link</a>
+      Heading5 <a href="#">link</a>
     </h5>
     <h6>
-      Heading6 <a>link</a>
+      Heading6 <a href="#">link</a>
     </h6>
     <p>
       Paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -32,7 +32,7 @@ const Component = () => (
     <br />
     <i>Italic</i>
     <br />
-    <a>this is link</a>
+    <a href="/">this is link</a>
     <br />
     <hr />
     <ul>
