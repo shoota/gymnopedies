@@ -221,63 +221,9 @@ export const global = css`
   [type="submit"]:disabled {
     cursor: auto;
   }
-  input,
-  textarea,
-  select {
-    display: block;
-    outline: none;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-color: ${colors.light};
-    padding: 5px 10px;
-    width: 100%;
-    line-height: 30px;
-    color: #ffc69f;
-    background-color: transparent;
-    transition:
-      border-color 100ms ease-out,
-      background-color 100ms ease-out,
-      box-shadow 100ms ease-out;
-  }
-  input::placeholder,
-  textarea::placeholder,
-  select::placeholder {
-    color: rgba(255, 198, 159, 0.5);
-  }
-  input:hover,
-  textarea:hover,
-  select:hover,
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: #ffc69f;
-    background-color: rgba(163, 45, 8, 0.3);
-    box-shadow: 0 0 2px #a32d08;
-  }
-  input:disabled,
-  textarea:disabled,
-  select:disabled {
-    border-color: #0b8481;
-    color: #05c6c1;
-    background-color: transparent;
-    box-shadow: none;
-    cursor: auto;
-  }
-  input:disabled::placeholder,
-  textarea:disabled::placeholder,
-  select:disabled::placeholder {
-    color: #0b8481;
-  }
-  option {
-    color: #ffc69f;
-    background-color: #a32d08;
-  }
   button,
   input {
     overflow: visible;
-  }
-  progress {
-    vertical-align: baseline;
   }
   h1,
   h2,
