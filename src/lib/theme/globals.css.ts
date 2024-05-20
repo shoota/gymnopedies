@@ -1,5 +1,5 @@
 import { css } from "@emotion/react"
-import { colors } from "./color"
+import { colors, colorsRGB } from "./color"
 export const global = css`
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
   *,
@@ -127,33 +127,34 @@ export const global = css`
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(62, 251, 251, 0.05);
+    background-color: rgba(${colorsRGB.default}, 0.05);
   }
   blockquote p:last-of-type {
     margin-bottom: 0;
   }
   table {
     border-collapse: separate;
-    border-spacing: 5px;
-    width: 100%;
+    border-spacing: 4px;
     text-align: left;
+    text-shadow: none;
   }
   thead tr {
-    background-color: rgba(62, 251, 251, 0.15);
+    background-color: rgba(${colorsRGB.default}, 0.15);
   }
   thead th,
   thead td {
-    border-bottom: 1px solid #f66901;
+    border-bottom: 1px solid ${colors.link};
   }
   tbody tr {
-    background-color: rgba(62, 251, 251, 0.05);
+    background-color: rgba(${colorsRGB.default}, 0.05);
   }
   tbody tr:hover,
   tbody tr:focus {
-    background-color: rgba(62, 251, 251, 0.1);
+    color: ${colors.link};
+    background-color: rgba(${colorsRGB.default}, 0.1);
   }
   tbody td {
-    border-bottom: 1px solid #0b8481;
+    border-bottom: 1px solid ${colors.light};
   }
   th,
   td {
@@ -164,6 +165,8 @@ export const global = css`
   }
   img {
     max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 16px ${colors.light};
   }
   figure img {
     margin-bottom: 0;
@@ -175,6 +178,7 @@ export const global = css`
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: ${colors.default};
+    margin: 1.25rem 0;
   }
   fieldset {
     border-style: solid;
