@@ -1,8 +1,7 @@
 import { ImgHTMLAttributes, PropsWithChildren } from "react"
 import styled from "@emotion/styled"
 import { colorsRGB } from "../../theme/color"
-
-type Size = "sm" | "md" | "lg"
+import { Size } from "../../constants"
 
 const sizeProperties: Record<
   Size,
