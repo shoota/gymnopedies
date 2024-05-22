@@ -9,7 +9,7 @@ export const Content = ({ children }: PropsWithChildren) => {
 const Container = styled.div`
   padding: 16px;
   & + & {
-    margin-bottom: 48px;
+    margin-top: 16px;
   }
   img {
     margin: 1rem auto 0.85rem;
