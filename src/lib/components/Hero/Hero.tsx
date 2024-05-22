@@ -2,19 +2,48 @@ import { ImgHTMLAttributes, PropsWithChildren } from "react"
 import styled from "@emotion/styled"
 import { colorsRGB } from "../../theme/color"
 
-type Props = { cover: string } & ImgHTMLAttributes<HTMLImageElement>
-export const Hero = ({ cover, src }: PropsWithChildren<Props>) => {
+type Size = "sm" | "md" | "lg"
+
+const sizeProperties: Record<
+  Size,
+  { width: string; standardFontSize: string }
+> = {
+  sm: {
+    width: "60vw",
+    standardFontSize: "4vw",
+  },
+  md: {
+    width: "75vw",
+    standardFontSize: "5vw",
+  },
+  lg: {
+    width: "90vw",
+    standardFontSize: "6vw",
+  },
+}
+
+type Props = {
+  cover: string
+  size?: Size
+} & ImgHTMLAttributes<HTMLImageElement>
+export const Hero = ({
+  cover,
+  size = "md",
+  ...imgProps
+}: PropsWithChildren<Props>) => {
+  const { width, standardFontSize } = sizeProperties[size]
   return (
-    <FlexContainer>
+    <FlexContainer width={width}>
       <Container>
-        <Image src={src} />
+        <Image {...imgProps} />
       </Container>
-      <Title>{cover}</Title>
+      <Title standardFontSize={standardFontSize}>{cover}</Title>
     </FlexContainer>
   )
 }
 
-const FlexContainer = styled.div`
+const FlexContainer = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
   position: relative;
   display: flex;
   justify-content: center;
@@ -32,7 +61,7 @@ const Image = styled.img`
   filter: grayscale(1);
 `
 
-const Title = styled.h1`
+const Title = styled.h1<{ standardFontSize: string }>`
   display: inline-block;
   width: 100%;
   position: absolute;
@@ -42,6 +71,7 @@ const Title = styled.h1`
   text-wrap: nowrap;
   background-color: rgba(${colorsRGB.dark}, 0.45);
   overflow: hidden;
-  font-size: clamp(4px, 6vw, 4.5rem);
+  font-size: ${({ standardFontSize }) =>
+    `clamp(4px, ${standardFontSize}, 4.5rem)`};
   transform: translate(-50%, -50%);
 `
