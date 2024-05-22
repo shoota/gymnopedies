@@ -122,11 +122,11 @@ export const global = css`
     box-shadow: 0px 0px 12px ${colors.default} inset;
   }
   blockquote {
-    border-left: 6px solid #00f8f8;
-    padding-left: 26px;
+    border-left: 4px solid ${colors.default};
+    padding-left: 16px;
     padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: rgba(${colorsRGB.default}, 0.05);
   }
   blockquote p:last-of-type {
