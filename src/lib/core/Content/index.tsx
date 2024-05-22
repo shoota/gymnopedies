@@ -8,8 +8,12 @@ export const Content = ({ children }: PropsWithChildren) => {
 
 const Container = styled.div`
   padding: 16px;
+  & + & {
+    margin-bottom: 48px;
+  }
   img {
+    margin: 1rem auto 0.85rem;
     border-radius: 2px;
-    box-shadow: 0 0 24px ${colors.dark};
+    box-shadow: 0 0 1rem ${colors.dark};
   }
 `
