@@ -27,11 +27,12 @@ const sizeProperties: Record<
 type Props = {
   cover: string
   size?: Size
-} & ImgHTMLAttributes<HTMLImageElement>
+  imgProps: ImgHTMLAttributes<HTMLImageElement>
+}
 export const Hero = ({
   cover,
   size = "md",
-  ...imgProps
+  imgProps,
 }: PropsWithChildren<Props>) => {
   const { width, maxWidth, standardFontSize } = sizeProperties[size]
   return (
