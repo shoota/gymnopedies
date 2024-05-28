@@ -6,7 +6,9 @@ const meta = {
   component: Hero,
   args: {
     cover: "Hello Everyone, I'm a cat.",
-    src: "/image/example.jpg",
+    imgProps: {
+      src: "/image/example.jpg",
+    },
   },
 } satisfies Meta<typeof Hero>
 
