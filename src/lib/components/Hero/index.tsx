@@ -2,6 +2,7 @@ import { ImgHTMLAttributes, PropsWithChildren } from "react"
 import styled from "@emotion/styled"
 import { colorsRGB } from "../../theme/color"
 import { Size } from "../../constants"
+import { keyframes } from "@emotion/react"
 
 const sizeProperties: Record<
   Size,
@@ -26,25 +27,48 @@ const sizeProperties: Record<
 
 type Props = {
   cover: string
+  coverTop?: number
   size?: Size
   imgProps: ImgHTMLAttributes<HTMLImageElement>
 }
 export const Hero = ({
   cover,
+  coverTop,
   size = "md",
   imgProps,
 }: PropsWithChildren<Props>) => {
   const { width, maxWidth, standardFontSize } = sizeProperties[size]
   return (
-    <FlexContainer width={width} maxWidth={maxWidth}>
-      <Container>
-        <Image {...imgProps} />
-      </Container>
-      <Title standardFontSize={standardFontSize}>{cover}</Title>
-    </FlexContainer>
+    <Container>
+      <FlexContainer width={width} maxWidth={maxWidth}>
+        <ImageWrap>
+          <Image {...imgProps} />
+        </ImageWrap>
+        <Title standardFontSize={standardFontSize} coverTop={coverTop}>
+          {cover}
+        </Title>
+      </FlexContainer>
+    </Container>
   )
 }
 
+const lighting = keyframes`
+  0% {
+    filter: grayscale(0.8) brightness(1);
+  }
+  75% {
+    filter: grayscale(0.9) brightness(0.5) blur(3px);
+  }
+  100% {
+    filter: grayscale(1) brightness(0.4) blur(4px);
+  }
+`
+
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
 const FlexContainer = styled.div<{ width: string; maxWidth: string }>`
   width: ${({ width }) => width};
   max-width: ${({ maxWidth }) => maxWidth};
@@ -53,9 +77,10 @@ const FlexContainer = styled.div<{ width: string; maxWidth: string }>`
   justify-content: center;
   align-items: center;
 `
-const Container = styled.div`
+const ImageWrap = styled.div`
   width: 100%;
 `
+
 const Image = styled.img`
   display: block;
   vertical-align: top;
@@ -63,13 +88,14 @@ const Image = styled.img`
   object-position: center;
   opacity: 0.6;
   filter: grayscale(1);
+  animation: ${lighting} 8s 1.5s ease-in-out 2 alternate;
 `
 
-const Title = styled.h1<{ standardFontSize: string }>`
+const Title = styled.h1<{ standardFontSize: string; coverTop?: number }>`
   display: inline-block;
   width: 100%;
   position: absolute;
-  top: 66%;
+  top: ${({ coverTop }) => (coverTop ? `${coverTop}%` : "50%")};
   left: 50%;
   text-align: center;
   text-wrap: nowrap;
