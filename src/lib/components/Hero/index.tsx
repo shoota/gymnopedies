@@ -5,18 +5,21 @@ import { Size } from "../../constants"
 
 const sizeProperties: Record<
   Size,
-  { width: string; standardFontSize: string }
+  { width: string; maxWidth: string; standardFontSize: string }
 > = {
   sm: {
     width: "60vw",
+    maxWidth: "800px",
     standardFontSize: "4vw",
   },
   md: {
     width: "75vw",
+    maxWidth: "1000px",
     standardFontSize: "5vw",
   },
   lg: {
     width: "90vw",
+    maxWidth: "1200px",
     standardFontSize: "6vw",
   },
 }
@@ -24,15 +27,16 @@ const sizeProperties: Record<
 type Props = {
   cover: string
   size?: Size
-} & ImgHTMLAttributes<HTMLImageElement>
+  imgProps: ImgHTMLAttributes<HTMLImageElement>
+}
 export const Hero = ({
   cover,
   size = "md",
-  ...imgProps
+  imgProps,
 }: PropsWithChildren<Props>) => {
-  const { width, standardFontSize } = sizeProperties[size]
+  const { width, maxWidth, standardFontSize } = sizeProperties[size]
   return (
-    <FlexContainer width={width}>
+    <FlexContainer width={width} maxWidth={maxWidth}>
       <Container>
         <Image {...imgProps} />
       </Container>
@@ -41,8 +45,9 @@ export const Hero = ({
   )
 }
 
-const FlexContainer = styled.div<{ width: string }>`
+const FlexContainer = styled.div<{ width: string; maxWidth: string }>`
   width: ${({ width }) => width};
+  max-width: ${({ maxWidth }) => maxWidth};
   position: relative;
   display: flex;
   justify-content: center;
