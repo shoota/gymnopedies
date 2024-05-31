@@ -6,6 +6,7 @@ import { Picture } from "../Picture"
 type Props = {
   title?: string
   heading?: ReactNode
+  cardWidth?: string
   description?: ReactNode
   width?: string
   onClick?: () => void
@@ -16,15 +17,15 @@ export const Card = ({
   description,
   onClick,
   heading,
-  width,
   image,
   imageCaption,
-  figureWidth,
   transition,
   children,
+  cardWidth,
+  figureWidth,
 }: PropsWithChildren<Props>) => {
   return (
-    <BasicCard width={width} onClick={onClick} isClickable={!!onClick}>
+    <BasicCard cardWidth={cardWidth} onClick={onClick} isClickable={!!onClick}>
       <Container>
         {heading && <Head>{heading}</Head>}
         <Picture
@@ -48,8 +49,8 @@ export const Card = ({
   )
 }
 
-const BasicCard = styled.article<{ isClickable: boolean; width?: string }>`
-  ${({ width }) => width && `width: ${width}`};
+const BasicCard = styled.article<{ isClickable: boolean; cardWidth?: string }>`
+  ${({ cardWidth }) => cardWidth !== undefined && `width: ${cardWidth}`};
   cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
   display: block;
 `
