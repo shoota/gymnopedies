@@ -7,6 +7,7 @@ type Props = {
   title?: string
   heading?: ReactNode
   description?: ReactNode
+  width?: string
   onClick?: () => void
 } & ComponentProps<typeof Picture>
 
@@ -15,16 +16,19 @@ export const Card = ({
   description,
   onClick,
   heading,
+  width,
   image,
   imageCaption,
+  figureWidth,
   transition,
   children,
 }: PropsWithChildren<Props>) => {
   return (
-    <BasicCard onClick={onClick} isClickable={!!onClick}>
+    <BasicCard width={width} onClick={onClick} isClickable={!!onClick}>
       <Container>
         {heading && <Head>{heading}</Head>}
         <Picture
+          figureWidth={figureWidth}
           image={image}
           imageCaption={imageCaption}
           transition={transition}
@@ -44,7 +48,8 @@ export const Card = ({
   )
 }
 
-const BasicCard = styled.article<{ isClickable: boolean }>`
+const BasicCard = styled.article<{ isClickable: boolean; width?: string }>`
+  ${({ width }) => width && `width: ${width}`};
   cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
   display: block;
 `
