@@ -30,21 +30,29 @@ export const HeaderNavigation = ({ title, menuItems, currentIndex }: Props) => {
 }
 
 const Container = styled.header`
+  margin: 1.25rem 0;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 2.4rem;
-  background-color: ${colors.dark};
+  padding: 1rem 24px;
+  background-color: rgb(${colorsRGB.dark}, 0.4);
   background-image: linear-gradient(
-    ${colors.dark} 26%,
-    rgb(${colorsRGB.default}, 0.1) 80%,
-    ${colors.dark} 100%
+    rgb(${colorsRGB.light}, 0.1) 0%,
+    rgb(${colorsRGB.dark}, 0.4) 4%,
+    rgb(${colorsRGB.dark}, 0.4) 80%,
+    rgb(${colorsRGB.dark}, 0.4) 90%,
+    rgb(${colorsRGB.light}, 0.1) 100%
   );
-  font-size: 0.9rem;
+  box-shadow: 0 0 2.5rem 0 rgb(${colorsRGB.light}, 0.3);
+  font-size: 0.625rem;
+  * {
+    opacity: 1;
+  }
   h1 {
-    font-size: 1.2rem;
+    flex-grow: 3;
+    font-size: 1rem;
   }
   @media screen and (min-width: 40em) {
-    font-size: 0.9rem;
+    font-size: 0.87rem;
     h1 {
       font-size: 1.4rem;
     }
@@ -69,11 +77,10 @@ const MenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
 `
 
 const MenuItem = styled.div`
-  margin-right: 0.8rem;
   a {
     text-decoration: underline;
     text-decoration-color: ${colors.link};
