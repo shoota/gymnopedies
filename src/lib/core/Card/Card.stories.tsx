@@ -27,6 +27,8 @@ const meta = {
         Photo by <a>@shoota</a> in 2024
       </>
     ),
+    figureWidth: "80%",
+    width: "80vw",
     onClick: action("onClick"),
     children: <Content />,
   },
