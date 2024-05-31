@@ -30,6 +30,7 @@ export const HeaderNavigation = ({ title, menuItems, currentIndex }: Props) => {
 }
 
 const Container = styled.header`
+  margin: 1.25rem 0;
   display: flex;
   justify-content: space-between;
   padding: 1rem 24px;
