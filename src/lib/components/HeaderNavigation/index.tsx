@@ -33,13 +33,19 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 1rem 24px;
-  background-color: ${colors.dark};
+  background-color: rgb(${colorsRGB.dark}, 0.4);
   background-image: linear-gradient(
-    ${colors.dark} 26%,
-    rgb(${colorsRGB.default}, 0.1) 80%,
-    ${colors.dark} 100%
+    rgb(${colorsRGB.light}, 0.1) 0%,
+    rgb(${colorsRGB.dark}, 0.4) 4%,
+    rgb(${colorsRGB.dark}, 0.4) 80%,
+    rgb(${colorsRGB.dark}, 0.4) 90%,
+    rgb(${colorsRGB.light}, 0.1) 100%
   );
+  box-shadow: 0 0 2.5rem 0 rgb(${colorsRGB.light}, 0.3);
   font-size: 0.625rem;
+  * {
+    opacity: 1;
+  }
   h1 {
     flex-grow: 3;
     font-size: 1rem;
