@@ -1,39 +1,57 @@
 import styled from "@emotion/styled"
-import { ComponentProps, PropsWithChildren, ReactNode } from "react"
+import { ComponentProps, PropsWithChildren, ReactNode, useMemo } from "react"
 import { colors } from "../../theme/color"
 import { Picture } from "../Picture"
+
+type CustomStyleProps = {
+  width?: string
+  maxWidth?: string
+  height?: string
+}
 
 type Props = {
   title?: string
   heading?: ReactNode
-  cardWidth?: string
   description?: ReactNode
-  width?: string
   onClick?: () => void
-} & ComponentProps<typeof Picture>
+} & CustomStyleProps &
+  ComponentProps<typeof Picture>
 
 export const Card = ({
   title,
+  heading,
   description,
   onClick,
-  heading,
+  children,
+  width,
+  maxWidth,
+  height,
   image,
   imageCaption,
   transition,
-  children,
-  cardWidth,
-  figureWidth,
 }: PropsWithChildren<Props>) => {
+  const hasContent = useMemo(
+    () => title || description || children,
+    [title, description, children]
+  )
+
   return (
-    <BasicCard cardWidth={cardWidth} onClick={onClick} isClickable={!!onClick}>
-      <Container>
-        {heading && <Head>{heading}</Head>}
+    <Container
+      width={width}
+      maxWidth={maxWidth}
+      height={height}
+      onClick={onClick}
+      isClickable={!!onClick}
+    >
+      {heading && <Head>{heading}</Head>}
+      {image && (
         <Picture
-          figureWidth={figureWidth}
           image={image}
           imageCaption={imageCaption}
           transition={transition}
         />
+      )}
+      {hasContent && (
         <ContentContainer>
           {title && <h1>{title}</h1>}
           {description && <div>{description}</div>}
@@ -44,24 +62,24 @@ export const Card = ({
             </Content>
           )}
         </ContentContainer>
-      </Container>
-    </BasicCard>
+      )}
+    </Container>
   )
 }
 
-const BasicCard = styled.article<{ isClickable: boolean; cardWidth?: string }>`
-  ${({ cardWidth }) => cardWidth !== undefined && `width: ${cardWidth}`};
+const Container = styled.article<
+  CustomStyleProps & {
+    isClickable?: boolean
+  }
+>`
   cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
-  display: block;
-`
-
-const Container = styled.div`
   border-radius: 8px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: ${({ width }) => (width !== undefined ? `${width}` : "100%")};
+  height: ${({ height }) => (height !== undefined ? `${height}` : "100%")};
+  ${({ maxWidth }) => maxWidth !== undefined && `max-width: ${maxWidth};`};
   background-color: ${colors.dark};
 `
 

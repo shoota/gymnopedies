@@ -9,25 +9,18 @@ type Props = {
   image?: ImageProps
   imageCaption?: ReactNode
   transition?: boolean
-  figureWidth?: string
 }
-export const Picture = ({
-  image,
-  imageCaption,
-  transition,
-  figureWidth,
-}: Props) => {
+
+export const Picture = ({ image, imageCaption, transition }: Props) => {
   return (
-    <PictureContainer figureWidth={figureWidth}>
+    <PictureContainer>
       <Image {...image} transition={transition} />
       <PictureCaption>{imageCaption}</PictureCaption>
     </PictureContainer>
   )
 }
 
-const PictureContainer = styled.figure<{ figureWidth?: string }>`
-  ${({ figureWidth }) => figureWidth !== undefined && `width: ${figureWidth};`};
-  ${({ figureWidth }) => figureWidth !== undefined && "margin: 0 auto;"};
+const PictureContainer = styled.figure`
   position: relative;
   background-color: ${colors.main};
   border-radius: 4px;
