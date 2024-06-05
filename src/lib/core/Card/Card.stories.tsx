@@ -17,19 +17,19 @@ const Content = () => (
 const meta: Meta<typeof Card> = {
   title: "core/Card",
   component: Card,
-}
-
-export default meta
-
-type Story = StoryObj<typeof Card>
-export const Min: Story = {
   args: {
     image: { src: "/image/example.jpg" },
   },
 }
 
+export default meta
+
+type Story = StoryObj<typeof Card>
+export const Min: Story = {}
+
 export const ContentsCard: Story = {
   args: {
+    image: undefined,
     title: "Hello Everyone, I'm a cat.",
     heading: "YYYY-MM-DD (E)",
     description: "I'm a cat, and I'm here to say hello to you.",
