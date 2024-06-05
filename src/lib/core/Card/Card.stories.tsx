@@ -14,34 +14,50 @@ const Content = () => (
   </>
 )
 
-const meta = {
+const meta: Meta<typeof Card> = {
   title: "core/Card",
   component: Card,
+}
+
+export default meta
+
+type Story = StoryObj<typeof Card>
+export const Min: Story = {
+  args: {
+    image: { src: "/image/example.jpg" },
+  },
+}
+
+export const ContentsCard: Story = {
   args: {
     title: "Hello Everyone, I'm a cat.",
     heading: "YYYY-MM-DD (E)",
     description: "I'm a cat, and I'm here to say hello to you.",
-    cardWidth: undefined,
-    figureWidth: undefined,
+    children: <Content />,
+  },
+}
+
+export const Full: Story = {
+  args: {
+    title: "Hello Everyone, I'm a cat.",
+    heading: "YYYY-MM-DD (E)",
+    description: "I'm a cat, and I'm here to say hello to you.",
     image: { src: "/image/example.jpg" },
     imageCaption: (
       <>
         Photo by <a>@shoota</a> in 2024
       </>
     ),
-    width: "80vw",
     onClick: action("onClick"),
     children: <Content />,
   },
-} satisfies Meta<typeof Card>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-export const Default: Story = {}
+}
 
 export const Width: Story = {
-  args: { cardWidth: "60%", figureWidth: "80%" },
+  args: {
+    width: "60%",
+    maxWidth: "800px",
+  },
 }
 export const JP: Story = {
   args: {
