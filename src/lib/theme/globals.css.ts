@@ -112,6 +112,7 @@ export const global = css`
   code,
   pre {
     font-family: monospace;
+    overflow-x: auto;
   }
   pre {
     display: block;
