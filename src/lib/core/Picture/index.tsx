@@ -1,20 +1,24 @@
 import styled from "@emotion/styled"
-import { ImgHTMLAttributes, ReactNode } from "react"
+import { CSSProperties, ImgHTMLAttributes, ReactNode } from "react"
 import { colors, colorsRGB } from "../../theme/color"
 import { css } from "@emotion/react"
 
-type ImageProps = ImgHTMLAttributes<HTMLImageElement>
+type EnhancedImageProps = {
+  objectPosition?: CSSProperties["objectPosition"]
+  transition?: boolean
+}
+
+type ImageProps = ImgHTMLAttributes<HTMLImageElement> & EnhancedImageProps
 
 type Props = {
   image?: ImageProps
   imageCaption?: ReactNode
-  transition?: boolean
 }
 
-export const Picture = ({ image, imageCaption, transition }: Props) => {
+export const Picture = ({ image, imageCaption }: Props) => {
   return (
     <PictureContainer>
-      <Image {...image} transition={transition} />
+      <Image {...image} />
       <PictureCaption>{imageCaption}</PictureCaption>
     </PictureContainer>
   )
@@ -53,7 +57,7 @@ const imageTransition = css`
       filter 1s 0.4s;
   }
 `
-const Image = styled.img<{ src?: string; transition?: boolean }>`
+const Image = styled.img<ImageProps>`
   box-sizing: content-box;
   display: block;
   vertical-align: top;
@@ -61,11 +65,10 @@ const Image = styled.img<{ src?: string; transition?: boolean }>`
   margin: 0;
   border: none;
   padding: 0;
-  padding-bottom: calc(100% * 2 / 4);
   width: 100%;
-  height: 0;
+  height: ${({ height }) => `${height || "auto"}`};
   object-fit: cover;
-  object-position: center;
+  object-position: ${({ objectPosition }) => `${objectPosition || "center"}`};
   background-size: cover;
   background-position: center;
   background-color: ${colors.dark};
@@ -73,6 +76,5 @@ const Image = styled.img<{ src?: string; transition?: boolean }>`
   filter: grayscale(1);
   transition: opacity 0.6s;
   ${({ src }) => !!src && `background-image: url(${src})`};
-
   ${({ transition }) => transition && imageTransition};
 `

@@ -28,7 +28,6 @@ export const Card = ({
   height,
   image,
   imageCaption,
-  transition,
 }: PropsWithChildren<Props>) => {
   const hasContent = useMemo(
     () => title || description || children,
@@ -44,13 +43,7 @@ export const Card = ({
       isClickable={!!onClick}
     >
       {heading && <Head>{heading}</Head>}
-      {image && (
-        <Picture
-          image={image}
-          imageCaption={imageCaption}
-          transition={transition}
-        />
-      )}
+      {image && <Picture image={image} imageCaption={imageCaption} />}
       {hasContent && (
         <ContentContainer>
           {title && <h1>{title}</h1>}
