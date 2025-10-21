@@ -33,15 +33,15 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 1rem 24px;
-  background-color: rgba(4, 37, 43, 0.4);
+  background-color: rgba(var(--color-dark-rgb), 0.4);
   background-image: linear-gradient(
-    rgba(214, 214, 214, 0.1) 0%,
-    rgba(4, 37, 43, 0.4) 4%,
-    rgba(4, 37, 43, 0.4) 80%,
-    rgba(4, 37, 43, 0.4) 90%,
-    rgba(214, 214, 214, 0.1) 100%
+    rgba(var(--color-light-rgb), 0.1) 0%,
+    rgba(var(--color-dark-rgb), 0.4) 4%,
+    rgba(var(--color-dark-rgb), 0.4) 80%,
+    rgba(var(--color-dark-rgb), 0.4) 90%,
+    rgba(var(--color-light-rgb), 0.1) 100%
   );
-  box-shadow: 0 0 2.5rem 0 rgba(214, 214, 214, 0.3);
+  box-shadow: 0 0 2.5rem 0 rgba(var(--color-light-rgb), 0.3);
   font-size: 0.625rem;
   * {
     opacity: 1;

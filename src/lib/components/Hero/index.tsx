@@ -98,7 +98,7 @@ const Title = styled.h1<{ standardFontSize: string; coverTop?: number }>`
   left: 50%;
   text-align: center;
   text-wrap: nowrap;
-  background-color: rgba(4, 37, 43, 0.45);
+  background-color: rgba(var(--color-dark-rgb), 0.45);
   overflow: hidden;
   font-size: ${({ standardFontSize }) =>
     `clamp(4px, ${standardFontSize}, 4.5rem)`};

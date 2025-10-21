@@ -43,7 +43,7 @@ const PictureCaption = styled.figcaption`
   font-weight: bold;
   color: var(--color-tone);
   text-shadow: none;
-  background-color: rgba(4, 37, 43, 0.6);
+  background-color: rgba(var(--color-dark-rgb), 0.6);
 `
 
 const imageTransition = css`
