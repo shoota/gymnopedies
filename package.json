@@ -57,7 +57,7 @@
     "@storybook/react-vite": "^8.1.11",
     "@storybook/test": "^8.1.11",
     "@swc/plugin-emotion": "3.0.9",
-    "@types/node": "^20.14.13",
+    "@types/node": "^20.19.23",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
