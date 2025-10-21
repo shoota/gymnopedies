@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Setup Node.js
       id: setup_nodejs
-      uses: actions/setup-node@v4.0.2
+      uses: actions/setup-node@v4.4.0
       with:
         node-version-file: ".tool-versions"
     - uses: actions/cache@v4.0.2
