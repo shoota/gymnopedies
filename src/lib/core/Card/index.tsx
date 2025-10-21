@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import { ComponentProps, PropsWithChildren, ReactNode, useMemo } from "react"
-import { colors } from "../../theme/color"
 import { Picture } from "../Picture"
 
 type CustomStyleProps = {
@@ -73,7 +72,7 @@ const Container = styled.article<
   width: ${({ width }) => (width !== undefined ? `${width}` : "100%")};
   height: ${({ height }) => (height !== undefined ? `${height}` : "100%")};
   ${({ maxWidth }) => maxWidth !== undefined && `max-width: ${maxWidth};`};
-  background-color: ${colors.dark};
+  background-color: var(--color-dark);
 `
 
 const Head = styled.span`
