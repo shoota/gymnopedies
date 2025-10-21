@@ -1,17 +1,10 @@
 import { css } from "@emotion/react"
+import { variables } from "./variables.css"
+
 export const global = css`
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
-  :root {
-    --color-base: #333333;
-    --color-main: #35434c;
-    --color-default: #999999;
-    --color-light: #d6d6d6;
-    --color-dark: #04252b;
-    --color-tone: #cfd8de;
-    --color-link: #d5ca86;
-    --color-default-rgb: 153, 153, 153;
-  }
+  ${variables}
 
   *,
   *:before,
