@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import { CSSProperties, ImgHTMLAttributes, ReactNode } from "react"
-import { colors, colorsRGB } from "../../theme/color"
 import { css } from "@emotion/react"
 
 type EnhancedImageProps = {
@@ -26,7 +25,7 @@ export const Picture = ({ image, imageCaption }: Props) => {
 
 const PictureContainer = styled.figure`
   position: relative;
-  background-color: ${colors.main};
+  background-color: var(--color-main);
   border-radius: 4px;
   > img {
     border-radius: 4px;
@@ -42,9 +41,9 @@ const PictureCaption = styled.figcaption`
   width: auto;
   font-size: 12px;
   font-weight: bold;
-  color: ${colors.tone};
+  color: var(--color-tone);
   text-shadow: none;
-  background-color: rgb(${colorsRGB.dark}, 0.6);
+  background-color: rgba(4, 37, 43, 0.6);
 `
 
 const imageTransition = css`
@@ -71,7 +70,7 @@ const Image = styled.img<ImageProps>`
   object-position: ${({ objectPosition }) => `${objectPosition || "center"}`};
   background-size: cover;
   background-position: center;
-  background-color: ${colors.dark};
+  background-color: var(--color-dark);
   opacity: 0.6;
   filter: grayscale(1);
   transition: opacity 0.6s;

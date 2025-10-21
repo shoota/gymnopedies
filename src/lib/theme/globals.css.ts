@@ -1,7 +1,18 @@
 import { css } from "@emotion/react"
-import { colors, colorsRGB } from "./color"
 export const global = css`
   @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+  :root {
+    --color-base: #333333;
+    --color-main: #35434c;
+    --color-default: #999999;
+    --color-light: #d6d6d6;
+    --color-dark: #04252b;
+    --color-tone: #cfd8de;
+    --color-link: #d5ca86;
+    --color-default-rgb: 153, 153, 153;
+  }
+
   *,
   *:before,
   *:after {
@@ -11,13 +22,13 @@ export const global = css`
   }
   html,
   body {
-    background-color: ${colors.base};
+    background-color: var(--color-base);
     font-size: 16px;
     line-height: 1.3;
-    color: ${colors.default};
-    text-shadow: 0 0 2px ${colors.default};
+    color: var(--color-default);
+    text-shadow: 0 0 2px var(--color-default);
     scrollbar-width: thin;
-    scrollbar-color: ${colors.default} ${colors.dark};
+    scrollbar-color: var(--color-default) var(--color-dark);
     font-family: "Merriweather", "Times New Roman", "YuMincho",
       "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   }
@@ -34,9 +45,9 @@ export const global = css`
   h5,
   h6 {
     font-weight: bold;
-    color: ${colors.light};
+    color: var(--color-light);
     letter-spacing: 0.5px;
-    text-shadow: 0 0 4px ${colors.light};
+    text-shadow: 0 0 4px var(--color-light);
   }
   h1 a,
   h2 a,
@@ -44,7 +55,7 @@ export const global = css`
   h4 a,
   h5 a,
   h6 a {
-    text-shadow: 0 0 4px ${colors.light};
+    text-shadow: 0 0 4px var(--color-light);
   }
   h1 {
     font-size: 1.75rem;
@@ -75,14 +86,14 @@ export const global = css`
     font-size: 80%;
   }
   a {
-    color: ${colors.link};
+    color: var(--color-link);
     outline: none;
     text-decoration: none;
 
     :hover,
     :focus {
-      color: ${colors.link};
-      text-shadow: 0 0 4px ${colors.link};
+      color: var(--color-link);
+      text-shadow: 0 0 4px var(--color-link);
     }
   }
   a h1,
@@ -91,7 +102,7 @@ export const global = css`
   a h4,
   a h5,
   a h6 {
-    text-shadow: 0 0 2px ${colors.light};
+    text-shadow: 0 0 2px var(--color-light);
   }
   ul,
   ol {
@@ -120,15 +131,15 @@ export const global = css`
     padding: 20px;
     font-size: 0.9rem;
     text-shadow: none;
-    box-shadow: 0px 0px 12px ${colors.default} inset;
+    box-shadow: 0px 0px 12px var(--color-default) inset;
   }
   blockquote {
-    border-left: 4px solid ${colors.default};
+    border-left: 4px solid var(--color-default);
     padding-left: 16px;
     padding-right: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: rgba(${colorsRGB.default}, 0.05);
+    background-color: rgba(var(--color-default-rgb), 0.05);
   }
   blockquote p:last-of-type {
     margin-bottom: 0;
@@ -140,22 +151,22 @@ export const global = css`
     text-shadow: none;
   }
   thead tr {
-    background-color: rgba(${colorsRGB.default}, 0.15);
+    background-color: rgba(var(--color-default-rgb), 0.15);
   }
   thead th,
   thead td {
-    border-bottom: 1px solid ${colors.link};
+    border-bottom: 1px solid var(--color-link);
   }
   tbody tr {
-    background-color: rgba(${colorsRGB.default}, 0.05);
+    background-color: rgba(var(--color-default-rgb), 0.05);
   }
   tbody tr:hover,
   tbody tr:focus {
-    color: ${colors.link};
-    background-color: rgba(${colorsRGB.default}, 0.1);
+    color: var(--color-link);
+    background-color: rgba(var(--color-default-rgb), 0.1);
   }
   tbody td {
-    border-bottom: 1px solid ${colors.light};
+    border-bottom: 1px solid var(--color-light);
   }
   th,
   td {
@@ -176,7 +187,7 @@ export const global = css`
     height: 0;
     border-width: 0 0 1px 0;
     border-style: solid;
-    border-color: ${colors.default};
+    border-color: var(--color-default);
     margin: 1.25rem 0;
   }
   fieldset {

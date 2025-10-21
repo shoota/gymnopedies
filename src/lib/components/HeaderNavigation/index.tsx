@@ -1,5 +1,4 @@
 import styled from "@emotion/styled"
-import { colors, colorsRGB } from "../../theme/color"
 type Props = {
   title: string
   menuItems?: { name: string; onClick?: () => void }[]
@@ -34,15 +33,15 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 1rem 24px;
-  background-color: rgb(${colorsRGB.dark}, 0.4);
+  background-color: rgba(4, 37, 43, 0.4);
   background-image: linear-gradient(
-    rgb(${colorsRGB.light}, 0.1) 0%,
-    rgb(${colorsRGB.dark}, 0.4) 4%,
-    rgb(${colorsRGB.dark}, 0.4) 80%,
-    rgb(${colorsRGB.dark}, 0.4) 90%,
-    rgb(${colorsRGB.light}, 0.1) 100%
+    rgba(214, 214, 214, 0.1) 0%,
+    rgba(4, 37, 43, 0.4) 4%,
+    rgba(4, 37, 43, 0.4) 80%,
+    rgba(4, 37, 43, 0.4) 90%,
+    rgba(214, 214, 214, 0.1) 100%
   );
-  box-shadow: 0 0 2.5rem 0 rgb(${colorsRGB.light}, 0.3);
+  box-shadow: 0 0 2.5rem 0 rgba(214, 214, 214, 0.3);
   font-size: 0.625rem;
   * {
     opacity: 1;
@@ -83,7 +82,7 @@ const MenuContainer = styled.div`
 const MenuItem = styled.div`
   a {
     text-decoration: underline;
-    text-decoration-color: ${colors.link};
+    text-decoration-color: var(--color-link);
   }
 `
 
