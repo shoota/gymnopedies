@@ -11,10 +11,52 @@ const primitive = {
     tone: "#cfd8de",
     link: "#d5ca86",
   },
+  fontSizes: {
+    xs: "0.75rem", // 12px
+    sm: "0.875rem", // 14px
+    base: "1rem", // 16px
+    lg: "1.125rem", // 18px (h6)
+    xl: "1.25rem", // 20px (h5)
+    "2xl": "1.375rem", // 22px (h4)
+    "3xl": "1.5rem", // 24px (h3)
+    "4xl": "1.625rem", // 26px (h2)
+    "5xl": "1.75rem", // 28px (h1)
+  },
+  spacing: {
+    xs: "0.25rem", // 4px
+    sm: "0.5rem", // 8px
+    md: "1rem", // 16px
+    lg: "1.25rem", // 20px
+    xl: "1.5rem", // 24px
+    "2xl": "2rem", // 32px
+  },
+  typography: {
+    fontFamily: {
+      serif:
+        '"Merriweather", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif',
+      mono: "monospace",
+    },
+    fontWeight: {
+      normal: "400",
+      bold: "bold",
+      bolder: "bolder",
+    },
+    lineHeight: {
+      tight: "1.2",
+      base: "1.3",
+      relaxed: "1.5",
+    },
+    letterSpacing: {
+      tight: "-0.025em",
+      base: "0",
+      wide: "0.5px",
+    },
+  },
 }
 
 export const variables = css`
   :root {
+    /* Colors */
     --color-base: ${primitive.colors.base};
     --color-main: ${primitive.colors.main};
     --color-default: ${primitive.colors.default};
@@ -25,5 +67,37 @@ export const variables = css`
     --color-default-rgb: ${hexToRgb(primitive.colors.default)};
     --color-dark-rgb: ${hexToRgb(primitive.colors.dark)};
     --color-light-rgb: ${hexToRgb(primitive.colors.light)};
+
+    /* Font Sizes */
+    --font-size-xs: ${primitive.fontSizes.xs};
+    --font-size-sm: ${primitive.fontSizes.sm};
+    --font-size-base: ${primitive.fontSizes.base};
+    --font-size-lg: ${primitive.fontSizes.lg};
+    --font-size-xl: ${primitive.fontSizes.xl};
+    --font-size-2xl: ${primitive.fontSizes["2xl"]};
+    --font-size-3xl: ${primitive.fontSizes["3xl"]};
+    --font-size-4xl: ${primitive.fontSizes["4xl"]};
+    --font-size-5xl: ${primitive.fontSizes["5xl"]};
+
+    /* Spacing */
+    --spacing-xs: ${primitive.spacing.xs};
+    --spacing-sm: ${primitive.spacing.sm};
+    --spacing-md: ${primitive.spacing.md};
+    --spacing-lg: ${primitive.spacing.lg};
+    --spacing-xl: ${primitive.spacing.xl};
+    --spacing-2xl: ${primitive.spacing["2xl"]};
+
+    /* Typography */
+    --font-family-serif: ${primitive.typography.fontFamily.serif};
+    --font-family-mono: ${primitive.typography.fontFamily.mono};
+    --font-weight-normal: ${primitive.typography.fontWeight.normal};
+    --font-weight-bold: ${primitive.typography.fontWeight.bold};
+    --font-weight-bolder: ${primitive.typography.fontWeight.bolder};
+    --line-height-tight: ${primitive.typography.lineHeight.tight};
+    --line-height-base: ${primitive.typography.lineHeight.base};
+    --line-height-relaxed: ${primitive.typography.lineHeight.relaxed};
+    --letter-spacing-tight: ${primitive.typography.letterSpacing.tight};
+    --letter-spacing-base: ${primitive.typography.letterSpacing.base};
+    --letter-spacing-wide: ${primitive.typography.letterSpacing.wide};
   }
 `

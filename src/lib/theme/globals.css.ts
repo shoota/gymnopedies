@@ -16,14 +16,13 @@ export const global = css`
   html,
   body {
     background-color: var(--color-base);
-    font-size: 16px;
-    line-height: 1.3;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
     color: var(--color-default);
     text-shadow: 0 0 2px var(--color-default);
     scrollbar-width: thin;
     scrollbar-color: var(--color-default) var(--color-dark);
-    font-family: "Merriweather", "Times New Roman", "YuMincho",
-      "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-family: var(--font-family-serif);
   }
 
   html ::selection,
@@ -37,9 +36,9 @@ export const global = css`
   h4,
   h5,
   h6 {
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
     color: var(--color-light);
-    letter-spacing: 0.5px;
+    letter-spacing: var(--letter-spacing-wide);
     text-shadow: 0 0 4px var(--color-light);
   }
   h1 a,
@@ -51,29 +50,29 @@ export const global = css`
     text-shadow: 0 0 4px var(--color-light);
   }
   h1 {
-    font-size: 1.75rem;
+    font-size: var(--font-size-5xl);
   }
   h2 {
-    font-size: 1.625rem;
+    font-size: var(--font-size-4xl);
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: var(--font-size-3xl);
   }
   h4 {
-    font-size: 1.375rem;
+    font-size: var(--font-size-2xl);
   }
   h5 {
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
   }
   h6 {
-    font-size: 1.125rem;
+    font-size: var(--font-size-lg);
   }
   p {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
   b,
   strong {
-    font-weight: bolder;
+    font-weight: var(--font-weight-bolder);
   }
   small {
     font-size: 80%;
@@ -99,7 +98,7 @@ export const global = css`
   }
   ul,
   ol {
-    padding-left: 30px;
+    padding-left: var(--spacing-2xl);
   }
   ul ul,
   ol ul,
@@ -115,23 +114,23 @@ export const global = css`
   }
   code,
   pre {
-    font-family: monospace;
+    font-family: var(--font-family-mono);
     overflow-x: auto;
   }
   pre {
     display: block;
     border-width: 1px 0 1px 0;
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-sm);
     text-shadow: none;
     box-shadow: 0px 0px 12px var(--color-default) inset;
   }
   blockquote {
     border-left: 4px solid var(--color-default);
-    padding-left: 16px;
-    padding-right: 20px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-lg);
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
     background-color: rgba(var(--color-default-rgb), 0.05);
   }
   blockquote p:last-of-type {
@@ -139,7 +138,7 @@ export const global = css`
   }
   table {
     border-collapse: separate;
-    border-spacing: 4px;
+    border-spacing: var(--spacing-xs);
     text-align: left;
     text-shadow: none;
   }
@@ -163,7 +162,7 @@ export const global = css`
   }
   th,
   td {
-    padding: 5px 8px;
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
   tr {
     transition: background-color 100ms ease-out;
@@ -181,13 +180,13 @@ export const global = css`
     border-width: 0 0 1px 0;
     border-style: solid;
     border-color: var(--color-default);
-    margin: 1.25rem 0;
+    margin: var(--spacing-lg) 0;
   }
   fieldset {
     border-style: solid;
     border-width: 1px;
     border-color: #0b8481;
-    padding: 20px;
+    padding: var(--spacing-lg);
   }
   button,
   input,
@@ -196,7 +195,7 @@ export const global = css`
   textarea {
     font-family: inherit;
     font-size: 100%;
-    line-height: 1.2;
+    line-height: var(--line-height-tight);
   }
   button,
   [type="button"],
@@ -243,6 +242,6 @@ export const global = css`
   figure,
   hr,
   fieldset {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-lg);
   }
 `
