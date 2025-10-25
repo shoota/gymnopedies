@@ -39,6 +39,25 @@ const primitive = {
     "2xl": "1rem", // 16px
     full: "50%",
   },
+  shadows: {
+    boxShadow: {
+      neutral: "0 2px 8px rgba(153, 153, 153, 0.15)", // default color
+      softGlow:
+        "0 0 16px rgba(207, 216, 222, 0.3), 0 2px 8px rgba(207, 216, 222, 0.2)", // tone color
+      strongGlow:
+        "0 0 24px rgba(213, 202, 134, 0.4), 0 4px 16px rgba(213, 202, 134, 0.3)", // link color
+      lightSoft:
+        "0 1px 4px rgba(4, 37, 43, 0.1), 0 2px 8px rgba(4, 37, 43, 0.08)", // dark color
+      lightSharp:
+        "0 2px 8px rgba(4, 37, 43, 0.2), 0 4px 16px rgba(4, 37, 43, 0.15)", // dark color
+    },
+    textShadow: {
+      soft: "0 2px 4px rgba(51, 51, 51, 0.4)", // base color
+      strong: "0 2px 4px rgba(4, 37, 43, 0.5)", // dark color
+      glow: "0 0 8px rgba(213, 202, 134, 0.6), 0 1px 2px rgba(213, 202, 134, 0.4)", // link color
+      lightBlur: "0 0 12px rgba(255, 255, 255, 0.8), 0 0 6px rgba(207, 216, 222, 0.6)", // white + tone color for light blur effect
+    },
+  },
   typography: {
     fontFamily: {
       serif:
@@ -125,5 +144,18 @@ export const variables = css`
     --letter-spacing-tight: ${primitive.typography.letterSpacing.tight};
     --letter-spacing-base: ${primitive.typography.letterSpacing.base};
     --letter-spacing-wide: ${primitive.typography.letterSpacing.wide};
+
+    /* Box Shadows */
+    --box-shadow-neutral: ${primitive.shadows.boxShadow.neutral};
+    --box-shadow-soft-glow: ${primitive.shadows.boxShadow.softGlow};
+    --box-shadow-strong-glow: ${primitive.shadows.boxShadow.strongGlow};
+    --box-shadow-light-soft: ${primitive.shadows.boxShadow.lightSoft};
+    --box-shadow-light-sharp: ${primitive.shadows.boxShadow.lightSharp};
+
+    /* Text Shadows */
+    --text-shadow-soft: ${primitive.shadows.textShadow.soft};
+    --text-shadow-strong: ${primitive.shadows.textShadow.strong};
+    --text-shadow-glow: ${primitive.shadows.textShadow.glow};
+    --text-shadow-light-blur: ${primitive.shadows.textShadow.lightBlur};
   }
 `
