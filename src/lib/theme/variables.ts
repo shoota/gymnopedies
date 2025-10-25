@@ -30,6 +30,15 @@ const primitive = {
     xl: "1.5rem", // 24px
     "2xl": "2rem", // 32px
   },
+  borderRadius: {
+    none: "0",
+    sm: "0.125rem", // 2px
+    md: "0.25rem", // 4px
+    lg: "0.5rem", // 8px
+    xl: "0.75rem", // 12px
+    "2xl": "1rem", // 16px
+    full: "50%",
+  },
   typography: {
     fontFamily: {
       serif:
@@ -87,15 +96,32 @@ export const variables = css`
     --spacing-xl: ${primitive.spacing.xl};
     --spacing-2xl: ${primitive.spacing["2xl"]};
 
+    /* Border Radius - Primitive */
+    --border-radius-none: ${primitive.borderRadius.none};
+    --border-radius-sm: ${primitive.borderRadius.sm};
+    --border-radius-md: ${primitive.borderRadius.md};
+    --border-radius-lg: ${primitive.borderRadius.lg};
+    --border-radius-xl: ${primitive.borderRadius.xl};
+    --border-radius-2xl: ${primitive.borderRadius["2xl"]};
+    --border-radius-full: ${primitive.borderRadius.full};
+
+    /* Border Radius - Semantic */
+    --border-radius-outer: var(--border-radius-lg);
+    --border-radius-inner: var(--border-radius-sm);
+    --border-radius-full-semantic: var(--border-radius-full);
+
     /* Typography */
     --font-family-serif: ${primitive.typography.fontFamily.serif};
     --font-family-mono: ${primitive.typography.fontFamily.mono};
+
     --font-weight-normal: ${primitive.typography.fontWeight.normal};
     --font-weight-bold: ${primitive.typography.fontWeight.bold};
     --font-weight-bolder: ${primitive.typography.fontWeight.bolder};
+
     --line-height-tight: ${primitive.typography.lineHeight.tight};
     --line-height-base: ${primitive.typography.lineHeight.base};
     --line-height-relaxed: ${primitive.typography.lineHeight.relaxed};
+
     --letter-spacing-tight: ${primitive.typography.letterSpacing.tight};
     --letter-spacing-base: ${primitive.typography.letterSpacing.base};
     --letter-spacing-wide: ${primitive.typography.letterSpacing.wide};
