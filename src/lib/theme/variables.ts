@@ -23,12 +23,12 @@ const primitive = {
     "5xl": "1.75rem", // 28px (h1)
   },
   spacing: {
-    xs: "0.25rem", // 4px
-    sm: "0.5rem", // 8px
-    md: "1rem", // 16px
-    lg: "1.25rem", // 20px
-    xl: "1.5rem", // 24px
-    "2xl": "2rem", // 32px
+    xs: "0.5rem", // 8px
+    sm: "0.75rem", // 12px
+    md: "1.5rem", // 24px
+    lg: "2rem", // 32px
+    xl: "2.5rem", // 40px
+    "2xl": "3rem", // 48px
   },
   borderRadius: {
     none: "0",
