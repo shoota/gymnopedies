@@ -5,6 +5,7 @@ import { Global } from "@emotion/react"
 import { global } from "../src/lib/theme/globals.css"
 
 import type { Preview } from "@storybook/react"
+import theme from "./theme"
 
 const preview: Preview = {
   parameters: {
@@ -13,6 +14,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    docs: {
+      theme,
     },
   },
   decorators: [
