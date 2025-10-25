@@ -4,7 +4,7 @@ import { Global } from "@emotion/react"
 
 import { global } from "../src/lib/theme/globals.css"
 
-import type { Preview } from "@storybook/react"
+import type { Preview } from "@storybook/react-vite"
 import theme from "./theme"
 
 const preview: Preview = {

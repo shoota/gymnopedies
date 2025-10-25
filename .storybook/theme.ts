@@ -1,4 +1,4 @@
-import { create } from "@storybook/theming"
+import { create } from "storybook/theming"
 
 // Import the color values from our theme
 const primitive = {
