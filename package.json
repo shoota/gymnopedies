@@ -38,7 +38,7 @@
     "chromatic": "npx chromatic --project-token=chpt_4388496fa226214"
   },
   "dependencies": {
-    "commitizen": "^4.3.0",
+    "commitizen": "^4.3.1",
     "date-fns": "^3.6.0"
   },
   "devDependencies": {
