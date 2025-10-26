@@ -1,77 +1,77 @@
-import { action } from "storybook/actions"
 import type { Meta, StoryObj } from "@storybook/react-vite"
-import { Card } from "."
-import { DateTime } from "../DateTime"
+import { Card } from "./index"
 
-const Content = () => (
-  <>
-    <h4>Any content can write here as children.</h4>
-    <p>
-      Example Paragraph. You can show what{" "}
-      <a href="https://en.wikipedia.org/wiki/Gymnop%C3%A9dies">gymnopedies</a>{" "}
-      in Wikipedia.
-    </p>
-  </>
-)
-
-const meta: Meta<typeof Card> = {
-  title: "core/Card",
+const meta = {
+  title: "Core/Card",
   component: Card,
-  args: {
-    image: { src: "/image/example.jpg" },
+  parameters: {
+    layout: "padded",
   },
-}
+  tags: ["autodocs"],
+} satisfies Meta<typeof Card>
 
 export default meta
+type Story = StoryObj<typeof meta>
 
-type Story = StoryObj<typeof Card>
-export const Min: Story = {}
-
-export const ContentsCard: Story = {
+export const Default: Story = {
   args: {
-    image: undefined,
-    title: "Hello Everyone, I'm a cat.",
-    heading: "YYYY-MM-DD (E)",
-    description: "I'm a cat, and I'm here to say hello to you.",
-    children: <Content />,
+    title: "Understanding React Hooks",
+    description:
+      "A comprehensive guide to understanding and using React Hooks in modern applications. Learn about useState, useEffect, and custom hooks.",
+    image: {
+      src: "/image/example.jpg",
+      alt: "React Hooks tutorial illustration",
+      caption: "React Hooks Guide",
+    },
   },
 }
 
-export const Full: Story = {
+export const WithoutImage: Story = {
   args: {
-    title: "Hello Everyone, I'm a cat.",
-    heading: "YYYY-MM-DD (E)",
-    description: "I'm a cat, and I'm here to say hello to you.",
-    image: { src: "/image/example.jpg" },
-    imageCaption: (
-      <>
-        Photo by <a>@shoota</a> in 2024
-      </>
-    ),
-    onClick: action("onClick"),
-    children: <Content />,
+    title: "JavaScript Best Practices",
+    description:
+      "Essential JavaScript practices every developer should know to write clean, maintainable code.",
   },
 }
 
-export const Width: Story = {
+export const LongContent: Story = {
   args: {
-    width: "60%",
-    maxWidth: "800px",
-  },
-}
-export const JP: Story = {
-  args: {
-    title: "こんにちは。猫です。",
-    description: "私は猫ですが、こんにちはをあなたに言いに来ました。",
+    title: "Advanced TypeScript Techniques for Better Code Quality",
+    description:
+      "Explore advanced TypeScript features including conditional types, mapped types, and template literal types to enhance your development workflow and catch errors at compile time.",
+    content:
+      "This guide covers practical examples and real-world applications that you can implement immediately in your projects.",
+    image: {
+      src: "/image/example.jpg",
+      alt: "TypeScript advanced techniques",
+      caption: "Advanced TS",
+    },
   },
 }
 
-export const DateStamp: Story = {
+export const SmallSize: Story = {
   args: {
-    children: (
-      <div style={{ display: "flex", justifyContent: "end" }}>
-        <DateTime dateString="2022-09-16" />
-      </div>
-    ),
+    title: "Quick Tips",
+    description: "Short and useful development tips.",
+    size: "xs",
+    image: {
+      src: "/image/example.jpg",
+      alt: "Quick tips",
+      caption: "Tips",
+    },
+  },
+}
+
+export const LargeSize: Story = {
+  args: {
+    title: "Complete Guide to Modern Web Development",
+    description:
+      "An extensive guide covering everything from HTML basics to advanced React patterns, including best practices and performance optimization techniques.",
+    size: "lg",
+    image: {
+      src: "/image/example.jpg",
+      alt: "Web development guide",
+      caption: "Web Dev Guide",
+    },
   },
 }

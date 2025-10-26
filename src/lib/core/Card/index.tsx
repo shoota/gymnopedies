@@ -1,92 +1,104 @@
 import styled from "@emotion/styled"
-import { ComponentProps, PropsWithChildren, ReactNode, useMemo } from "react"
+import { ReactNode } from "react"
 import { Picture } from "../Picture"
 
-type CustomStyleProps = {
-  width?: string
-  maxWidth?: string
-  height?: string
+type CardProps = {
+  title: string
+  description: string
+  content?: string
+  size?: "xs" | "sm" | "md" | "lg" | "xl"
+  image?: {
+    src: string
+    alt: string
+    caption?: ReactNode
+  }
 }
-
-type Props = {
-  title?: string
-  heading?: ReactNode
-  description?: ReactNode
-  onClick?: () => void
-} & CustomStyleProps &
-  ComponentProps<typeof Picture>
 
 export const Card = ({
   title,
-  heading,
   description,
-  onClick,
-  children,
-  width,
-  maxWidth,
-  height,
+  content,
+  size = "sm",
   image,
-  imageCaption,
-}: PropsWithChildren<Props>) => {
-  const hasContent = useMemo(
-    () => title || description || children,
-    [title, description, children]
-  )
-
+}: CardProps) => {
   return (
-    <Container
-      width={width}
-      maxWidth={maxWidth}
-      height={height}
-      onClick={onClick}
-      isClickable={!!onClick}
-    >
-      {heading && <Head>{heading}</Head>}
-      {image && <Picture image={image} imageCaption={imageCaption} />}
-      {hasContent && (
-        <ContentContainer>
-          {title && <h1>{title}</h1>}
-          {description && <div>{description}</div>}
-          {children && (
-            <Content>
-              <hr />
-              {children}
-            </Content>
-          )}
-        </ContentContainer>
+    <CardContainer size={size}>
+      {image && (
+        <ImageContainer>
+          <Picture
+            image={{
+              src: image.src,
+              alt: image.alt,
+              transition: true,
+            }}
+            imageCaption={image.caption}
+          />
+        </ImageContainer>
       )}
-    </Container>
+      <CardContent>
+        <CardTitle>{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+        {content && <CardText>{content}</CardText>}
+      </CardContent>
+    </CardContainer>
   )
 }
 
-const Container = styled.article<
-  CustomStyleProps & {
-    isClickable?: boolean
-  }
->`
-  cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
-  border-radius: 8px;
-  padding: 16px;
+const CardContainer = styled.article<{ size: "xs" | "sm" | "md" | "lg" | "xl" }>`
   display: flex;
   flex-direction: column;
-  width: ${({ width }) => (width !== undefined ? `${width}` : "100%")};
-  height: ${({ height }) => (height !== undefined ? `${height}` : "100%")};
-  ${({ maxWidth }) => maxWidth !== undefined && `max-width: ${maxWidth};`};
   background-color: var(--color-dark);
+  border-radius: var(--border-radius-outer);
+  box-shadow: var(--box-shadow-soft-glow);
+  overflow: hidden;
+  width: 100%;
+  max-width: var(--box-size-${({ size }) => size});
 `
 
-const Head = styled.span`
-  margin: 6px 0 12px 0;
-  text-decoration: underline;
+const ImageContainer = styled.div`
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  figure {
+    height: 100%;
+    margin: 0;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
 `
 
-const ContentContainer = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: auto;
-  padding: 16px;
+const CardContent = styled.div`
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 `
-const Content = styled.div`
-  margin-top: 24px;
+
+const CardTitle = styled.h3`
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-tone);
+  text-shadow: var(--text-shadow-glow);
+`
+
+const CardDescription = styled.p`
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-light);
+  text-shadow: var(--text-shadow-light-blur);
+`
+
+const CardText = styled.p`
+  margin: 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-tone);
+  text-shadow: var(--text-shadow-glow);
 `

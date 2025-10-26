@@ -39,6 +39,13 @@ const primitive = {
     "2xl": "1rem", // 16px
     full: "50%",
   },
+  boxSize: {
+    xs: "12rem", // 192px
+    sm: "20rem", // 320px
+    md: "28rem", // 448px
+    lg: "36rem", // 576px
+    xl: "48rem", // 768px
+  },
   shadows: {
     boxShadow: {
       neutral: "0 2px 8px rgba(153, 153, 153, 0.15)", // default color
@@ -55,7 +62,8 @@ const primitive = {
       soft: "0 2px 4px rgba(51, 51, 51, 0.4)", // base color
       strong: "0 2px 4px rgba(4, 37, 43, 0.5)", // dark color
       glow: "0 0 8px rgba(213, 202, 134, 0.6), 0 1px 2px rgba(213, 202, 134, 0.4)", // link color
-      lightBlur: "0 0 12px rgba(255, 255, 255, 0.8), 0 0 6px rgba(207, 216, 222, 0.6)", // white + tone color for light blur effect
+      lightBlur:
+        "0 0 12px rgba(255, 255, 255, 0.8), 0 0 6px rgba(207, 216, 222, 0.6)", // white + tone color for light blur effect
     },
   },
   typography: {
@@ -157,5 +165,12 @@ export const variables = css`
     --text-shadow-strong: ${primitive.shadows.textShadow.strong};
     --text-shadow-glow: ${primitive.shadows.textShadow.glow};
     --text-shadow-light-blur: ${primitive.shadows.textShadow.lightBlur};
+
+    /* Box Sizes */
+    --box-size-xs: ${primitive.boxSize.xs};
+    --box-size-sm: ${primitive.boxSize.sm};
+    --box-size-md: ${primitive.boxSize.md};
+    --box-size-lg: ${primitive.boxSize.lg};
+    --box-size-xl: ${primitive.boxSize.xl};
   }
 `
