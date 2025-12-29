@@ -51,7 +51,7 @@
     "@storybook/addon-links": "^9.1.15",
     "@storybook/addon-onboarding": "^9.1.15",
     "@storybook/react-vite": "^9.1.15",
-    "@swc/plugin-emotion": "3.0.9",
+    "@swc/plugin-emotion": "14.3.0",
     "@types/node": "^20.19.24",
     "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
