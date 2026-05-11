@@ -61,3 +61,24 @@
   background: transparent;
   padding: 0;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Undo globals.css's rich-typography base rules inside docs pages so they    */
+/* don't double up with Storybook's own block-level chrome (Copy button,      */
+/* prism container, callouts, etc.).                                          */
+/* -------------------------------------------------------------------------- */
+
+.sbdocs-content pre {
+  padding: 0;
+  border-width: 0;
+  box-shadow: none;
+  background: transparent;
+  display: block;
+  text-shadow: none;
+}
+
+.sbdocs-content blockquote {
+  border-left-width: 0;
+  padding: 0;
+  background: transparent;
+}
