@@ -5,6 +5,11 @@ import theme from "./theme"
 const preview: Preview = {
   parameters: {
     layout: "centered",
+    options: {
+      storySort: {
+        order: ["Welcome", ["Introduction"], "Blog", "UI"],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
