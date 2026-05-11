@@ -2,6 +2,56 @@ import { Meta } from "@storybook/addon-docs/blocks"
 
 <Meta title="Welcome/Introduction" />
 
+<style>{`
+  .sbdocs-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.25rem 0 2rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #d6d6d6;
+    background-color: rgba(4, 37, 43, 0.35);
+    border: 1px solid rgba(207, 216, 222, 0.18);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .sbdocs-content thead {
+    background-color: rgba(207, 216, 222, 0.08);
+  }
+  .sbdocs-content thead th {
+    text-align: left;
+    font-weight: 700;
+    color: #d5ca86;
+    padding: 0.625rem 0.875rem;
+    border-bottom: 1px solid rgba(213, 202, 134, 0.35);
+    text-shadow: none;
+  }
+  .sbdocs-content tbody td {
+    padding: 0.5rem 0.875rem;
+    border-top: 1px solid rgba(207, 216, 222, 0.1);
+    vertical-align: top;
+  }
+  .sbdocs-content tbody tr:first-child td {
+    border-top: 0;
+  }
+  .sbdocs-content tbody tr:hover {
+    background-color: rgba(207, 216, 222, 0.04);
+  }
+  .sbdocs-content code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875em;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    background: rgba(207, 216, 222, 0.08);
+    color: #cfd8de;
+  }
+  .sbdocs-content table code {
+    background: transparent;
+    padding: 0;
+  }
+`}</style>
+
 # Gymnopédies
 
 A **shadcn registry** of dark, serif, glow-leaning React components for
