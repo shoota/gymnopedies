@@ -1,0 +1,824 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "gymnopedies",
+  "homepage": "https://github.com/shoota/gymnopedies",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn utility",
+      "description": "Class-name merging helper (clsx + tailwind-merge).",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:style",
+      "title": "Gymnopédies Theme",
+      "description": "Dark, serif, glow-leaning theme tokens — the gymnopédies identity layer.",
+      "files": [
+        {
+          "path": "src/styles/globals.css",
+          "type": "registry:style"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--font-serif)",
+          "font-mono": "var(--font-mono)"
+        },
+        "light": {
+          "background": "#333333",
+          "foreground": "#d6d6d6",
+          "card": "#04252b",
+          "card-foreground": "#d6d6d6",
+          "popover": "#04252b",
+          "popover-foreground": "#d6d6d6",
+          "primary": "#d5ca86",
+          "primary-foreground": "#04252b",
+          "secondary": "#35434c",
+          "secondary-foreground": "#d6d6d6",
+          "muted": "#35434c",
+          "muted-foreground": "#999999",
+          "accent": "#cfd8de",
+          "accent-foreground": "#04252b",
+          "destructive": "#d4856a",
+          "destructive-foreground": "#04252b",
+          "border": "rgba(207, 216, 222, 0.18)",
+          "input": "rgba(207, 216, 222, 0.18)",
+          "ring": "#d5ca86",
+          "radius": "0.5rem"
+        },
+        "dark": {
+          "background": "#333333",
+          "foreground": "#d6d6d6",
+          "card": "#04252b",
+          "card-foreground": "#d6d6d6",
+          "popover": "#04252b",
+          "popover-foreground": "#d6d6d6",
+          "primary": "#d5ca86",
+          "primary-foreground": "#04252b",
+          "secondary": "#35434c",
+          "secondary-foreground": "#d6d6d6",
+          "muted": "#35434c",
+          "muted-foreground": "#999999",
+          "accent": "#cfd8de",
+          "accent-foreground": "#04252b",
+          "destructive": "#d4856a",
+          "destructive-foreground": "#04252b",
+          "border": "rgba(207, 216, 222, 0.18)",
+          "input": "rgba(207, 216, 222, 0.18)",
+          "ring": "#d5ca86"
+        }
+      }
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Accordion — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Alert Dialog — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "description": "Aspect Ratio — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Breadcrumb — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Carousel — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Chart — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Collapsible — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Command — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Context Menu — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Drawer — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Dropdown Menu — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Hover Card — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Input — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Input Group — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Menubar — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Navigation Menu — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "Progress — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Resizable — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Scroll Area — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Separator — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Sheet — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Sidebar — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Sonner — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Table — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Toggle — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Toggle Group — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip — gymnopédies-themed shadcn primitive.",
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "utils"
+      ]
+    },
+    {
+      "name": "article",
+      "type": "registry:component",
+      "title": "Article",
+      "description": "Article — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/article.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "content",
+      "type": "registry:component",
+      "title": "Content",
+      "description": "Content — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "date-time",
+      "type": "registry:component",
+      "title": "Date Time",
+      "description": "Date Time — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/date-time.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ],
+      "dependencies": [
+        "date-fns"
+      ]
+    },
+    {
+      "name": "global-styles",
+      "type": "registry:component",
+      "title": "Global Styles",
+      "description": "Global Styles — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/global-styles.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "header-navigation",
+      "type": "registry:component",
+      "title": "Header Navigation",
+      "description": "Header Navigation — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/header-navigation.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "hero",
+      "type": "registry:component",
+      "title": "Hero",
+      "description": "Hero — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/hero.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "picture",
+      "type": "registry:component",
+      "title": "Picture",
+      "description": "Picture — gymnopédies blog reading primitive.",
+      "files": [
+        {
+          "path": "src/components/blog/picture.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "utils",
+        "theme"
+      ]
+    },
+    {
+      "name": "gymnopedies",
+      "type": "registry:style",
+      "title": "Gymnopédies — read-only design system",
+      "description": "A dark, serif, glow-leaning shadcn registry preset for long-form reading experiences. Installs the theme tokens, every non-form shadcn primitive, and the bespoke blog components.",
+      "registryDependencies": [
+        "utils",
+        "theme",
+        "accordion",
+        "alert",
+        "alert-dialog",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "breadcrumb",
+        "button",
+        "card",
+        "carousel",
+        "chart",
+        "collapsible",
+        "command",
+        "context-menu",
+        "dialog",
+        "drawer",
+        "dropdown-menu",
+        "hover-card",
+        "input",
+        "input-group",
+        "menubar",
+        "navigation-menu",
+        "pagination",
+        "popover",
+        "progress",
+        "resizable",
+        "scroll-area",
+        "separator",
+        "sheet",
+        "sidebar",
+        "skeleton",
+        "sonner",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle",
+        "toggle-group",
+        "tooltip",
+        "article",
+        "content",
+        "date-time",
+        "global-styles",
+        "header-navigation",
+        "hero",
+        "picture"
+      ]
+    }
+  ]
+}

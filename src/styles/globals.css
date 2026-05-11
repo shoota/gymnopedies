@@ -1,0 +1,291 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* -------------------------------------------------------------------------- */
+/* Gymnopédies — dark, serif, glow-leaning design tokens                       */
+/*                                                                            */
+/* Legacy primitives (preserved for traceability)                             */
+/*   base   #333333  – the page background                                     */
+/*   main   #35434c  – figure/picture inner fill                               */
+/*   default #999999 – muted body text                                         */
+/*   light  #d6d6d6  – primary body text                                       */
+/*   dark   #04252b  – card / surface raised                                   */
+/*   tone   #cfd8de  – accent / borders / subtle highlights                    */
+/*   link   #d5ca86  – brand accent / links / "primary"                        */
+/* -------------------------------------------------------------------------- */
+
+:root {
+  /* shadcn semantic tokens — gymnopédies dark default                        */
+  --background: #333333;
+  --foreground: #d6d6d6;
+
+  --card: #04252b;
+  --card-foreground: #d6d6d6;
+
+  --popover: #04252b;
+  --popover-foreground: #d6d6d6;
+
+  --primary: #d5ca86;
+  --primary-foreground: #04252b;
+
+  --secondary: #35434c;
+  --secondary-foreground: #d6d6d6;
+
+  --muted: #35434c;
+  --muted-foreground: #999999;
+
+  --accent: #cfd8de;
+  --accent-foreground: #04252b;
+
+  --destructive: #d4856a;
+  --destructive-foreground: #04252b;
+
+  --border: rgba(207, 216, 222, 0.18);
+  --input: rgba(207, 216, 222, 0.18);
+  --ring: #d5ca86;
+
+  --chart-1: #d5ca86;
+  --chart-2: #cfd8de;
+  --chart-3: #d4856a;
+  --chart-4: #86c2d5;
+  --chart-5: #d6d6d6;
+
+  --sidebar: #04252b;
+  --sidebar-foreground: #d6d6d6;
+  --sidebar-primary: #d5ca86;
+  --sidebar-primary-foreground: #04252b;
+  --sidebar-accent: #35434c;
+  --sidebar-accent-foreground: #d6d6d6;
+  --sidebar-border: rgba(207, 216, 222, 0.18);
+  --sidebar-ring: #d5ca86;
+
+  --radius: 0.5rem;
+
+  /* gymnopédies-only extensions */
+  --color-link: #d5ca86;
+  --color-tone: #cfd8de;
+  --color-light: #d6d6d6;
+  --color-dark: #04252b;
+
+  --shadow-soft-glow:
+    0 0 16px rgba(207, 216, 222, 0.3), 0 2px 8px rgba(207, 216, 222, 0.2);
+  --shadow-strong-glow:
+    0 0 24px rgba(213, 202, 134, 0.4), 0 4px 16px rgba(213, 202, 134, 0.3);
+  --shadow-neutral: 0 2px 8px rgba(153, 153, 153, 0.15);
+  --shadow-light-soft:
+    0 1px 4px rgba(4, 37, 43, 0.1), 0 2px 8px rgba(4, 37, 43, 0.08);
+  --shadow-light-sharp:
+    0 2px 8px rgba(4, 37, 43, 0.2), 0 4px 16px rgba(4, 37, 43, 0.15);
+
+  --text-shadow-soft: 0 2px 4px rgba(51, 51, 51, 0.4);
+  --text-shadow-strong: 0 2px 4px rgba(4, 37, 43, 0.5);
+  --text-shadow-glow:
+    0 0 8px rgba(213, 202, 134, 0.6), 0 1px 2px rgba(213, 202, 134, 0.4);
+  --text-shadow-light-blur:
+    0 0 12px rgba(255, 255, 255, 0.8), 0 0 6px rgba(207, 216, 222, 0.6);
+
+  --font-serif:
+    "Merriweather", "Times New Roman", "YuMincho", "Hiragino Mincho ProN",
+    "Yu Mincho", "MS PMincho", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* .dark mirrors :root — gymnopédies is dark-first */
+.dark {
+  --background: #333333;
+  --foreground: #d6d6d6;
+  --card: #04252b;
+  --card-foreground: #d6d6d6;
+  --popover: #04252b;
+  --popover-foreground: #d6d6d6;
+  --primary: #d5ca86;
+  --primary-foreground: #04252b;
+  --secondary: #35434c;
+  --secondary-foreground: #d6d6d6;
+  --muted: #35434c;
+  --muted-foreground: #999999;
+  --accent: #cfd8de;
+  --accent-foreground: #04252b;
+  --destructive: #d4856a;
+  --destructive-foreground: #04252b;
+  --border: rgba(207, 216, 222, 0.18);
+  --input: rgba(207, 216, 222, 0.18);
+  --ring: #d5ca86;
+  --sidebar: #04252b;
+  --sidebar-foreground: #d6d6d6;
+  --sidebar-primary: #d5ca86;
+  --sidebar-primary-foreground: #04252b;
+  --sidebar-accent: #35434c;
+  --sidebar-accent-foreground: #d6d6d6;
+  --sidebar-border: rgba(207, 216, 222, 0.18);
+  --sidebar-ring: #d5ca86;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tailwind v4 @theme mapping — exposes tokens as Tailwind utilities          */
+/* -------------------------------------------------------------------------- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-serif);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-soft-glow: var(--shadow-soft-glow);
+  --shadow-strong-glow: var(--shadow-strong-glow);
+  --shadow-neutral: var(--shadow-neutral);
+  --shadow-light-soft: var(--shadow-light-soft);
+  --shadow-light-sharp: var(--shadow-light-sharp);
+
+  --animate-lighting: lighting 8s 1.5s ease-in-out 2 alternate;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes lighting {
+    0% {
+      filter: grayscale(0.8) brightness(1);
+    }
+    75% {
+      filter: grayscale(0.9) brightness(0.5) blur(3px);
+    }
+    100% {
+      filter: grayscale(1) brightness(0.4) blur(4px);
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base typography & reset (carried over from legacy globals.ts)              */
+/* -------------------------------------------------------------------------- */
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground font-serif;
+    text-shadow: 0 0 2px var(--muted-foreground);
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted-foreground) var(--card);
+  }
+
+  ::selection {
+    background-color: rgba(0, 248, 248, 0.3);
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-light);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 4px var(--color-light);
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--color-link);
+    text-shadow: 0 0 4px var(--color-link);
+  }
+
+  pre,
+  code {
+    font-family: var(--font-mono);
+  }
+
+  pre {
+    display: block;
+    padding: 2rem;
+    border-width: 1px 0;
+    border-color: var(--color-border);
+    box-shadow: 0 0 12px var(--muted-foreground) inset;
+    overflow-x: auto;
+  }
+
+  blockquote {
+    border-left: 4px solid var(--muted-foreground);
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+    background-color: rgba(153, 153, 153, 0.05);
+  }
+}

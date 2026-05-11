@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-time",
+  "title": "Date Time",
+  "description": "Date Time — gymnopédies blog reading primitive.",
+  "dependencies": [
+    "date-fns"
+  ],
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/blog/date-time.tsx",
+      "content": "import * as React from \"react\"\nimport { format, parseISO } from \"date-fns\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type DateTimeProps = Omit<\n  React.TimeHTMLAttributes<HTMLTimeElement>,\n  \"dateTime\"\n> & {\n  dateString: string\n  formatStr?: string\n}\n\nexport function DateTime({\n  dateString,\n  formatStr = \"MMMM dd, yyyy\",\n  className,\n  ...props\n}: DateTimeProps) {\n  const date = parseISO(dateString)\n  return (\n    <time\n      dateTime={dateString}\n      className={cn(\"text-muted-foreground\", className)}\n      {...props}\n    >\n      {format(date, formatStr)}\n    </time>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
