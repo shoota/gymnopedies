@@ -3,10 +3,10 @@
 A **shadcn registry** of dark, serif, glow-leaning React components for long-form
 reading experiences (blogs, essays, archives, photo journals).
 
-> **v2.0 is a full reset.** The legacy Emotion-based npm package (v0.1.x) was
-> retired in favour of a shadcn/ui registry distributing source code directly
-> into consumer projects. Forms are intentionally out of scope — gymnopédies
-> is a read-only design system.
+> **v1.0.0 is the first stable release.** The 0.1.x prototype (Emotion-based
+> npm package) has been retired in favour of a shadcn/ui registry that
+> distributes source code directly into consumer projects. Forms are
+> intentionally out of scope — gymnopédies is a read-only design system.
 
 ## Stack
 
@@ -105,20 +105,25 @@ npx shadcn@latest add https://<your-host>/r/card.json
 
 Consumers need Tailwind CSS v4 and the `@/*` path alias configured in their project.
 
-## Migration from v0.1.x (Emotion)
+## Migration from the 0.1.x prototype (Emotion)
 
-There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion +
-npm package), the v2 migration path is:
+There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
++ npm package), the path to v1.0.0 is:
 
 1. Remove `gymnopedies` from `dependencies`.
 2. Install Tailwind v4 in your project: `npx shadcn@latest init`.
-3. Adopt the v2 components via `npx shadcn@latest add <url>`.
-4. Rewrite call sites — APIs are not compatible (Card is now `Card / CardHeader /
-   CardTitle / CardContent`, Picture uses a compound `Picture.Image / Picture.Caption`, etc.).
+3. Adopt the v1 components via `npx shadcn@latest add <url>`.
+4. Rewrite call sites — APIs are not source-compatible:
+   - The legacy `Card` returns as `blog/Article` with the same Props.
+   - `Picture` moved to a compound API (`Picture.Image` / `Picture.Caption`).
+   - The shadcn-style `ui/Card` is a separate compound primitive
+     (`Card / CardHeader / CardTitle / CardContent / CardFooter`).
+   - `GlobalStyles` keeps the same drop-in usability but is now a zero-
+     dependency `<style>` injector instead of Emotion's `<Global>`.
 
 ## Release notes
 
-- **v2.0.0 (pending)**
+- **v1.0.0** — first stable release
   - Replaced Emotion with Tailwind CSS v4.
   - Migrated to shadcn/ui registry distribution; dropped npm bundling.
   - Adopted **Base UI** primitives via the `base-nova` shadcn style.
@@ -126,6 +131,7 @@ npm package), the v2 migration path is:
       Radix's `asChild`.
     - `ToggleGroup` and `Accordion` use array `defaultValue`/`value` and the
       `multiple` boolean (Base UI API).
-  - Reset directory layout to shadcn conventions (`src/components/ui` + `src/components/blog`).
-  - Ported the 5 legacy bespoke components to Tailwind compound APIs.
+  - Reset directory layout to shadcn conventions (`src/components/ui` +
+    `src/components/blog`).
+  - Ported the legacy bespoke components to Tailwind compound APIs.
   - Added 35 non-form shadcn primitives + Storybook stories for each.
