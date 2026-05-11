@@ -1,0 +1,116 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+
+<Meta title="Welcome/Introduction" />
+
+# Gymnopédies
+
+A **shadcn registry** of dark, serif, glow-leaning React components for
+long-form reading experiences — blogs, essays, archives, photo journals.
+
+> No npm publish. Source is copied straight into your project via the
+> `shadcn` CLI.
+
+---
+
+## Install
+
+**Prerequisites**: React 18+ project with **Tailwind CSS v4** and the
+`@/*` tsconfig path alias.
+
+### 1. Install the whole preset (theme + every component)
+
+```bash
+npx shadcn@latest add https://gymnopedies.shoota.work/r/gymnopedies.json
+```
+
+### 2. Or pick individual items
+
+```bash
+# theme tokens (dark / serif / glow)
+npx shadcn@latest add https://gymnopedies.shoota.work/r/theme.json
+
+# blog-oriented primitives
+npx shadcn@latest add https://gymnopedies.shoota.work/r/article.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/hero.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/global-styles.json
+
+# any non-form shadcn primitive (Base UI under the hood)
+npx shadcn@latest add https://gymnopedies.shoota.work/r/card.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/dialog.json
+```
+
+---
+
+## What's inside
+
+### Blog primitives — `src/components/blog/`
+
+Bespoke reading-oriented components that don't exist in upstream shadcn.
+
+| Story                     | Purpose                                                                               |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| **Blog/Article**          | Article card (v0.1 `core/Card` API preserved)                                         |
+| **Blog/Hero**             | Full-bleed cover image + over-image title with `animate-lighting` filter pulse        |
+| **Blog/Picture**          | `<figure>` with grayscale-on-rest / reveal-on-hover image, compound `Picture.Caption` |
+| **Blog/Content**          | Article paragraph container; spaces siblings, styles embedded images                  |
+| **Blog/DateTime**         | `<time>` with date-fns formatting                                                     |
+| **Blog/HeaderNavigation** | Gradient + glow page header with optional menu row                                    |
+| **Blog/GlobalStyles**     | Drop-in `<GlobalStyles />` for raw HTML (Markdown-rendered) blog content              |
+
+### shadcn primitives — `src/components/ui/`
+
+**35 non-form** shadcn components on **Base UI** (style: `base-nova`).
+
+| group        | components                                                              |
+| ------------ | ----------------------------------------------------------------------- |
+| primitives   | Button, Badge, Separator, Skeleton, AspectRatio, Avatar, Progress       |
+| containers   | Card, Alert, ScrollArea                                                 |
+| navigation   | Breadcrumb, Pagination, Tabs, NavigationMenu, Menubar                   |
+| overlays     | Dialog, AlertDialog, Sheet, Drawer, Popover, HoverCard, Tooltip, Sonner |
+| menus        | DropdownMenu, ContextMenu, Command                                      |
+| disclosure   | Accordion, Collapsible                                                  |
+| state/toggle | Toggle, ToggleGroup                                                     |
+| layout       | Resizable, Sidebar                                                      |
+| data         | Table, Chart, Carousel                                                  |
+
+Forms (Input, Textarea, Select, Checkbox, Radio, Switch, Slider, Form,
+Calendar, Date Picker, Combobox, InputOTP, Label) are intentionally
+**out of scope** — gymnopédies is a read-only design system.
+
+---
+
+## Theme
+
+Dark-first identity, served by `src/styles/globals.css`. Map of the most
+useful semantic tokens:
+
+| token                  | hex / value      | role                              |
+| ---------------------- | ---------------- | --------------------------------- |
+| `--background`         | `#333333`        | page background                   |
+| `--card`               | `#04252b`        | raised surfaces                   |
+| `--secondary`          | `#35434c`        | inner fill / muted blocks         |
+| `--foreground`         | `#d6d6d6`        | primary body text                 |
+| `--muted-foreground`   | `#999999`        | subtle body text                  |
+| `--accent`             | `#cfd8de`        | hairlines, tone highlights        |
+| `--primary`            | `#d5ca86`        | brand accent / links / focus ring |
+| `--shadow-soft-glow`   | tone glow ×2     | cards, figures                    |
+| `--shadow-strong-glow` | gold glow ×2     | hover / interactive callout       |
+| `--font-serif`         | Merriweather + … | every body & heading              |
+| `--animate-lighting`   | 8s filter pulse  | hero cover image                  |
+
+`<GlobalStyles />` injects the full typography (heading scale, list
+markers, `<pre>`, `<blockquote>`, table layout, hover glow on `<a>`, …)
+so Markdown-rendered blog HTML stays themed without becoming React.
+
+---
+
+## Links
+
+- 🌐 **Live registry & this Storybook** — [gymnopedies.shoota.work](https://gymnopedies.shoota.work/)
+- 📦 **GitHub** — [shoota/gymnopedies](https://github.com/shoota/gymnopedies)
+- 🧪 **Chromatic visual history** — [build #7 baseline](https://www.chromatic.com/build?appId=662d32d94288f3b7f7ceecf5&number=7)
+- 📝 **Release notes** — see [v1.0.0](https://github.com/shoota/gymnopedies/releases/tag/v1.0.0)
+
+> ⚠ **v0.1.x npm users**: the npm package is deprecated. Migrate using the
+> registry URLs above. APIs are not source-compatible — see [README:
+> Migration](https://github.com/shoota/gymnopedies#migration-from-the-01x-prototype-emotion).
