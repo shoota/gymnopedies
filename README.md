@@ -1,43 +1,131 @@
-# Gymnopedies
+# Gymnopédies
 
-## Development Setup
+A **shadcn registry** of dark, serif, glow-leaning React components for long-form
+reading experiences (blogs, essays, archives, photo journals).
 
-### run once on your computer
+> **v2.0 is a full reset.** The legacy Emotion-based npm package (v0.1.x) was
+> retired in favour of a shadcn/ui registry distributing source code directly
+> into consumer projects. Forms are intentionally out of scope — gymnopédies
+> is a read-only design system.
 
+## Stack
+
+- React 18 + TypeScript 5
+- Vite 5 + Tailwind CSS v4
+- **shadcn/ui (style: `base-nova`) — primitives from `@base-ui/react`**
+- For non-Base-UI primitives shadcn still pulls in: `vaul` (Drawer), `cmdk` (Command), `recharts` (Chart), `sonner` (Toast), `embla-carousel-react` (Carousel).
+- date-fns v4, lucide-react
+- Storybook 9 + Chromatic
+
+## Component catalogue
+
+`src/components/ui/` — 35 shadcn primitives (everything non-form):
+
+| group        | components                                                                                     |
+| ------------ | ---------------------------------------------------------------------------------------------- |
+| primitives   | button, badge, separator, skeleton, aspect-ratio, avatar, progress                             |
+| containers   | card, alert, scroll-area                                                                       |
+| navigation   | breadcrumb, pagination, tabs, navigation-menu, menubar                                         |
+| overlays     | dialog, alert-dialog, sheet, drawer, popover, hover-card, tooltip, sonner                      |
+| menus        | dropdown-menu, context-menu, command                                                           |
+| disclosure   | accordion, collapsible                                                                         |
+| state/toggle | toggle, toggle-group                                                                           |
+| layout       | resizable, sidebar                                                                             |
+| data         | table, chart, carousel                                                                         |
+
+`src/components/blog/` — 5 bespoke gymnopédies primitives:
+
+| name              | purpose                                                                                |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| hero              | full-bleed cover image + over-image title; ships the legacy `lighting` animation       |
+| picture           | `<figure>` with grayscale-on-rest / reveal-on-hover image; compound API w/ `Caption`   |
+| content           | article paragraph container; auto-spaces adjacent siblings; styles embedded images     |
+| date-time         | `<time>` with date-fns formatting (default `MMMM dd, yyyy`)                            |
+| header-navigation | gradient + glow page header with optional menu row                                     |
+
+Each component has a `*.stories.tsx` file alongside it. Browse them with `npm run storybook`.
+
+## Theme
+
+The dark gymnopédies identity lives in `src/styles/globals.css`:
+
+| token              | hex / value           | usage                                |
+| ------------------ | --------------------- | ------------------------------------ |
+| `--background`     | `#333333`             | page background                      |
+| `--card`           | `#04252b`             | raised surfaces                      |
+| `--secondary`      | `#35434c`             | inner fill / muted blocks            |
+| `--muted-foreground` | `#999999`           | body subtle text                     |
+| `--foreground`     | `#d6d6d6`             | primary body text                    |
+| `--accent`         | `#cfd8de`             | hairline borders, tone highlights    |
+| `--primary`        | `#d5ca86`             | brand accent / links / focus ring    |
+| `--shadow-soft-glow` | tone glow ×2        | cards, figures                       |
+| `--shadow-strong-glow` | gold glow ×2      | hover / interactive callout          |
+| `--font-serif`     | Merriweather + fallbacks | every body & heading             |
+
+## Local development
+
+```bash
+npm install
+
+# Storybook (HTTP, no mkcert required)
+npm run storybook:plain
+
+# Storybook with HTTPS (requires mkcert localhost-key.pem / localhost.pem)
+npm run storybook
+
+# Static playground
+npm run dev
+
+# Verify the build
+npm run typecheck
+npm run lint
+npm run build-storybook
 ```
-brew install mkcert
-mkcert -install
+
+## Distribution: shadcn registry
+
+The registry is built from the file system by `scripts/build-registry.ts`:
+
+```bash
+npm run registry:generate   # regenerate registry.json from src/components
+npm run registry:build      # regenerate + shadcn build → public/r/*.json
 ```
 
-```sh
-mkcert localhost
-npm run dev:proxy
+After deployment (Vercel, GitHub Pages, etc.), consumers install with:
+
+```bash
+# Install the whole gymnopedies preset (theme + all components)
+npx shadcn@latest add https://<your-host>/r/gymnopedies.json
+
+# Or pick individual items
+npx shadcn@latest add https://<your-host>/r/theme.json
+npx shadcn@latest add https://<your-host>/r/hero.json
+npx shadcn@latest add https://<your-host>/r/card.json
 ```
 
-## Release Procedure
+Consumers need Tailwind CSS v4 and the `@/*` path alias configured in their project.
 
-### Steps
+## Migration from v0.1.x (Emotion)
 
-1. **Pull request to Bump up package.json version, and merge it.**
+There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion +
+npm package), the v2 migration path is:
 
-   ```json
-     "version": "1.0.0",
-   ```
+1. Remove `gymnopedies` from `dependencies`.
+2. Install Tailwind v4 in your project: `npx shadcn@latest init`.
+3. Adopt the v2 components via `npx shadcn@latest add <url>`.
+4. Rewrite call sites — APIs are not compatible (Card is now `Card / CardHeader /
+   CardTitle / CardContent`, Picture uses a compound `Picture.Image / Picture.Caption`, etc.).
 
-2. **push git tag on main branch**
+## Release notes
 
-   ```sh
-   git tag v1.0.0
-   git push origin v1.0.0
-   ```
-
-3. **Open new release**
-
-- open [releases](https://github.com/shoota/gymnopedies/releases) in browser
-- publish release with pushed git tag
-
-4. **Run npm publish actions**
-
-- run publish GitHub Actions automatically
-
-https://github.com/shoota/gymnopedies/actions/workflows/publish.yml
+- **v2.0.0 (pending)**
+  - Replaced Emotion with Tailwind CSS v4.
+  - Migrated to shadcn/ui registry distribution; dropped npm bundling.
+  - Adopted **Base UI** primitives via the `base-nova` shadcn style.
+    - All `*Trigger` / `*Close` etc. use the Base UI `render` prop instead of
+      Radix's `asChild`.
+    - `ToggleGroup` and `Accordion` use array `defaultValue`/`value` and the
+      `multiple` boolean (Base UI API).
+  - Reset directory layout to shadcn conventions (`src/components/ui` + `src/components/blog`).
+  - Ported the 5 legacy bespoke components to Tailwind compound APIs.
+  - Added 35 non-form shadcn primitives + Storybook stories for each.

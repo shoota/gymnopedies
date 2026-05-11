@@ -1,30 +1,13 @@
-import { resolve } from "path"
+import path from "node:path"
 import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react-swc"
+import react from "@vitejs/plugin-react"
+import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
-  plugins: [
-    react({
-      plugins: [["@swc/plugin-emotion", {}]],
-    }),
-  ],
-  build: {
-    lib: {
-      entry: resolve(__dirname, "src/lib/index.ts"),
-      name: "index",
-      fileName: "index",
-      formats: ["es", "umd"],
-    },
-    rollupOptions: {
-      external: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          "@emotion/react": "EmotionReact",
-          "@emotion/styled": "EmotionStyled",
-        },
-      },
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 })

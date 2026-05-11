@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "picture",
+  "title": "Picture",
+  "description": "Picture — gymnopédies blog reading primitive.",
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/blog/picture.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\ntype PictureProps = React.HTMLAttributes<HTMLElement> & {\n  children?: React.ReactNode\n}\n\nfunction PictureRoot({ className, children, ...props }: PictureProps) {\n  return (\n    <figure\n      className={cn(\n        \"relative overflow-hidden rounded-md bg-muted [&_img]:rounded-md\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </figure>\n  )\n}\n\ntype PictureImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {\n  objectPosition?: React.CSSProperties[\"objectPosition\"]\n  transition?: boolean\n}\n\nfunction PictureImage({\n  className,\n  objectPosition,\n  transition = false,\n  style,\n  ...props\n}: PictureImageProps) {\n  return (\n    <img\n      {...props}\n      style={{ objectPosition, ...style }}\n      className={cn(\n        \"block w-full object-cover opacity-60 grayscale transition-opacity duration-700\",\n        transition &&\n          \"hover:opacity-100 hover:grayscale-[60%] hover:duration-1000 focus:opacity-100 focus:grayscale-[60%] focus:duration-1000\",\n        className\n      )}\n    />\n  )\n}\n\ntype PictureCaptionProps = React.HTMLAttributes<HTMLElement>\n\nfunction PictureCaption({\n  className,\n  children,\n  ...props\n}: PictureCaptionProps) {\n  return (\n    <figcaption\n      className={cn(\n        \"absolute bottom-0 right-0 h-6 px-1.5 text-xs font-bold leading-6 text-accent bg-[rgba(4,37,43,0.6)]\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </figcaption>\n  )\n}\n\nexport const Picture = Object.assign(PictureRoot, {\n  Image: PictureImage,\n  Caption: PictureCaption,\n})\n\nexport { PictureImage, PictureCaption }\nexport type { PictureProps, PictureImageProps, PictureCaptionProps }\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

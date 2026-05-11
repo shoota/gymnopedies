@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "header-navigation",
+  "title": "Header Navigation",
+  "description": "Header Navigation — gymnopédies blog reading primitive.",
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/blog/header-navigation.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type HeaderNavigationMenuItem = {\n  name: string\n  onClick?: () => void\n}\n\nexport type HeaderNavigationProps = React.HTMLAttributes<HTMLElement> & {\n  title: string\n  menuItems?: HeaderNavigationMenuItem[]\n  currentIndex?: number\n}\n\nexport function HeaderNavigation({\n  title,\n  menuItems = [],\n  currentIndex,\n  className,\n  ...props\n}: HeaderNavigationProps) {\n  return (\n    <header\n      className={cn(\n        \"mx-0 my-5 flex items-center justify-between gap-4 px-6 py-4\",\n        \"bg-[rgba(4,37,43,0.4)] bg-[linear-gradient(rgba(214,214,214,0.1)_0%,rgba(4,37,43,0.4)_4%,rgba(4,37,43,0.4)_80%,rgba(4,37,43,0.4)_90%,rgba(214,214,214,0.1)_100%)]\",\n        \"shadow-[0_0_2.5rem_0_rgba(214,214,214,0.3)]\",\n        className\n      )}\n      {...props}\n    >\n      <h1 className=\"m-0 flex-grow text-base sm:text-xl md:text-2xl lg:text-3xl\">\n        {title}\n      </h1>\n      {menuItems.length > 0 && (\n        <nav className=\"flex items-center gap-3 text-[0.625rem] sm:text-sm md:text-base\">\n          {menuItems.map((item, index) => {\n            const isCurrent = index === currentIndex\n            if (isCurrent || !item.onClick) {\n              return (\n                <span key={`${item.name}-${index}`} aria-current={isCurrent ? \"page\" : undefined}>\n                  {item.name}\n                </span>\n              )\n            }\n            return (\n              <button\n                key={`${item.name}-${index}`}\n                type=\"button\"\n                onClick={item.onClick}\n                className=\"underline decoration-primary underline-offset-4 hover:text-primary\"\n              >\n                {item.name}\n              </button>\n            )\n          })}\n        </nav>\n      )}\n    </header>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

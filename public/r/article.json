@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "article",
+  "title": "Article",
+  "description": "Article — gymnopédies blog reading primitive.",
+  "registryDependencies": [
+    "utils",
+    "theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/blog/article.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Picture } from \"@/components/blog/picture\"\n\n/**\n * <Article /> — the gymnopédies article card.\n *\n * This is the v1 `core/Card` component, brought back as a blog primitive\n * (the shadcn-flavoured `ui/Card` is intentionally separate). Props, defaults\n * and text styling match the legacy implementation:\n *\n *   - dark teal surface (`bg-card`) with a soft glow shadow\n *   - 16:9 image header rendered through gymnopédies' <Picture /> so the\n *     legacy grayscale → hover-reveal animation is preserved\n *   - serif heading in `--accent` with a gold glow shadow\n *   - body copy in `--foreground` with a light-blur text shadow\n *   - optional supplementary `content` paragraph in `--accent` (xs)\n */\n\nexport type ArticleSize = \"xs\" | \"sm\" | \"md\" | \"lg\" | \"xl\"\n\nexport type ArticleProps = {\n  title: string\n  description: string\n  content?: string\n  size?: ArticleSize\n  image?: {\n    src: string\n    alt: string\n    caption?: React.ReactNode\n  }\n  className?: string\n}\n\nconst sizeMaxWidth: Record<ArticleSize, string> = {\n  xs: \"max-w-[12rem]\", // 192px\n  sm: \"max-w-[20rem]\", // 320px\n  md: \"max-w-[28rem]\", // 448px\n  lg: \"max-w-[36rem]\", // 576px\n  xl: \"max-w-[48rem]\", // 768px\n}\n\nexport function Article({\n  title,\n  description,\n  content,\n  size = \"sm\",\n  image,\n  className,\n}: ArticleProps) {\n  return (\n    <article\n      className={cn(\n        \"flex w-full flex-col overflow-hidden rounded-lg bg-card shadow-soft-glow\",\n        sizeMaxWidth[size],\n        className,\n      )}\n    >\n      {image && (\n        <div className=\"aspect-[16/9] w-full overflow-hidden\">\n          <Picture className=\"h-full rounded-none bg-card\">\n            <Picture.Image\n              src={image.src}\n              alt={image.alt}\n              transition\n              className=\"h-full rounded-none\"\n            />\n            {image.caption ? (\n              <Picture.Caption>{image.caption}</Picture.Caption>\n            ) : null}\n          </Picture>\n        </div>\n      )}\n      <div className=\"flex flex-col gap-3 p-6\">\n        <h3\n          className={cn(\n            \"m-0 text-xl font-bold leading-tight text-accent\",\n            \"[text-shadow:var(--text-shadow-glow)]\",\n          )}\n        >\n          {title}\n        </h3>\n        <p\n          className={cn(\n            \"m-0 text-base leading-[1.5] text-foreground\",\n            \"[text-shadow:var(--text-shadow-light-blur)]\",\n          )}\n        >\n          {description}\n        </p>\n        {content ? (\n          <p\n            className={cn(\n              \"m-0 text-xs leading-[1.5] text-accent\",\n              \"[text-shadow:var(--text-shadow-glow)]\",\n            )}\n          >\n            {content}\n          </p>\n        ) : null}\n      </div>\n    </article>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

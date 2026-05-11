@@ -8,7 +8,7 @@ module.exports = {
     "plugin:storybook/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "storybook-static"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {
@@ -17,4 +17,14 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      // shadcn-generated UI exports component + cva variant constants in one file.
+      // It's an accepted pattern in the shadcn ecosystem; turn the warning off there.
+      files: ["src/components/ui/**/*.{ts,tsx}", "src/main.tsx"],
+      rules: {
+        "react-refresh/only-export-components": "off",
+      },
+    },
+  ],
 }

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme",
+  "title": "Gymnopédies Theme",
+  "description": "Dark, serif, glow-leaning theme tokens — the gymnopédies identity layer.",
+  "files": [
+    {
+      "path": "src/styles/globals.css",
+      "content": "@import \"tailwindcss\";\n\n@custom-variant dark (&:where(.dark, .dark *));\n\n/* -------------------------------------------------------------------------- */\n/* Gymnopédies — dark, serif, glow-leaning design tokens                       */\n/*                                                                            */\n/* Legacy primitives (preserved for traceability)                             */\n/*   base   #333333  – the page background                                     */\n/*   main   #35434c  – figure/picture inner fill                               */\n/*   default #999999 – muted body text                                         */\n/*   light  #d6d6d6  – primary body text                                       */\n/*   dark   #04252b  – card / surface raised                                   */\n/*   tone   #cfd8de  – accent / borders / subtle highlights                    */\n/*   link   #d5ca86  – brand accent / links / \"primary\"                        */\n/* -------------------------------------------------------------------------- */\n\n:root {\n  /* shadcn semantic tokens — gymnopédies dark default                        */\n  --background: #333333;\n  --foreground: #d6d6d6;\n\n  --card: #04252b;\n  --card-foreground: #d6d6d6;\n\n  --popover: #04252b;\n  --popover-foreground: #d6d6d6;\n\n  --primary: #d5ca86;\n  --primary-foreground: #04252b;\n\n  --secondary: #35434c;\n  --secondary-foreground: #d6d6d6;\n\n  --muted: #35434c;\n  --muted-foreground: #999999;\n\n  --accent: #cfd8de;\n  --accent-foreground: #04252b;\n\n  --destructive: #d4856a;\n  --destructive-foreground: #04252b;\n\n  --border: rgba(207, 216, 222, 0.18);\n  --input: rgba(207, 216, 222, 0.18);\n  --ring: #d5ca86;\n\n  --chart-1: #d5ca86;\n  --chart-2: #cfd8de;\n  --chart-3: #d4856a;\n  --chart-4: #86c2d5;\n  --chart-5: #d6d6d6;\n\n  --sidebar: #04252b;\n  --sidebar-foreground: #d6d6d6;\n  --sidebar-primary: #d5ca86;\n  --sidebar-primary-foreground: #04252b;\n  --sidebar-accent: #35434c;\n  --sidebar-accent-foreground: #d6d6d6;\n  --sidebar-border: rgba(207, 216, 222, 0.18);\n  --sidebar-ring: #d5ca86;\n\n  --radius: 0.5rem;\n\n  /* gymnopédies-only extensions */\n  --color-link: #d5ca86;\n  --color-tone: #cfd8de;\n  --color-light: #d6d6d6;\n  --color-dark: #04252b;\n\n  --shadow-soft-glow:\n    0 0 16px rgba(207, 216, 222, 0.3), 0 2px 8px rgba(207, 216, 222, 0.2);\n  --shadow-strong-glow:\n    0 0 24px rgba(213, 202, 134, 0.4), 0 4px 16px rgba(213, 202, 134, 0.3);\n  --shadow-neutral: 0 2px 8px rgba(153, 153, 153, 0.15);\n  --shadow-light-soft:\n    0 1px 4px rgba(4, 37, 43, 0.1), 0 2px 8px rgba(4, 37, 43, 0.08);\n  --shadow-light-sharp:\n    0 2px 8px rgba(4, 37, 43, 0.2), 0 4px 16px rgba(4, 37, 43, 0.15);\n\n  --text-shadow-soft: 0 2px 4px rgba(51, 51, 51, 0.4);\n  --text-shadow-strong: 0 2px 4px rgba(4, 37, 43, 0.5);\n  --text-shadow-glow:\n    0 0 8px rgba(213, 202, 134, 0.6), 0 1px 2px rgba(213, 202, 134, 0.4);\n  --text-shadow-light-blur:\n    0 0 12px rgba(255, 255, 255, 0.8), 0 0 6px rgba(207, 216, 222, 0.6);\n\n  --font-serif:\n    \"Merriweather\", \"Times New Roman\", \"YuMincho\", \"Hiragino Mincho ProN\",\n    \"Yu Mincho\", \"MS PMincho\", serif;\n  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;\n}\n\n/* .dark mirrors :root — gymnopédies is dark-first */\n.dark {\n  --background: #333333;\n  --foreground: #d6d6d6;\n  --card: #04252b;\n  --card-foreground: #d6d6d6;\n  --popover: #04252b;\n  --popover-foreground: #d6d6d6;\n  --primary: #d5ca86;\n  --primary-foreground: #04252b;\n  --secondary: #35434c;\n  --secondary-foreground: #d6d6d6;\n  --muted: #35434c;\n  --muted-foreground: #999999;\n  --accent: #cfd8de;\n  --accent-foreground: #04252b;\n  --destructive: #d4856a;\n  --destructive-foreground: #04252b;\n  --border: rgba(207, 216, 222, 0.18);\n  --input: rgba(207, 216, 222, 0.18);\n  --ring: #d5ca86;\n  --sidebar: #04252b;\n  --sidebar-foreground: #d6d6d6;\n  --sidebar-primary: #d5ca86;\n  --sidebar-primary-foreground: #04252b;\n  --sidebar-accent: #35434c;\n  --sidebar-accent-foreground: #d6d6d6;\n  --sidebar-border: rgba(207, 216, 222, 0.18);\n  --sidebar-ring: #d5ca86;\n}\n\n/* -------------------------------------------------------------------------- */\n/* Tailwind v4 @theme mapping — exposes tokens as Tailwind utilities          */\n/* -------------------------------------------------------------------------- */\n\n@theme inline {\n  --color-background: var(--background);\n  --color-foreground: var(--foreground);\n\n  --color-card: var(--card);\n  --color-card-foreground: var(--card-foreground);\n\n  --color-popover: var(--popover);\n  --color-popover-foreground: var(--popover-foreground);\n\n  --color-primary: var(--primary);\n  --color-primary-foreground: var(--primary-foreground);\n\n  --color-secondary: var(--secondary);\n  --color-secondary-foreground: var(--secondary-foreground);\n\n  --color-muted: var(--muted);\n  --color-muted-foreground: var(--muted-foreground);\n\n  --color-accent: var(--accent);\n  --color-accent-foreground: var(--accent-foreground);\n\n  --color-destructive: var(--destructive);\n  --color-destructive-foreground: var(--destructive-foreground);\n\n  --color-border: var(--border);\n  --color-input: var(--input);\n  --color-ring: var(--ring);\n\n  --color-chart-1: var(--chart-1);\n  --color-chart-2: var(--chart-2);\n  --color-chart-3: var(--chart-3);\n  --color-chart-4: var(--chart-4);\n  --color-chart-5: var(--chart-5);\n\n  --color-sidebar: var(--sidebar);\n  --color-sidebar-foreground: var(--sidebar-foreground);\n  --color-sidebar-primary: var(--sidebar-primary);\n  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);\n  --color-sidebar-accent: var(--sidebar-accent);\n  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);\n  --color-sidebar-border: var(--sidebar-border);\n  --color-sidebar-ring: var(--sidebar-ring);\n\n  --font-sans: var(--font-serif);\n  --font-serif: var(--font-serif);\n  --font-mono: var(--font-mono);\n\n  --radius-sm: calc(var(--radius) - 4px);\n  --radius-md: calc(var(--radius) - 2px);\n  --radius-lg: var(--radius);\n  --radius-xl: calc(var(--radius) + 4px);\n\n  --shadow-soft-glow: var(--shadow-soft-glow);\n  --shadow-strong-glow: var(--shadow-strong-glow);\n  --shadow-neutral: var(--shadow-neutral);\n  --shadow-light-soft: var(--shadow-light-soft);\n  --shadow-light-sharp: var(--shadow-light-sharp);\n\n  --animate-lighting: lighting 8s 1.5s ease-in-out 2 alternate;\n  --animate-accordion-down: accordion-down 0.2s ease-out;\n  --animate-accordion-up: accordion-up 0.2s ease-out;\n\n  @keyframes lighting {\n    0% {\n      filter: grayscale(0.8) brightness(1);\n    }\n    75% {\n      filter: grayscale(0.9) brightness(0.5) blur(3px);\n    }\n    100% {\n      filter: grayscale(1) brightness(0.4) blur(4px);\n    }\n  }\n\n  @keyframes accordion-down {\n    from {\n      height: 0;\n    }\n    to {\n      height: var(--radix-accordion-content-height);\n    }\n  }\n\n  @keyframes accordion-up {\n    from {\n      height: var(--radix-accordion-content-height);\n    }\n    to {\n      height: 0;\n    }\n  }\n}\n\n/* -------------------------------------------------------------------------- */\n/* Base typography & reset (carried over from legacy globals.ts)              */\n/* -------------------------------------------------------------------------- */\n\n@layer base {\n  @import url(\"https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap\");\n\n  *,\n  *::before,\n  *::after {\n    border-color: var(--color-border);\n  }\n\n  html,\n  body {\n    @apply bg-background text-foreground font-serif;\n    text-shadow: 0 0 2px var(--muted-foreground);\n    scrollbar-width: thin;\n    scrollbar-color: var(--muted-foreground) var(--card);\n  }\n\n  ::selection {\n    background-color: rgba(0, 248, 248, 0.3);\n    color: inherit;\n  }\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    color: var(--color-light);\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    text-shadow: 0 0 4px var(--color-light);\n  }\n\n  a {\n    color: var(--color-link);\n    text-decoration: none;\n  }\n\n  a:hover,\n  a:focus {\n    color: var(--color-link);\n    text-shadow: 0 0 4px var(--color-link);\n  }\n\n  pre,\n  code {\n    font-family: var(--font-mono);\n  }\n\n  pre {\n    display: block;\n    padding: 2rem;\n    border-width: 1px 0;\n    border-color: var(--color-border);\n    box-shadow: 0 0 12px var(--muted-foreground) inset;\n    overflow-x: auto;\n  }\n\n  blockquote {\n    border-left: 4px solid var(--muted-foreground);\n    padding: 0.75rem 2rem 0.75rem 1.5rem;\n    background-color: rgba(153, 153, 153, 0.05);\n  }\n}\n",
+      "type": "registry:style"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "font-sans": "var(--font-serif)",
+      "font-mono": "var(--font-mono)"
+    },
+    "light": {
+      "background": "#333333",
+      "foreground": "#d6d6d6",
+      "card": "#04252b",
+      "card-foreground": "#d6d6d6",
+      "popover": "#04252b",
+      "popover-foreground": "#d6d6d6",
+      "primary": "#d5ca86",
+      "primary-foreground": "#04252b",
+      "secondary": "#35434c",
+      "secondary-foreground": "#d6d6d6",
+      "muted": "#35434c",
+      "muted-foreground": "#999999",
+      "accent": "#cfd8de",
+      "accent-foreground": "#04252b",
+      "destructive": "#d4856a",
+      "destructive-foreground": "#04252b",
+      "border": "rgba(207, 216, 222, 0.18)",
+      "input": "rgba(207, 216, 222, 0.18)",
+      "ring": "#d5ca86",
+      "radius": "0.5rem"
+    },
+    "dark": {
+      "background": "#333333",
+      "foreground": "#d6d6d6",
+      "card": "#04252b",
+      "card-foreground": "#d6d6d6",
+      "popover": "#04252b",
+      "popover-foreground": "#d6d6d6",
+      "primary": "#d5ca86",
+      "primary-foreground": "#04252b",
+      "secondary": "#35434c",
+      "secondary-foreground": "#d6d6d6",
+      "muted": "#35434c",
+      "muted-foreground": "#999999",
+      "accent": "#cfd8de",
+      "accent-foreground": "#04252b",
+      "destructive": "#d4856a",
+      "destructive-foreground": "#04252b",
+      "border": "rgba(207, 216, 222, 0.18)",
+      "input": "rgba(207, 216, 222, 0.18)",
+      "ring": "#d5ca86"
+    }
+  },
+  "type": "registry:style"
+}
