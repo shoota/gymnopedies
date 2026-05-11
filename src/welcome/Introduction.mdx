@@ -47,31 +47,31 @@ npx shadcn@latest add https://gymnopedies.shoota.work/r/dialog.json
 
 Bespoke reading-oriented components that don't exist in upstream shadcn.
 
-| Story | Purpose |
-|---|---|
-| **Blog/Article** | Article card (v0.1 `core/Card` API preserved) |
-| **Blog/Hero** | Full-bleed cover image + over-image title with `animate-lighting` filter pulse |
-| **Blog/Picture** | `<figure>` with grayscale-on-rest / reveal-on-hover image, compound `Picture.Caption` |
-| **Blog/Content** | Article paragraph container; spaces siblings, styles embedded images |
-| **Blog/DateTime** | `<time>` with date-fns formatting |
-| **Blog/HeaderNavigation** | Gradient + glow page header with optional menu row |
-| **Blog/GlobalStyles** | Drop-in `<GlobalStyles />` for raw HTML (Markdown-rendered) blog content |
+| Story                     | Purpose                                                                               |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| **Blog/Article**          | Article card (v0.1 `core/Card` API preserved)                                         |
+| **Blog/Hero**             | Full-bleed cover image + over-image title with `animate-lighting` filter pulse        |
+| **Blog/Picture**          | `<figure>` with grayscale-on-rest / reveal-on-hover image, compound `Picture.Caption` |
+| **Blog/Content**          | Article paragraph container; spaces siblings, styles embedded images                  |
+| **Blog/DateTime**         | `<time>` with date-fns formatting                                                     |
+| **Blog/HeaderNavigation** | Gradient + glow page header with optional menu row                                    |
+| **Blog/GlobalStyles**     | Drop-in `<GlobalStyles />` for raw HTML (Markdown-rendered) blog content              |
 
 ### shadcn primitives — `src/components/ui/`
 
 **35 non-form** shadcn components on **Base UI** (style: `base-nova`).
 
-| group        | components                                                         |
-| ------------ | ------------------------------------------------------------------ |
-| primitives   | Button, Badge, Separator, Skeleton, AspectRatio, Avatar, Progress  |
-| containers   | Card, Alert, ScrollArea                                            |
-| navigation   | Breadcrumb, Pagination, Tabs, NavigationMenu, Menubar              |
+| group        | components                                                              |
+| ------------ | ----------------------------------------------------------------------- |
+| primitives   | Button, Badge, Separator, Skeleton, AspectRatio, Avatar, Progress       |
+| containers   | Card, Alert, ScrollArea                                                 |
+| navigation   | Breadcrumb, Pagination, Tabs, NavigationMenu, Menubar                   |
 | overlays     | Dialog, AlertDialog, Sheet, Drawer, Popover, HoverCard, Tooltip, Sonner |
-| menus        | DropdownMenu, ContextMenu, Command                                 |
-| disclosure   | Accordion, Collapsible                                             |
-| state/toggle | Toggle, ToggleGroup                                                |
-| layout       | Resizable, Sidebar                                                 |
-| data         | Table, Chart, Carousel                                             |
+| menus        | DropdownMenu, ContextMenu, Command                                      |
+| disclosure   | Accordion, Collapsible                                                  |
+| state/toggle | Toggle, ToggleGroup                                                     |
+| layout       | Resizable, Sidebar                                                      |
+| data         | Table, Chart, Carousel                                                  |
 
 Forms (Input, Textarea, Select, Checkbox, Radio, Switch, Slider, Form,
 Calendar, Date Picker, Combobox, InputOTP, Label) are intentionally
@@ -84,19 +84,19 @@ Calendar, Date Picker, Combobox, InputOTP, Label) are intentionally
 Dark-first identity, served by `src/styles/globals.css`. Map of the most
 useful semantic tokens:
 
-| token                  | hex / value           | role                                |
-| ---------------------- | --------------------- | ----------------------------------- |
-| `--background`         | `#333333`             | page background                     |
-| `--card`               | `#04252b`             | raised surfaces                     |
-| `--secondary`          | `#35434c`             | inner fill / muted blocks           |
-| `--foreground`         | `#d6d6d6`             | primary body text                   |
-| `--muted-foreground`   | `#999999`             | subtle body text                    |
-| `--accent`             | `#cfd8de`             | hairlines, tone highlights          |
-| `--primary`            | `#d5ca86`             | brand accent / links / focus ring   |
-| `--shadow-soft-glow`   | tone glow ×2          | cards, figures                      |
-| `--shadow-strong-glow` | gold glow ×2          | hover / interactive callout         |
-| `--font-serif`         | Merriweather + …      | every body & heading                |
-| `--animate-lighting`   | 8s filter pulse       | hero cover image                    |
+| token                  | hex / value      | role                              |
+| ---------------------- | ---------------- | --------------------------------- |
+| `--background`         | `#333333`        | page background                   |
+| `--card`               | `#04252b`        | raised surfaces                   |
+| `--secondary`          | `#35434c`        | inner fill / muted blocks         |
+| `--foreground`         | `#d6d6d6`        | primary body text                 |
+| `--muted-foreground`   | `#999999`        | subtle body text                  |
+| `--accent`             | `#cfd8de`        | hairlines, tone highlights        |
+| `--primary`            | `#d5ca86`        | brand accent / links / focus ring |
+| `--shadow-soft-glow`   | tone glow ×2     | cards, figures                    |
+| `--shadow-strong-glow` | gold glow ×2     | hover / interactive callout       |
+| `--font-serif`         | Merriweather + … | every body & heading              |
+| `--animate-lighting`   | 8s filter pulse  | hero cover image                  |
 
 `<GlobalStyles />` injects the full typography (heading scale, list
 markers, `<pre>`, `<blockquote>`, table layout, hover glow on `<a>`, …)
