@@ -24,3 +24,22 @@ jobs:
         uses: ./.github/actions/setupNode
       - name: Typecheck
         run: npm run typecheck
+
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - name: Install Node.js and dependencies
+        uses: ./.github/actions/setupNode
+      - name: Rebuild registry artifacts
+        run: npm run registry:build
+      - name: Fail if registry.json or public/r/ drifted from committed files
+        run: |
+          if ! git diff --quiet -- registry.json public/r; then
+            echo "::error::registry artifacts are out of sync with src/components/{ui,blog}/."
+            echo "Run 'npm run registry:build' locally and commit registry.json + public/r/."
+            git diff --stat -- registry.json public/r
+            exit 1
+          fi
