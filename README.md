@@ -91,16 +91,25 @@ npm run registry:generate   # regenerate registry.json from src/components
 npm run registry:build      # regenerate + shadcn build → public/r/*.json
 ```
 
-After deployment (Vercel, GitHub Pages, etc.), consumers install with:
+Hosting rides along with the Storybook deployment on Vercel: `public/r/` is
+copied into Storybook's `storybook-static/` output dir via
+`.storybook/main.ts`'s `staticDirs`, so the same domain serves both the
+Storybook UI and the registry endpoints.
+
+- Storybook UI:          <https://gymnopedies.shoota.work/>
+- Registry preset:       <https://gymnopedies.shoota.work/r/gymnopedies.json>
+- Individual items:      <https://gymnopedies.shoota.work/r/article.json> etc.
+
+Consumers install with:
 
 ```bash
 # Install the whole gymnopedies preset (theme + all components)
-npx shadcn@latest add https://<your-host>/r/gymnopedies.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/gymnopedies.json
 
 # Or pick individual items
-npx shadcn@latest add https://<your-host>/r/theme.json
-npx shadcn@latest add https://<your-host>/r/hero.json
-npx shadcn@latest add https://<your-host>/r/card.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/theme.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/hero.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/card.json
 ```
 
 Consumers need Tailwind CSS v4 and the `@/*` path alias configured in their project.
