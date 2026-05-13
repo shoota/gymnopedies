@@ -14,140 +14,143 @@ export type Post = {
   body: string[]
 }
 
-const cover = (seed: string, alt: string, caption?: string) => ({
-  src: `https://picsum.photos/seed/${seed}/1600/900`,
+const coverFor = (slug: string, alt: string, caption?: string) => ({
+  src: `${import.meta.env.BASE_URL}covers/${slug}.jpg`,
   alt,
   caption,
 })
 
 export const posts: Post[] = [
   {
-    slug: "letters-from-the-quiet-city",
-    title: "Letters from the Quiet City",
+    slug: "above-the-crossing",
+    title: "Above the Crossing",
     description:
-      "On the small hours, the lamp at the end of the corridor, and the habit of writing to no one in particular.",
+      "Notes from the height of a city footbridge, where everything is in motion and nothing seems to be.",
     date: "2026-04-21",
     author: "Erik Satie",
-    tags: ["essay", "evening"],
-    cover: cover(
-      "quiet-city",
-      "An empty boulevard at dusk under amber street lamps",
-      "Boulevard, 4:12 AM",
+    tags: ["essay", "city"],
+    cover: coverFor(
+      "above-the-crossing",
+      "A city footbridge view of a Tokyo crossing in mid-morning light, with shop signs along both sides of the street",
+      "Footbridge, mid-morning",
     ),
     excerpt:
-      "The city, when it is finally quiet, becomes a kind of correspondent. You leave the window cracked open and it writes to you in the language of distant traffic and cooling pipes.",
+      "Seen from the height of a footbridge a city pretends to be slow. The traffic light counts down, no one runs, the white van is already where it was always going.",
     body: [
-      "The city, when it is finally quiet, becomes a kind of correspondent. You leave the window cracked open and it writes to you in the language of distant traffic and cooling pipes. The first letter always arrives a little after three: a single car at the far end of the street, the driver invisible behind the headlights, going somewhere private at the only hour the streetlights will allow.",
-      "I used to think the small hours were for solving problems. Now I think they are for setting problems down for the night, like cups returned to a high shelf. You will lift them again at noon, and they will still be heavy, but the handle will have cooled.",
-      "There is a particular kind of paragraph that only writes itself when no one is awake to read it. It is unhurried, slightly serif, content to take a long turn through a sentence before arriving anywhere in particular. It is the kind of sentence a hallway makes when the lights go off one by one and only the last lamp at the end stays on, golden and absurdly dignified, as if it knew you would be passing through.",
-      "I am sending this from that lamp. The city is still writing. I will keep the window open.",
+      "Seen from the height of a footbridge a city pretends to be slow. The traffic light counts down, no one runs, the white van is already where it was always going. The shop signs are smaller than they ought to be — 焼肉, 寿司, クリニック — and the buildings on the far side reflect their own neighbours back at a slightly different angle, as if the street had quietly doubled itself for the morning.",
+      "It is not, of course, slow. The bridge is the trick: from this height every step has time to belong to someone. The man with the orange courier bag, the four students walking abreast without looking at each other, the woman crossing diagonally even though there is a perfectly serviceable straight line. None of them is in a hurry, and yet they are all leaving, and in two minutes a different cast will be doing exactly the same thing in slightly different shoes.",
+      "I think the best argument for the footbridge is that it lets you forget which direction you came from. From the staircase on either side you arrive into the same uneventful middle of the same uneventful crossing, and the city, generously, declines to ask you to choose.",
+      "When I come down the stairs I will be one of the figures someone else is failing to keep track of from above. This is comforting, in a way that I would have called pastoral, if pastoral were ever made of asphalt and signs in three different languages.",
     ],
   },
   {
-    slug: "a-field-guide-to-slow-afternoons",
-    title: "A Field Guide to Slow Afternoons",
+    slug: "on-small-commutes",
+    title: "On Small Commutes",
     description:
-      "How to recognise the species of an unhurried Sunday, with notes on rituals, weather, and the correct number of cups.",
+      "A rope walk, a wire platform, and the patient choreography of a thirty-centimetre journey.",
     date: "2026-04-08",
     author: "Claude Debussy",
-    tags: ["essay", "ritual"],
-    cover: cover(
-      "slow-afternoon",
-      "Sunlight on a wooden table with a half-full coffee cup",
-      "Linden table, 3:47 PM",
+    tags: ["notebook", "observation"],
+    cover: coverFor(
+      "on-small-commutes",
+      "A cluster of white mice gathered on a wire platform suspended between rope bridges, with foliage out of focus behind them",
+      "Mice on a rope walk",
     ),
     excerpt:
-      "There are afternoons that arrive already finished, and there are afternoons that arrive empty, waiting to be furnished. The slow ones are the second kind — they are rooms, not appointments.",
+      "Twelve white mice on a wire platform, taking turns over a rope bridge that is exactly the length of a slow thought. The arrangement is collective; the journey is individual.",
     body: [
-      "There are afternoons that arrive already finished, and there are afternoons that arrive empty, waiting to be furnished. The slow ones are the second kind — they are rooms, not appointments. You walk into them carrying very little, and you do not leave for some time.",
-      "The correct number of cups is two. One is for the drink you are currently having; the other is for the drink you intend to have, which you will not in fact have, because you will be reading. The second cup is honest about intentions and is, in this way, a kindness.",
-      "Light is a moveable property. Move with it. A chair that was good at noon may be wrong by four, and there is no shame in standing up and going to the other side of the room. The shame is in arguing with the sun.",
-      "By six the afternoon ends in the same colour as a cooled brass kettle. You will not have done what you set out to do. You will instead have done what the afternoon required, which is harder to name and easier to remember.",
+      "Twelve white mice on a wire platform, taking turns over a rope bridge that is exactly the length of a slow thought. The arrangement is collective; the journey is individual. One mouse advances perhaps two centimetres, considers, retreats, advances again. The rest, in the meantime, sleep in a small pale heap on the far end of the platform, as if to keep the destination warm.",
+      "I have stood here longer than I will admit. Watching small commutes is the kind of thing one does in a city when one is briefly out of patience for the larger commutes. Train, escalator, hallway, desk — versus rope, plank, rope. Both are journeys of millimetres; only one is admitted to be charming.",
+      "What I like about the mice is that they do not pretend the bridge is anything other than what it is. They cross it, or they do not. They do not check the time. They do not pretend, for the sake of the platform, that they were always going to cross.",
+      "By the time I leave, the bridge is briefly straight, and somewhere on the far end there is a sleepy white heap that has not, in any meaningful sense, moved an inch in twenty minutes. The journey, I think, is preserved.",
     ],
   },
   {
-    slug: "notebooks-of-an-idle-librarian",
-    title: "Notebooks of an Idle Librarian",
+    slug: "the-grammar-of-bark",
+    title: "The Grammar of Bark",
     description:
-      "Marginalia from a year of cataloguing a private library that nobody, including the librarian, intended to assemble.",
+      "A field note from a wood yard, on the marginalia logs leave behind when you stack them long enough.",
     date: "2026-03-19",
     author: "Maurice Ravel",
-    tags: ["notebook", "archives"],
-    cover: cover(
-      "library",
-      "Tall library shelves lit by a single hanging lamp",
-      "West stack, third aisle",
+    tags: ["notebook", "texture"],
+    cover: coverFor(
+      "the-grammar-of-bark",
+      "Stacked logs photographed close to the bark, where the rough surface catches afternoon sun",
+      "Bark, in the wood yard",
     ),
     excerpt:
-      "A private library is what happens when you stop arguing with the books you keep. Mine began by accident and was catalogued the same way.",
+      "Bark, after a winter's cutting, is a kind of script. The cuts leave the page; the years stay. Stack the logs and you assemble, by accident, a small library.",
     body: [
-      "A private library is what happens when you stop arguing with the books you keep. Mine began by accident and was catalogued the same way — by colour, then by mood, then briefly by author, then by the small disasters each book had survived (water, sun, the inside of a coat pocket, a long bus ride).",
-      "The most honest classification is by reading. Books I have read live on the lower shelf, because I revisit them as one revisits a kitchen. Books I have not read live on the higher shelf, because anticipation is best when it requires a step-stool.",
-      "Marginalia, I have decided, is not vandalism. It is a record of attention. A book that has been read carefully looks like a book that has been argued with, gently, in pencil, by someone who loved it enough to disagree.",
-      "If a library is well kept, it should be possible to fall asleep in it. Mine passes this test, occasionally, by accident, around four in the afternoon, between the poetry and the maps.",
+      "Bark, after a winter's cutting, is a kind of script. The cuts leave the page; the years stay. Stack the logs and you assemble, by accident, a small library — each spine a chapter of the tree's slow argument with the weather, abridged into rings and fissures.",
+      "Up close, the surfaces refuse to repeat. One log is shedding bark in long strips like a careless reader pulling bookmarks; another keeps its bark tight, as if reluctant to be quoted. A third has lost almost everything and shows you only the pale wood underneath, the bare paragraph after the citation has been removed.",
+      "If there is a grammar here it is the grammar of marginalia — comments that survived the binding because nothing inside cared enough to clean them off. The forest's editor was, you sense, distracted.",
+      "I find this consoling. We talk about reading nature as though the text were the leaves, or the river, or the long view across the valley. The text, more often, is the cut surface in the wood yard, the inch of bark that came off in your hand, the chapter heading you only saw because someone else stopped reading.",
     ],
   },
   {
-    slug: "late-night-reading-at-the-harbour",
-    title: "Late-Night Reading at the Harbour",
+    slug: "the-shape-of-a-web",
+    title: "The Shape of a Web",
     description:
-      "On lighthouses, the patience of moored boats, and a paperback I have been pretending to finish since October.",
+      "On a small orb-weaver in the garden, the patience of geometry, and the inconvenience of being interested in anything for long.",
     date: "2026-02-27",
     author: "Frédéric Chopin",
-    tags: ["essay", "harbour"],
-    cover: cover(
-      "harbour",
-      "A small harbour at night with a distant lighthouse beam",
-      "North quay, 11:48 PM",
+    tags: ["essay", "garden"],
+    cover: coverFor(
+      "the-shape-of-a-web",
+      "A small orb-weaver spider at the centre of its web, with green foliage out of focus behind it",
+      "Web, leaning into the green",
     ),
     excerpt:
-      "The harbour at night is mostly a kind of patience. The boats are tied up to the idea of morning. I sit on the bench at the end of the quay and read by the light of two streetlamps and one lighthouse.",
+      "A spider in the garden has built a web at the height of a person's eye, which is either presumptuous or naïve — possibly both. I cannot say I have ever seen a web at this height that survived a whole afternoon.",
     body: [
-      "The harbour at night is mostly a kind of patience. The boats are tied up to the idea of morning. I sit on the bench at the end of the quay and read by the light of two streetlamps and one lighthouse, which rotates with the same unhurried disinterest as a teacher walking the aisles of an exam hall.",
-      "The paperback in question is the kind of novel that does not advertise its intentions. It opens with a man arriving at a station, and it closes, three hundred pages later, with the same man at the same station, slightly altered. Between these two stations, almost nothing happens, in the way that almost nothing happens to the harbour between two beams of the lighthouse.",
-      "I have been on page two hundred and eleven since October. This is not a failure of reading. It is a long mooring.",
+      "A spider in the garden has built a web at the height of a person's eye, which is either presumptuous or naïve — possibly both. I cannot say I have ever seen a web at this height that survived a whole afternoon. And yet here it is, mid-morning, holding three or four damp particulars of the previous night and a small wrapped thing the spider is no longer interested in.",
+      "It is the shape that always surprises me. From a distance the geometry looks decisive; up close the spiral wobbles like handwriting, and the radial threads do not, in fact, agree about where the centre is. The web is a compromise between the spider and the wind, like all good plans.",
+      "I have stood here long enough to be embarrassed about how long I have stood here. The spider, who has stronger commitments, has not moved. Behind the web the garden has gone slightly more green than I remember it being a minute ago — bokeh, photographers call it; the rest of us just say the back of things.",
+      "It would be tidy to end here with an observation about patience. I prefer to end with the spider — already, I think, drafting the next sentence of the web in the small wind.",
     ],
   },
   {
-    slug: "music-for-empty-galleries",
-    title: "Music for Empty Galleries",
+    slug: "tyre-dragons",
+    title: "Tyre Dragons",
     description:
-      "Notes on the recordings I keep on the small speaker by the window, and what they make of the rooms they share.",
+      "An afternoon at a strange municipal park, where the playground equipment turned out, mostly, to be eating itself.",
     date: "2026-02-04",
     author: "Federico Mompou",
-    tags: ["music", "ritual"],
-    cover: cover(
-      "gallery",
-      "An empty gallery room with white walls and a single bench",
-      "East room, before opening",
+    tags: ["essay", "park"],
+    cover: coverFor(
+      "tyre-dragons",
+      "An urban park built from stacked tyres, including a tall tyre creature with arms and an open mouth, with apartment blocks behind",
+      "Tyre dragons, in low afternoon light",
     ),
     excerpt:
-      "I keep a small speaker on the window sill. The room behind it is, for most of the day, an empty gallery — and I have learned that the recordings I play decide what the gallery is showing.",
+      "The tyre dragons are larger than I had expected. The largest has its mouth open in something between a yawn and a laugh, and is wearing, today, a small red ribbon around its neck like a courteous warning.",
     body: [
-      "I keep a small speaker on the window sill. The room behind it is, for most of the day, an empty gallery — and I have learned that the recordings I play decide what the gallery is showing. A nocturne, and the bare floor becomes a stretch of polished stone in some institution that closes at six. A field recording of rain, and the room is suddenly a courtyard.",
-      "Satie, of course, is the most generous tenant. He arrives quietly, rearranges nothing, leaves the windows the way he found them. The Gymnopédies are sometimes described as slow, which is unfair to slowness; they are not slow, they are simply unhurried, the way a long walk is unhurried.",
-      "The empty gallery, like the slow afternoon, is a room and not an appointment. The music is its only guest until you arrive.",
+      "The tyre dragons are larger than I had expected. The largest has its mouth open in something between a yawn and a laugh, and is wearing, today, a small red ribbon around its neck like a courteous warning. It is built from old truck tyres stacked seven, maybe eight, deep, and someone has given it eyes large enough to be seen from the apartment blocks on the far side of the lot.",
+      "The park is empty on a weekday afternoon, in the way that small municipal parks are only ever empty at exactly the wrong hour — the children all elsewhere, the older neighbours not yet out for their evening loop. The dragons are therefore, briefly, the only audience for one another, and they appear to be enjoying it.",
+      "I have read that this kind of park is a Japanese postwar invention: a way of putting the country's accumulated rubber to work as a playground that could not, in any conceivable accident, fail badly. Whether or not that is the full story, it explains the absurdity politely.",
+      "Música callada, the empty-gallery sort of music, is what I keep wanting to call the soundtrack of the place. The tyre dragons are doing something similar with rubber. They are filling an empty lot with the rumour of children, on the assumption that the children will be back.",
     ],
   },
   {
-    slug: "a-pocket-atlas-of-cooling-rooms",
-    title: "A Pocket Atlas of Cooling Rooms",
+    slug: "an-afternoon-with-a-sleeping-cat",
+    title: "An Afternoon with a Sleeping Cat",
     description:
-      "Six rooms I have known after they had been left, and the small geographies of the heat they kept.",
+      "Notes from the only chair the cat will permit me to share, on the small architecture of a cat in mid-yawn.",
     date: "2026-01-12",
     author: "Gabriel Fauré",
-    tags: ["notebook", "evening"],
-    cover: cover(
-      "rooms",
-      "A dim room lit only by the last light through a tall window",
-      "Studio, last light",
+    tags: ["essay", "interior"],
+    cover: coverFor(
+      "an-afternoon-with-a-sleeping-cat",
+      "A calico cat upside down on a grey couch, mid-yawn, with one paw lifted",
+      "An afternoon yawn",
     ),
     excerpt:
-      "Rooms cool unevenly. The radiator side will hold its heat for an hour after the heat is gone; the window side will already be the temperature of the street.",
+      "The cat is upside down on the grey couch and is yawning, briefly, in a way that suggests yawning is a thing one is born already practised at. I am, as usual, the visitor.",
     body: [
-      "Rooms cool unevenly. The radiator side will hold its heat for an hour after the heat is gone; the window side will already be the temperature of the street. To walk the diagonal of a cooling room is to cross a small climate in six steps.",
-      "I have begun a pocket atlas of these rooms. The studio above the bookshop, which cools from the floor upwards. The reading room at the library, which cools from the windows inwards, towards the lamp. The hallway of the house I grew up in, which never seemed to cool at all, although that may have been a property of the hallway and not the house.",
-      "An atlas is, in the end, a record of attention paid to places that did not ask to be noticed. I am still adding pages.",
+      "The cat is upside down on the grey couch and is yawning, briefly, in a way that suggests yawning is a thing one is born already practised at. I am, as usual, the visitor. The couch is hers; the afternoon is hers; the rectangle of sun on the floor between the kitchen and the table is hers, and I am here on a kind of long, unwritten visa.",
+      "Cats sleep in pieces. There is the deep part, in which the paws give small signals to whatever they are dreaming of, and the surface part, in which one ear stays on duty for the kettle. This cat is doing the second kind. She is asleep enough to look comfortable and awake enough to be photographed by anyone unwise enough to interrupt — which is to say, awake enough to be photographed by me.",
+      "I had meant to write something else this afternoon. The cat, by being where she is, has settled the matter. The room is not a study now. It is a cat's room with a guest in it.",
+      "She lifts a paw. She covers, then uncovers, an eye. The yawn finishes. Outside, the light goes the colour of the kettle.",
     ],
   },
 ]
