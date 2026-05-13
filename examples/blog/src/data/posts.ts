@@ -27,7 +27,7 @@ export const posts: Post[] = [
     description:
       "Notes from the height of a city footbridge, where everything is in motion and nothing seems to be.",
     date: "2026-04-21",
-    author: "Erik Satie",
+    author: "Gabriel Fauré",
     tags: ["essay", "city"],
     cover: coverFor(
       "above-the-crossing",
@@ -137,7 +137,7 @@ export const posts: Post[] = [
     description:
       "Notes from the only chair the cat will permit me to share, on the small architecture of a cat in mid-yawn.",
     date: "2026-05-10",
-    author: "Gabriel Fauré",
+    author: "Erik Satie",
     tags: ["essay", "interior"],
     cover: coverFor(
       "an-afternoon-with-a-sleeping-cat",
