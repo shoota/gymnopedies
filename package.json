@@ -1,7 +1,7 @@
 {
   "name": "gymnopedies",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "author": {
     "name": "shoota"
@@ -14,11 +14,15 @@
   "description": "A shadcn/ui registry of dark-themed, blog-oriented React components.",
   "scripts": {
     "dev": "vite",
+    "dev:examples": "vite --config ./examples/blog/vite.config.ts",
+    "dev:examples:https": "HTTPS=1 vite --config ./examples/blog/vite.config.ts",
     "build": "vite build",
+    "build:examples": "vite build --config ./examples/blog/vite.config.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "typecheck": "tsc -p ./tsconfig.typecheck.json",
+    "typecheck": "tsc -p ./tsconfig.typecheck.json && tsc -p ./examples/blog/tsconfig.json",
     "preview": "vite preview",
+    "preview:examples": "vite preview --config ./examples/blog/vite.config.ts",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006 --https --ssl-ca ./localhost.pem --ssl-cert ./localhost.pem --ssl-key ./localhost-key.pem",
     "storybook:plain": "storybook dev -p 6006",

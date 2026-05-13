@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run registry:build && npm run build-storybook",
+  "buildCommand": "npm run registry:build && npm run build-storybook && npm run build:examples",
   "devCommand": "npm run storybook",
   "installCommand": "npm ci --include=optional",
   "framework": null,

@@ -1,0 +1,9 @@
+@import "@/styles/globals.css";
+
+/* Tailwind v4 scans files starting from the Vite project root, which
+   for this sample blog is `examples/blog/`. Tell the engine to also
+   scan the gymnopédies sources two levels up so that the arbitrary
+   values used by `<HeaderNavigation />`, `<Hero />`, `<Picture />`
+   etc. are emitted into the generated CSS. */
+@source "../../../../src/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";

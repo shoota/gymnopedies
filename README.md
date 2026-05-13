@@ -132,6 +132,24 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
 
 ## Release notes
 
+- **v1.1.0** — sample blog published alongside the Storybook
+  - New **Quiet Pages** sample site under `examples/blog/`, deployed on the
+    same domain at <https://gymnopedies.shoota.work/examples/blog/>.
+  - Three pages — Home / Articles / Article detail — built from `Hero`,
+    `Picture`, `Content`, `DateTime`, `HeaderNavigation` and the shadcn `Card`
+    primitive, so the `#04252b` surface and the dark-serif theme show up end
+    to end.
+  - Responsive 1 / 2 / 3-column grid on the Articles page; tiny self-rolled
+    hash router keeps runtime dependencies unchanged.
+  - Vercel build now runs `npm run build:examples` after Storybook so the
+    sample blog ships in the same bundle. Storybook UI, registry endpoints
+    and the sample site cohabit one host.
+  - `npm run dev:examples` (+ `:https` variant reusing the mkcert pair) for
+    local development.
+  - Internal: a `blog.css` `@source` directive teaches Tailwind v4 to scan
+    `src/` from the `examples/blog/` Vite root, so registry components
+    render correctly outside the gymnopédies project tree — a useful
+    reference for consumers wiring gymnopédies into a child Vite app.
 - **v1.0.0** — first stable release
   - Replaced Emotion with Tailwind CSS v4.
   - Migrated to shadcn/ui registry distribution; dropped npm bundling.
