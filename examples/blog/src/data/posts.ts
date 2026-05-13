@@ -27,7 +27,7 @@ export const posts: Post[] = [
     description:
       "On the small hours, the lamp at the end of the corridor, and the habit of writing to no one in particular.",
     date: "2026-04-21",
-    author: "Hana Yamashiro",
+    author: "Erik Satie",
     tags: ["essay", "evening"],
     cover: cover(
       "quiet-city",
@@ -49,7 +49,7 @@ export const posts: Post[] = [
     description:
       "How to recognise the species of an unhurried Sunday, with notes on rituals, weather, and the correct number of cups.",
     date: "2026-04-08",
-    author: "Mateo Oliva",
+    author: "Claude Debussy",
     tags: ["essay", "ritual"],
     cover: cover(
       "slow-afternoon",
@@ -71,7 +71,7 @@ export const posts: Post[] = [
     description:
       "Marginalia from a year of cataloguing a private library that nobody, including the librarian, intended to assemble.",
     date: "2026-03-19",
-    author: "Iris Beaumont",
+    author: "Maurice Ravel",
     tags: ["notebook", "archives"],
     cover: cover(
       "library",
@@ -93,7 +93,7 @@ export const posts: Post[] = [
     description:
       "On lighthouses, the patience of moored boats, and a paperback I have been pretending to finish since October.",
     date: "2026-02-27",
-    author: "Theo Marsden",
+    author: "Frédéric Chopin",
     tags: ["essay", "harbour"],
     cover: cover(
       "harbour",
@@ -114,7 +114,7 @@ export const posts: Post[] = [
     description:
       "Notes on the recordings I keep on the small speaker by the window, and what they make of the rooms they share.",
     date: "2026-02-04",
-    author: "Hana Yamashiro",
+    author: "Federico Mompou",
     tags: ["music", "ritual"],
     cover: cover(
       "gallery",
@@ -135,7 +135,7 @@ export const posts: Post[] = [
     description:
       "Six rooms I have known after they had been left, and the small geographies of the heat they kept.",
     date: "2026-01-12",
-    author: "Mateo Oliva",
+    author: "Gabriel Fauré",
     tags: ["notebook", "evening"],
     cover: cover(
       "rooms",
