@@ -17,7 +17,7 @@ export function HomePage() {
     <>
       <Hero
         cover="Quiet Pages"
-        size="lg"
+        size="md"
         imgProps={{
           src: featured.cover.src,
           alt: featured.cover.alt,
