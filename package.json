@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "vite",
     "dev:examples": "vite --config ./examples/blog/vite.config.ts",
+    "dev:examples:https": "HTTPS=1 vite --config ./examples/blog/vite.config.ts",
     "build": "vite build",
     "build:examples": "vite build --config ./examples/blog/vite.config.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
