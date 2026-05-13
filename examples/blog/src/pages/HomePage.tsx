@@ -15,16 +15,17 @@ export function HomePage() {
 
   return (
     <>
-      <Hero
-        cover="Quiet Pages"
-        size="md"
-        imgProps={{
-          src: featured.cover.src,
-          alt: featured.cover.alt,
-          loading: "eager",
-        }}
-        className="mt-4"
-      />
+      <div className="mx-auto mt-4 w-full max-w-5xl px-4 sm:px-6">
+        <Hero
+          cover="Quiet Pages"
+          size="md"
+          imgProps={{
+            src: featured.cover.src,
+            alt: featured.cover.alt,
+            loading: "eager",
+          }}
+        />
+      </div>
 
       <main className="mx-auto w-full max-w-3xl px-4 sm:px-6">
         <section className="mt-16 mb-20 text-center">
