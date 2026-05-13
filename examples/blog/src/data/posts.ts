@@ -136,7 +136,7 @@ export const posts: Post[] = [
     title: "An Afternoon with a Sleeping Cat",
     description:
       "Notes from the only chair the cat will permit me to share, on the small architecture of a cat in mid-yawn.",
-    date: "2026-01-12",
+    date: "2026-05-10",
     author: "Gabriel Fauré",
     tags: ["essay", "interior"],
     cover: coverFor(
