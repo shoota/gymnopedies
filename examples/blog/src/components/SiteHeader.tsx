@@ -13,19 +13,21 @@ const navItems: { key: NavKey; name: string; route: Route | null }[] = [
 export function SiteHeader({ active }: { active: NavKey }) {
   const currentIndex = navItems.findIndex((item) => item.key === active)
   return (
-    <HeaderNavigation
-      title="Quiet Pages"
-      currentIndex={currentIndex}
-      menuItems={navItems.map((item) => ({
-        name: item.name,
-        onClick: item.route
-          ? () => navigate(item.route!)
-          : () => {
-              window.alert(
-                "This is a gymnopédies sample blog — the 'About' page is left as an exercise to the reader.",
-              )
-            },
-      }))}
-    />
+    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+      <HeaderNavigation
+        title="Quiet Pages"
+        currentIndex={currentIndex}
+        menuItems={navItems.map((item) => ({
+          name: item.name,
+          onClick: item.route
+            ? () => navigate(item.route!)
+            : () => {
+                window.alert(
+                  "This is a gymnopédies sample blog — the 'About' page is left as an exercise to the reader.",
+                )
+              },
+        }))}
+      />
+    </div>
   )
 }

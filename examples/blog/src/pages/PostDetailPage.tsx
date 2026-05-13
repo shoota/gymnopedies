@@ -4,6 +4,8 @@ import { Picture } from "@/components/blog/picture"
 import { DateTime } from "@/components/blog/date-time"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
 import { findPost, sortedPosts } from "@blog/data/posts"
 import { postHref, postsHref } from "@blog/links"
 
@@ -22,10 +24,11 @@ export function PostDetailPage({ slug }: { slug: string }) {
         cover={post.title}
         size="md"
         imgProps={{ src: post.cover.src, alt: post.cover.alt }}
+        className="mt-4"
       />
 
-      <article className="mx-auto w-full max-w-2xl px-6 pt-12">
-        <header className="mb-8 flex flex-col items-center gap-3 text-center">
+      <article className="mx-auto w-full max-w-2xl px-4 pt-12 sm:px-6">
+        <header className="mb-10 flex flex-col items-center gap-3 text-center">
           <p className="m-0 text-xs uppercase tracking-[0.3em] text-primary">
             {post.tags[0] ?? "essay"}
           </p>
@@ -47,11 +50,11 @@ export function PostDetailPage({ slug }: { slug: string }) {
           </div>
         </header>
 
-        <p className="m-0 mb-8 text-center text-lg italic text-accent">
-          {post.excerpt}
+        <p className="m-0 mb-10 text-center text-lg italic leading-relaxed text-accent">
+          “{post.excerpt}”
         </p>
 
-        <Separator className="mb-2" />
+        <Separator className="mb-4" />
 
         <div className="leading-[1.85] text-foreground">
           {post.body.map((paragraph, i) => (
@@ -72,26 +75,30 @@ export function PostDetailPage({ slug }: { slug: string }) {
           </Picture>
 
           <Content className="px-0">
-            <p className="m-0 text-sm text-muted-foreground">
+            <p className="m-0 text-right text-sm text-muted-foreground">
               — {post.author}
             </p>
           </Content>
         </div>
 
-        <Separator className="mb-10 mt-10" />
+        <Separator className="my-10" />
 
-        <nav className="grid gap-6 sm:grid-cols-2">
+        <nav className="grid gap-4 sm:grid-cols-2">
           {prev ? (
             <a
               href={postHref(prev.slug)}
-              className="group block rounded-md border border-border p-4 no-underline focus:outline-none"
+              className="group block no-underline focus:outline-none"
             >
-              <p className="m-0 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                ← Newer
-              </p>
-              <p className="m-0 mt-2 text-base text-foreground group-hover:text-primary">
-                {prev.title}
-              </p>
+              <Card size="sm" className="h-full">
+                <CardHeader>
+                  <p className="m-0 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    ← Newer
+                  </p>
+                  <CardTitle className="text-base text-foreground group-hover:text-primary group-focus:text-primary">
+                    {prev.title}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
             </a>
           ) : (
             <span />
@@ -99,14 +106,18 @@ export function PostDetailPage({ slug }: { slug: string }) {
           {next ? (
             <a
               href={postHref(next.slug)}
-              className="group block rounded-md border border-border p-4 text-right no-underline focus:outline-none"
+              className="group block no-underline focus:outline-none"
             >
-              <p className="m-0 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Older →
-              </p>
-              <p className="m-0 mt-2 text-base text-foreground group-hover:text-primary">
-                {next.title}
-              </p>
+              <Card size="sm" className="h-full">
+                <CardHeader>
+                  <p className="m-0 text-right text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    Older →
+                  </p>
+                  <CardTitle className="text-right text-base text-foreground group-hover:text-primary group-focus:text-primary">
+                    {next.title}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
             </a>
           ) : (
             <span />
@@ -129,21 +140,29 @@ export function PostDetailPage({ slug }: { slug: string }) {
 function NotFound({ slug }: { slug: string }) {
   return (
     <main className="mx-auto flex w-full max-w-xl flex-col items-center gap-4 px-6 pt-32 text-center">
-      <p className="m-0 text-xs uppercase tracking-[0.3em] text-primary">
-        404
-      </p>
-      <h2 className="m-0 text-3xl">No article called “{slug}”</h2>
-      <p className="m-0 text-muted-foreground">
-        It may have been an idea I never wrote down. Try the index instead.
-      </p>
-      <p className="mt-4">
-        <a
-          href={postsHref()}
-          className="underline decoration-primary underline-offset-4"
-        >
-          ← Back to all articles
-        </a>
-      </p>
+      <Card size="sm" className="w-full">
+        <CardHeader>
+          <p className="m-0 text-xs uppercase tracking-[0.3em] text-primary">
+            404
+          </p>
+          <CardTitle className="text-2xl">
+            No article called “{slug}”
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="m-0 text-muted-foreground">
+            It may have been an idea I never wrote down. Try the index instead.
+          </p>
+          <p className="mt-4">
+            <a
+              href={postsHref()}
+              className="underline decoration-primary underline-offset-4"
+            >
+              ← Back to all articles
+            </a>
+          </p>
+        </CardContent>
+      </Card>
     </main>
   )
 }
