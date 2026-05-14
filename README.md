@@ -132,6 +132,13 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
 
 ## Release notes
 
+- **v1.1.2** — registry cross-reference fix
+  - Internal `registryDependencies` are now emitted as full item URLs
+    (`https://gymnopedies.shoota.work/r/<name>.json`). Previously they were
+    bare names, which the shadcn CLI resolves against *its own* default
+    registry — so `npx shadcn add` pulled official shadcn components instead
+    of the gymnopédies-themed ones, and failed on items with no upstream
+    equivalent (`hero`, `article`, `theme`, …).
 - **v1.1.1** — registry dependency fix
   - `registry.json` / `public/r/*.json` now list each component's npm
     dependencies (`@base-ui/react`, `class-variance-authority`,
