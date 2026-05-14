@@ -3,6 +3,9 @@
   "name": "popover",
   "title": "Popover",
   "description": "Popover — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

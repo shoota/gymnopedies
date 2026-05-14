@@ -3,6 +3,10 @@
   "name": "toggle",
   "title": "Toggle",
   "description": "Toggle — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,10 @@
   "name": "tabs",
   "title": "Tabs",
   "description": "Tabs — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "utils"
   ],

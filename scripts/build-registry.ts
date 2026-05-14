@@ -9,7 +9,7 @@
  * Run with `npm run registry:build` to also produce public/r/*.json via the shadcn CLI.
  */
 
-import { readdirSync, writeFileSync } from "node:fs"
+import { readdirSync, readFileSync, writeFileSync } from "node:fs"
 import { join, basename } from "node:path"
 
 type RegistryItemType =
@@ -53,6 +53,33 @@ const componentFiles = (dir: string) =>
     .filter((f) => f.endsWith(".tsx") && !f.endsWith(".stories.tsx"))
     .map((f) => basename(f, ".tsx"))
     .sort()
+
+// Peer-installed by the consumer; never list these as registry deps.
+const PEER_PACKAGES = new Set(["react", "react-dom"])
+
+const IMPORT_RE = /(?:^|\n)\s*import\s+(?:[^"';]*?\s+from\s+)?["']([^"']+)["']/g
+
+const extractExternalDeps = (filePath: string): string[] => {
+  const src = readFileSync(filePath, "utf8")
+  const deps = new Set<string>()
+  for (const match of src.matchAll(IMPORT_RE)) {
+    const spec = match[1]
+    if (
+      spec.startsWith(".") ||
+      spec.startsWith("@/") ||
+      spec.startsWith("node:")
+    ) {
+      continue
+    }
+    const parts = spec.split("/")
+    const pkgName = spec.startsWith("@")
+      ? parts.slice(0, 2).join("/")
+      : parts[0]
+    if (PEER_PACKAGES.has(pkgName)) continue
+    deps.add(pkgName)
+  }
+  return [...deps].sort()
+}
 
 const utilItem: RegistryItem = {
   name: "utils",
@@ -121,26 +148,35 @@ const themeItem: RegistryItem = {
   },
 }
 
-const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => ({
-  name,
-  type: "registry:ui",
-  title: toTitle(name),
-  description: `${toTitle(name)} — gymnopédies-themed shadcn primitive.`,
-  files: [{ path: `src/components/ui/${name}.tsx`, type: "registry:ui" }],
-  registryDependencies: ["utils"],
-}))
+const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => {
+  const filePath = join(UI_DIR, `${name}.tsx`)
+  const dependencies = extractExternalDeps(filePath)
+  return {
+    name,
+    type: "registry:ui",
+    title: toTitle(name),
+    description: `${toTitle(name)} — gymnopédies-themed shadcn primitive.`,
+    files: [{ path: `src/components/ui/${name}.tsx`, type: "registry:ui" }],
+    ...(dependencies.length > 0 ? { dependencies } : {}),
+    registryDependencies: ["utils"],
+  }
+})
 
-const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => ({
-  name,
-  type: "registry:component",
-  title: toTitle(name),
-  description: `${toTitle(name)} — gymnopédies blog reading primitive.`,
-  files: [
-    { path: `src/components/blog/${name}.tsx`, type: "registry:component" },
-  ],
-  registryDependencies: ["utils", "theme"],
-  ...(name === "date-time" ? { dependencies: ["date-fns"] } : {}),
-}))
+const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => {
+  const filePath = join(BLOG_DIR, `${name}.tsx`)
+  const dependencies = extractExternalDeps(filePath)
+  return {
+    name,
+    type: "registry:component",
+    title: toTitle(name),
+    description: `${toTitle(name)} — gymnopédies blog reading primitive.`,
+    files: [
+      { path: `src/components/blog/${name}.tsx`, type: "registry:component" },
+    ],
+    ...(dependencies.length > 0 ? { dependencies } : {}),
+    registryDependencies: ["utils", "theme"],
+  }
+})
 
 const presetItem: RegistryItem = {
   name: "gymnopedies",

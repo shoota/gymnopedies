@@ -3,6 +3,10 @@
   "name": "badge",
   "title": "Badge",
   "description": "Badge — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "utils"
   ],

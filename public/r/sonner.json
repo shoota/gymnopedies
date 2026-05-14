@@ -3,6 +3,11 @@
   "name": "sonner",
   "title": "Sonner",
   "description": "Sonner — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "lucide-react",
+    "next-themes",
+    "sonner"
+  ],
   "registryDependencies": [
     "utils"
   ],

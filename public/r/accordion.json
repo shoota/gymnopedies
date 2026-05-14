@@ -3,6 +3,10 @@
   "name": "accordion",
   "title": "Accordion",
   "description": "Accordion — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

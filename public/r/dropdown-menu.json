@@ -3,6 +3,10 @@
   "name": "dropdown-menu",
   "title": "Dropdown Menu",
   "description": "Dropdown Menu — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

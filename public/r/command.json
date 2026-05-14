@@ -3,6 +3,10 @@
   "name": "command",
   "title": "Command",
   "description": "Command — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "cmdk",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

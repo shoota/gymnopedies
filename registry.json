@@ -91,6 +91,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -106,6 +110,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -120,6 +127,9 @@
           "path": "src/components/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "utils"
@@ -151,6 +161,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -165,6 +178,10 @@
           "path": "src/components/ui/badge.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -181,6 +198,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -195,6 +216,10 @@
           "path": "src/components/ui/button.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -226,6 +251,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -240,6 +269,9 @@
           "path": "src/components/ui/chart.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "recharts"
       ],
       "registryDependencies": [
         "utils"
@@ -256,6 +288,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -270,6 +305,10 @@
           "path": "src/components/ui/command.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -286,6 +325,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -300,6 +343,10 @@
           "path": "src/components/ui/dialog.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -316,6 +363,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "vaul"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -330,6 +380,10 @@
           "path": "src/components/ui/dropdown-menu.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -346,6 +400,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -360,6 +417,9 @@
           "path": "src/components/ui/input.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "utils"
@@ -376,6 +436,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -390,6 +453,10 @@
           "path": "src/components/ui/menubar.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -406,6 +473,11 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -420,6 +492,9 @@
           "path": "src/components/ui/pagination.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -436,6 +511,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -450,6 +528,9 @@
           "path": "src/components/ui/progress.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "utils"
@@ -466,6 +547,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "react-resizable-panels"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -480,6 +564,9 @@
           "path": "src/components/ui/scroll-area.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "utils"
@@ -496,6 +583,9 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -511,6 +601,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -525,6 +619,11 @@
           "path": "src/components/ui/sidebar.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
       ],
       "registryDependencies": [
         "utils"
@@ -556,6 +655,11 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "lucide-react",
+        "next-themes",
+        "sonner"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -585,6 +689,10 @@
           "path": "src/components/ui/tabs.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
       ],
       "registryDependencies": [
         "utils"
@@ -616,6 +724,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -631,6 +743,10 @@
           "type": "registry:ui"
         }
       ],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
       "registryDependencies": [
         "utils"
       ]
@@ -645,6 +761,9 @@
           "path": "src/components/ui/tooltip.tsx",
           "type": "registry:ui"
         }
+      ],
+      "dependencies": [
+        "@base-ui/react"
       ],
       "registryDependencies": [
         "utils"
@@ -693,12 +812,12 @@
           "type": "registry:component"
         }
       ],
+      "dependencies": [
+        "date-fns"
+      ],
       "registryDependencies": [
         "utils",
         "theme"
-      ],
-      "dependencies": [
-        "date-fns"
       ]
     },
     {

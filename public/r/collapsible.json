@@ -3,6 +3,9 @@
   "name": "collapsible",
   "title": "Collapsible",
   "description": "Collapsible — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

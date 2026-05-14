@@ -3,6 +3,9 @@
   "name": "pagination",
   "title": "Pagination",
   "description": "Pagination — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

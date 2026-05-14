@@ -3,6 +3,9 @@
   "name": "hover-card",
   "title": "Hover Card",
   "description": "Hover Card — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

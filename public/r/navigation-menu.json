@@ -3,6 +3,11 @@
   "name": "navigation-menu",
   "title": "Navigation Menu",
   "description": "Navigation Menu — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

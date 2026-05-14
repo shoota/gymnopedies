@@ -3,6 +3,9 @@
   "name": "drawer",
   "title": "Drawer",
   "description": "Drawer — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "vaul"
+  ],
   "registryDependencies": [
     "utils"
   ],
