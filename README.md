@@ -132,6 +132,16 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
 
 ## Release notes
 
+- **v1.1.1** — registry dependency fix
+  - `registry.json` / `public/r/*.json` now list each component's npm
+    dependencies (`@base-ui/react`, `class-variance-authority`,
+    `lucide-react`, `embla-carousel-react`, …). Previously these fields were
+    empty, so `npx shadcn add` installed the component source without the
+    packages it imports — 33 of 45 items were affected, including `button`,
+    `badge` and `separator`.
+  - `scripts/build-registry.ts` now derives the dependency list by scanning
+    each component's `import` statements, so the registry stays correct as
+    components change.
 - **v1.1.0** — sample blog published alongside the Storybook
   - New **Quiet Pages** sample site under `examples/blog/`, deployed on the
     same domain at <https://gymnopedies.shoota.work/examples/blog/>.
