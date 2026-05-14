@@ -50,7 +50,8 @@
     "https://gymnopedies.shoota.work/r/global-styles.json",
     "https://gymnopedies.shoota.work/r/header-navigation.json",
     "https://gymnopedies.shoota.work/r/hero.json",
-    "https://gymnopedies.shoota.work/r/picture.json"
+    "https://gymnopedies.shoota.work/r/picture.json",
+    "https://gymnopedies.shoota.work/r/use-mobile.json"
   ],
   "type": "registry:style"
 }

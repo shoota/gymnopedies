@@ -139,6 +139,11 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
     registry — so `npx shadcn add` pulled official shadcn components instead
     of the gymnopédies-themed ones, and failed on items with no upstream
     equivalent (`hero`, `article`, `theme`, …).
+  - `src/hooks/*` are now published as `registry:hook` items and wired into
+    the `registryDependencies` of the components that import them via
+    `@/hooks/*`. `sidebar` imports `@/hooks/use-mobile`, which the registry
+    previously omitted entirely — installing `sidebar` produced a project
+    that failed to typecheck (`Cannot find module '@/hooks/use-mobile'`).
 - **v1.1.1** — registry dependency fix
   - `registry.json` / `public/r/*.json` now list each component's npm
     dependencies (`@base-ui/react`, `class-variance-authority`,

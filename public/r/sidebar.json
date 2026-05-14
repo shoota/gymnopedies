@@ -9,7 +9,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://gymnopedies.shoota.work/r/utils.json"
+    "https://gymnopedies.shoota.work/r/utils.json",
+    "https://gymnopedies.shoota.work/r/use-mobile.json"
   ],
   "files": [
     {
