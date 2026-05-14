@@ -3,6 +3,10 @@
   "name": "carousel",
   "title": "Carousel",
   "description": "Carousel — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "embla-carousel-react",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

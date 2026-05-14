@@ -3,6 +3,10 @@
   "name": "menubar",
   "title": "Menubar",
   "description": "Menubar — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

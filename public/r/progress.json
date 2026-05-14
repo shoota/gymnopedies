@@ -3,6 +3,9 @@
   "name": "progress",
   "title": "Progress",
   "description": "Progress — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

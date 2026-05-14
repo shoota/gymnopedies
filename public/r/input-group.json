@@ -3,6 +3,9 @@
   "name": "input-group",
   "title": "Input Group",
   "description": "Input Group — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,9 @@
   "name": "resizable",
   "title": "Resizable",
   "description": "Resizable — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "react-resizable-panels"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,10 @@
   "name": "toggle-group",
   "title": "Toggle Group",
   "description": "Toggle Group — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,11 @@
   "name": "sidebar",
   "title": "Sidebar",
   "description": "Sidebar — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "class-variance-authority",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,9 @@
   "name": "input",
   "title": "Input",
   "description": "Input — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

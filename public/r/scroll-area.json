@@ -3,6 +3,9 @@
   "name": "scroll-area",
   "title": "Scroll Area",
   "description": "Scroll Area — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],

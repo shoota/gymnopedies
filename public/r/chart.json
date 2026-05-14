@@ -3,6 +3,9 @@
   "name": "chart",
   "title": "Chart",
   "description": "Chart — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "recharts"
+  ],
   "registryDependencies": [
     "utils"
   ],

@@ -3,6 +3,10 @@
   "name": "breadcrumb",
   "title": "Breadcrumb",
   "description": "Breadcrumb — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react",
+    "lucide-react"
+  ],
   "registryDependencies": [
     "utils"
   ],

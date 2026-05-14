@@ -3,6 +3,9 @@
   "name": "tooltip",
   "title": "Tooltip",
   "description": "Tooltip — gymnopédies-themed shadcn primitive.",
+  "dependencies": [
+    "@base-ui/react"
+  ],
   "registryDependencies": [
     "utils"
   ],
