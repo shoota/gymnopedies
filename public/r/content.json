@@ -4,8 +4,8 @@
   "title": "Content",
   "description": "Content — gymnopédies blog reading primitive.",
   "registryDependencies": [
-    "utils",
-    "theme"
+    "https://gymnopedies.shoota.work/r/utils.json",
+    "https://gymnopedies.shoota.work/r/theme.json"
   ],
   "files": [
     {

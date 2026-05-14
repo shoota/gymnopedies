@@ -4,7 +4,7 @@
   "title": "Textarea",
   "description": "Textarea — gymnopédies-themed shadcn primitive.",
   "registryDependencies": [
-    "utils"
+    "https://gymnopedies.shoota.work/r/utils.json"
   ],
   "files": [
     {

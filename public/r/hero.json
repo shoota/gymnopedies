@@ -4,8 +4,8 @@
   "title": "Hero",
   "description": "Hero — gymnopédies blog reading primitive.",
   "registryDependencies": [
-    "utils",
-    "theme"
+    "https://gymnopedies.shoota.work/r/utils.json",
+    "https://gymnopedies.shoota.work/r/theme.json"
   ],
   "files": [
     {

@@ -42,6 +42,13 @@ const ROOT = process.cwd()
 const UI_DIR = join(ROOT, "src", "components", "ui")
 const BLOG_DIR = join(ROOT, "src", "components", "blog")
 
+// shadcn resolves bare registryDependencies names ("button", "utils", …)
+// against its own default registry. Cross-references within a custom
+// registry must be full item URLs, so every internal dependency is
+// emitted as an absolute URL under this base.
+const REGISTRY_BASE = "https://gymnopedies.shoota.work/r"
+const ref = (name: string) => `${REGISTRY_BASE}/${name}.json`
+
 const toTitle = (name: string) =>
   name
     .split("-")
@@ -158,7 +165,7 @@ const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => {
     description: `${toTitle(name)} — gymnopédies-themed shadcn primitive.`,
     files: [{ path: `src/components/ui/${name}.tsx`, type: "registry:ui" }],
     ...(dependencies.length > 0 ? { dependencies } : {}),
-    registryDependencies: ["utils"],
+    registryDependencies: [ref("utils")],
   }
 })
 
@@ -174,7 +181,7 @@ const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => {
       { path: `src/components/blog/${name}.tsx`, type: "registry:component" },
     ],
     ...(dependencies.length > 0 ? { dependencies } : {}),
-    registryDependencies: ["utils", "theme"],
+    registryDependencies: [ref("utils"), ref("theme")],
   }
 })
 
@@ -185,10 +192,10 @@ const presetItem: RegistryItem = {
   description:
     "A dark, serif, glow-leaning shadcn registry preset for long-form reading experiences. Installs the theme tokens, every non-form shadcn primitive, and the bespoke blog components.",
   registryDependencies: [
-    "utils",
-    "theme",
-    ...uiItems.map((i) => i.name),
-    ...blogItems.map((i) => i.name),
+    ref("utils"),
+    ref("theme"),
+    ...uiItems.map((i) => ref(i.name)),
+    ...blogItems.map((i) => ref(i.name)),
   ],
 }
 

@@ -4,7 +4,7 @@
   "title": "Card",
   "description": "Card — gymnopédies-themed shadcn primitive.",
   "registryDependencies": [
-    "utils"
+    "https://gymnopedies.shoota.work/r/utils.json"
   ],
   "files": [
     {
