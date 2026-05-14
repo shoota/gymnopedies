@@ -1,21 +1,48 @@
 # Gymnopédies
 
-A **shadcn registry** of dark, serif, glow-leaning React components for long-form
-reading experiences (blogs, essays, archives, photo journals).
+A **shadcn registry** of dark, serif, glow-leaning React components for
+long-form reading experiences — blogs, essays, archives, photo journals.
 
-> **v1.0.0 is the first stable release.** The 0.1.x prototype (Emotion-based
-> npm package) has been retired in favour of a shadcn/ui registry that
-> distributes source code directly into consumer projects. Forms are
-> intentionally out of scope — gymnopédies is a read-only design system.
+| | |
+| --- | --- |
+| 🎛️ **Storybook** | <https://gymnopedies.shoota.work/> — browse every component |
+| 📖 **Sample blog** | <https://gymnopedies.shoota.work/examples/blog/> — the components composed into a real site |
+| 📦 **Registry** | <https://gymnopedies.shoota.work/r/gymnopedies.json> — the install endpoint |
 
-## Stack
+Forms are intentionally out of scope — gymnopédies is a read-only design system.
 
-- React 18 + TypeScript 5
-- Vite 5 + Tailwind CSS v4
-- **shadcn/ui (style: `base-nova`) — primitives from `@base-ui/react`**
-- For non-Base-UI primitives shadcn still pulls in: `vaul` (Drawer), `cmdk` (Command), `recharts` (Chart), `sonner` (Toast), `embla-carousel-react` (Carousel).
-- date-fns v4, lucide-react
-- Storybook 9 + Chromatic
+## Quick start
+
+gymnopédies is distributed as a [shadcn registry](https://ui.shadcn.com/docs/registry):
+the CLI copies component **source** straight into your project. There is no
+runtime npm dependency on gymnopédies itself — you own the code once it lands.
+
+Requirements: a React project with **Tailwind CSS v4** and the `@/*` path alias.
+A fresh Vite app set up with shadcn works out of the box:
+
+```bash
+# 1. scaffold a shadcn-ready Vite app (skip if you already have a project)
+npx shadcn@latest init -b base -t vite
+
+# 2. install the whole gymnopédies preset
+npx shadcn@latest add https://gymnopedies.shoota.work/r/gymnopedies.json
+```
+
+The preset pulls in the theme tokens, every non-form shadcn primitive, the
+bespoke blog components and the `use-mobile` hook — and installs their npm
+dependencies (`@base-ui/react`, `class-variance-authority`, `lucide-react`,
+`date-fns`, …) automatically.
+
+Prefer to cherry-pick? Add items one at a time:
+
+```bash
+npx shadcn@latest add https://gymnopedies.shoota.work/r/theme.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/hero.json
+npx shadcn@latest add https://gymnopedies.shoota.work/r/article.json
+```
+
+Then compose a page — see the [sample blog](https://gymnopedies.shoota.work/examples/blog/)
+(source under [`examples/blog/`](./examples/blog)) for a worked example.
 
 ## Component catalogue
 
@@ -27,7 +54,7 @@ reading experiences (blogs, essays, archives, photo journals).
 | containers   | card, alert, scroll-area                                                                       |
 | navigation   | breadcrumb, pagination, tabs, navigation-menu, menubar                                         |
 | overlays     | dialog, alert-dialog, sheet, drawer, popover, hover-card, tooltip, sonner                      |
-| menus        | dropdown-menu, context-menu, command                                                           |
+| menus        | dropdown-menu, context-menu, command                                                          |
 | disclosure   | accordion, collapsible                                                                         |
 | state/toggle | toggle, toggle-group                                                                           |
 | layout       | resizable, sidebar                                                                             |
@@ -43,11 +70,13 @@ reading experiences (blogs, essays, archives, photo journals).
 | date-time         | `<time>` with date-fns formatting (default `MMMM dd, yyyy`)                            |
 | header-navigation | gradient + glow page header with optional menu row                                     |
 
-Each component has a `*.stories.tsx` file alongside it. Browse them with `npm run storybook`.
+`src/hooks/use-mobile` ships alongside `sidebar`. Each component has a
+`*.stories.tsx` file — browse them in [Storybook](https://gymnopedies.shoota.work/).
 
 ## Theme
 
-The dark gymnopédies identity lives in `src/styles/globals.css`:
+The dark gymnopédies identity lives in `src/styles/globals.css` and installs as
+the `theme` registry item:
 
 | token              | hex / value           | usage                                |
 | ------------------ | --------------------- | ------------------------------------ |
@@ -62,6 +91,37 @@ The dark gymnopédies identity lives in `src/styles/globals.css`:
 | `--shadow-strong-glow` | gold glow ×2      | hover / interactive callout          |
 | `--font-serif`     | Merriweather + fallbacks | every body & heading             |
 
+## Stack
+
+- React 18 + TypeScript 5
+- Vite 5 + Tailwind CSS v4
+- **shadcn/ui (style: `base-nova`) — primitives from `@base-ui/react`**
+- For non-Base-UI primitives shadcn still pulls in: `vaul` (Drawer), `cmdk` (Command), `recharts` (Chart), `sonner` (Toast), `embla-carousel-react` (Carousel)
+- date-fns v4, lucide-react
+- Storybook 9 + Chromatic
+
+## Distribution
+
+The registry is generated from the file system by `scripts/build-registry.ts`,
+which scans `src/components/ui`, `src/components/blog` and `src/hooks`, derives
+each item's npm `dependencies` from its `import` statements, and wires internal
+cross-references as full item URLs:
+
+```bash
+npm run registry:generate   # regenerate registry.json from src/
+npm run registry:build      # regenerate + shadcn build → public/r/*.json
+```
+
+Hosting rides along with the Storybook deployment on Vercel: `public/r/` is
+copied into Storybook's `storybook-static/` output via `.storybook/main.ts`'s
+`staticDirs`, so one domain serves the Storybook UI, the registry endpoints and
+the sample blog:
+
+- Storybook UI — <https://gymnopedies.shoota.work/>
+- Sample blog — <https://gymnopedies.shoota.work/examples/blog/>
+- Registry preset — <https://gymnopedies.shoota.work/r/gymnopedies.json>
+- Individual items — <https://gymnopedies.shoota.work/r/article.json>, etc.
+
 ## Local development
 
 ```bash
@@ -73,6 +133,10 @@ npm run storybook:plain
 # Storybook with HTTPS (requires mkcert localhost-key.pem / localhost.pem)
 npm run storybook
 
+# Sample blog (examples/blog/)
+npm run dev:examples          # http://localhost:6007/examples/blog/
+npm run dev:examples:https    # same, over HTTPS via the mkcert pair
+
 # Static playground
 npm run dev
 
@@ -80,44 +144,13 @@ npm run dev
 npm run typecheck
 npm run lint
 npm run build-storybook
+npm run registry:build
 ```
-
-## Distribution: shadcn registry
-
-The registry is built from the file system by `scripts/build-registry.ts`:
-
-```bash
-npm run registry:generate   # regenerate registry.json from src/components
-npm run registry:build      # regenerate + shadcn build → public/r/*.json
-```
-
-Hosting rides along with the Storybook deployment on Vercel: `public/r/` is
-copied into Storybook's `storybook-static/` output dir via
-`.storybook/main.ts`'s `staticDirs`, so the same domain serves both the
-Storybook UI and the registry endpoints.
-
-- Storybook UI:          <https://gymnopedies.shoota.work/>
-- Registry preset:       <https://gymnopedies.shoota.work/r/gymnopedies.json>
-- Individual items:      <https://gymnopedies.shoota.work/r/article.json> etc.
-
-Consumers install with:
-
-```bash
-# Install the whole gymnopedies preset (theme + all components)
-npx shadcn@latest add https://gymnopedies.shoota.work/r/gymnopedies.json
-
-# Or pick individual items
-npx shadcn@latest add https://gymnopedies.shoota.work/r/theme.json
-npx shadcn@latest add https://gymnopedies.shoota.work/r/hero.json
-npx shadcn@latest add https://gymnopedies.shoota.work/r/card.json
-```
-
-Consumers need Tailwind CSS v4 and the `@/*` path alias configured in their project.
 
 ## Migration from the 0.1.x prototype (Emotion)
 
 There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
-+ npm package), the path to v1.0.0 is:
++ npm package), the path to v1.x is:
 
 1. Remove `gymnopedies` from `dependencies`.
 2. Install Tailwind v4 in your project: `npx shadcn@latest init`.
@@ -130,57 +163,10 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
    - `GlobalStyles` keeps the same drop-in usability but is now a zero-
      dependency `<style>` injector instead of Emotion's `<Global>`.
 
-## Release notes
+## Changelog
 
-- **v1.1.2** — registry cross-reference fix
-  - Internal `registryDependencies` are now emitted as full item URLs
-    (`https://gymnopedies.shoota.work/r/<name>.json`). Previously they were
-    bare names, which the shadcn CLI resolves against *its own* default
-    registry — so `npx shadcn add` pulled official shadcn components instead
-    of the gymnopédies-themed ones, and failed on items with no upstream
-    equivalent (`hero`, `article`, `theme`, …).
-  - `src/hooks/*` are now published as `registry:hook` items and wired into
-    the `registryDependencies` of the components that import them via
-    `@/hooks/*`. `sidebar` imports `@/hooks/use-mobile`, which the registry
-    previously omitted entirely — installing `sidebar` produced a project
-    that failed to typecheck (`Cannot find module '@/hooks/use-mobile'`).
-- **v1.1.1** — registry dependency fix
-  - `registry.json` / `public/r/*.json` now list each component's npm
-    dependencies (`@base-ui/react`, `class-variance-authority`,
-    `lucide-react`, `embla-carousel-react`, …). Previously these fields were
-    empty, so `npx shadcn add` installed the component source without the
-    packages it imports — 33 of 45 items were affected, including `button`,
-    `badge` and `separator`.
-  - `scripts/build-registry.ts` now derives the dependency list by scanning
-    each component's `import` statements, so the registry stays correct as
-    components change.
-- **v1.1.0** — sample blog published alongside the Storybook
-  - New **Quiet Pages** sample site under `examples/blog/`, deployed on the
-    same domain at <https://gymnopedies.shoota.work/examples/blog/>.
-  - Three pages — Home / Articles / Article detail — built from `Hero`,
-    `Picture`, `Content`, `DateTime`, `HeaderNavigation` and the shadcn `Card`
-    primitive, so the `#04252b` surface and the dark-serif theme show up end
-    to end.
-  - Responsive 1 / 2 / 3-column grid on the Articles page; tiny self-rolled
-    hash router keeps runtime dependencies unchanged.
-  - Vercel build now runs `npm run build:examples` after Storybook so the
-    sample blog ships in the same bundle. Storybook UI, registry endpoints
-    and the sample site cohabit one host.
-  - `npm run dev:examples` (+ `:https` variant reusing the mkcert pair) for
-    local development.
-  - Internal: a `blog.css` `@source` directive teaches Tailwind v4 to scan
-    `src/` from the `examples/blog/` Vite root, so registry components
-    render correctly outside the gymnopédies project tree — a useful
-    reference for consumers wiring gymnopédies into a child Vite app.
-- **v1.0.0** — first stable release
-  - Replaced Emotion with Tailwind CSS v4.
-  - Migrated to shadcn/ui registry distribution; dropped npm bundling.
-  - Adopted **Base UI** primitives via the `base-nova` shadcn style.
-    - All `*Trigger` / `*Close` etc. use the Base UI `render` prop instead of
-      Radix's `asChild`.
-    - `ToggleGroup` and `Accordion` use array `defaultValue`/`value` and the
-      `multiple` boolean (Base UI API).
-  - Reset directory layout to shadcn conventions (`src/components/ui` +
-    `src/components/blog`).
-  - Ported the legacy bespoke components to Tailwind compound APIs.
-  - Added 35 non-form shadcn primitives + Storybook stories for each.
+See [CHANGELOG.md](./CHANGELOG.md) for the full release history.
+
+## License
+
+[MIT](./LICENSE) © shoota
