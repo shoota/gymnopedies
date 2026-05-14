@@ -4,8 +4,8 @@
   "title": "Header Navigation",
   "description": "Header Navigation — gymnopédies blog reading primitive.",
   "registryDependencies": [
-    "utils",
-    "theme"
+    "https://gymnopedies.shoota.work/r/utils.json",
+    "https://gymnopedies.shoota.work/r/theme.json"
   ],
   "files": [
     {

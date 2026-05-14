@@ -96,7 +96,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -114,7 +114,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -132,7 +132,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -147,7 +147,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -165,7 +165,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -184,7 +184,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -203,7 +203,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -222,7 +222,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -237,7 +237,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -256,7 +256,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -274,7 +274,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -292,7 +292,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -311,7 +311,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -330,7 +330,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -349,7 +349,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -367,7 +367,7 @@
         "vaul"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -386,7 +386,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -404,7 +404,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -422,7 +422,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -440,7 +440,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -459,7 +459,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -479,7 +479,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -497,7 +497,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -515,7 +515,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -533,7 +533,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -551,7 +551,7 @@
         "react-resizable-panels"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -569,7 +569,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -587,7 +587,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -606,7 +606,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -626,7 +626,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -641,7 +641,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -661,7 +661,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -676,7 +676,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -695,7 +695,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -710,7 +710,7 @@
         }
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -729,7 +729,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -748,7 +748,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -766,7 +766,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "utils"
+        "https://gymnopedies.shoota.work/r/utils.json"
       ]
     },
     {
@@ -781,8 +781,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -797,8 +797,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -816,8 +816,8 @@
         "date-fns"
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -832,8 +832,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -848,8 +848,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -864,8 +864,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -880,8 +880,8 @@
         }
       ],
       "registryDependencies": [
-        "utils",
-        "theme"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json"
       ]
     },
     {
@@ -890,53 +890,53 @@
       "title": "Gymnopédies — read-only design system",
       "description": "A dark, serif, glow-leaning shadcn registry preset for long-form reading experiences. Installs the theme tokens, every non-form shadcn primitive, and the bespoke blog components.",
       "registryDependencies": [
-        "utils",
-        "theme",
-        "accordion",
-        "alert",
-        "alert-dialog",
-        "aspect-ratio",
-        "avatar",
-        "badge",
-        "breadcrumb",
-        "button",
-        "card",
-        "carousel",
-        "chart",
-        "collapsible",
-        "command",
-        "context-menu",
-        "dialog",
-        "drawer",
-        "dropdown-menu",
-        "hover-card",
-        "input",
-        "input-group",
-        "menubar",
-        "navigation-menu",
-        "pagination",
-        "popover",
-        "progress",
-        "resizable",
-        "scroll-area",
-        "separator",
-        "sheet",
-        "sidebar",
-        "skeleton",
-        "sonner",
-        "table",
-        "tabs",
-        "textarea",
-        "toggle",
-        "toggle-group",
-        "tooltip",
-        "article",
-        "content",
-        "date-time",
-        "global-styles",
-        "header-navigation",
-        "hero",
-        "picture"
+        "https://gymnopedies.shoota.work/r/utils.json",
+        "https://gymnopedies.shoota.work/r/theme.json",
+        "https://gymnopedies.shoota.work/r/accordion.json",
+        "https://gymnopedies.shoota.work/r/alert.json",
+        "https://gymnopedies.shoota.work/r/alert-dialog.json",
+        "https://gymnopedies.shoota.work/r/aspect-ratio.json",
+        "https://gymnopedies.shoota.work/r/avatar.json",
+        "https://gymnopedies.shoota.work/r/badge.json",
+        "https://gymnopedies.shoota.work/r/breadcrumb.json",
+        "https://gymnopedies.shoota.work/r/button.json",
+        "https://gymnopedies.shoota.work/r/card.json",
+        "https://gymnopedies.shoota.work/r/carousel.json",
+        "https://gymnopedies.shoota.work/r/chart.json",
+        "https://gymnopedies.shoota.work/r/collapsible.json",
+        "https://gymnopedies.shoota.work/r/command.json",
+        "https://gymnopedies.shoota.work/r/context-menu.json",
+        "https://gymnopedies.shoota.work/r/dialog.json",
+        "https://gymnopedies.shoota.work/r/drawer.json",
+        "https://gymnopedies.shoota.work/r/dropdown-menu.json",
+        "https://gymnopedies.shoota.work/r/hover-card.json",
+        "https://gymnopedies.shoota.work/r/input.json",
+        "https://gymnopedies.shoota.work/r/input-group.json",
+        "https://gymnopedies.shoota.work/r/menubar.json",
+        "https://gymnopedies.shoota.work/r/navigation-menu.json",
+        "https://gymnopedies.shoota.work/r/pagination.json",
+        "https://gymnopedies.shoota.work/r/popover.json",
+        "https://gymnopedies.shoota.work/r/progress.json",
+        "https://gymnopedies.shoota.work/r/resizable.json",
+        "https://gymnopedies.shoota.work/r/scroll-area.json",
+        "https://gymnopedies.shoota.work/r/separator.json",
+        "https://gymnopedies.shoota.work/r/sheet.json",
+        "https://gymnopedies.shoota.work/r/sidebar.json",
+        "https://gymnopedies.shoota.work/r/skeleton.json",
+        "https://gymnopedies.shoota.work/r/sonner.json",
+        "https://gymnopedies.shoota.work/r/table.json",
+        "https://gymnopedies.shoota.work/r/tabs.json",
+        "https://gymnopedies.shoota.work/r/textarea.json",
+        "https://gymnopedies.shoota.work/r/toggle.json",
+        "https://gymnopedies.shoota.work/r/toggle-group.json",
+        "https://gymnopedies.shoota.work/r/tooltip.json",
+        "https://gymnopedies.shoota.work/r/article.json",
+        "https://gymnopedies.shoota.work/r/content.json",
+        "https://gymnopedies.shoota.work/r/date-time.json",
+        "https://gymnopedies.shoota.work/r/global-styles.json",
+        "https://gymnopedies.shoota.work/r/header-navigation.json",
+        "https://gymnopedies.shoota.work/r/hero.json",
+        "https://gymnopedies.shoota.work/r/picture.json"
       ]
     }
   ]

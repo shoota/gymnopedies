@@ -9,7 +9,7 @@
     "sonner"
   ],
   "registryDependencies": [
-    "utils"
+    "https://gymnopedies.shoota.work/r/utils.json"
   ],
   "files": [
     {
