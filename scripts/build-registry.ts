@@ -4,6 +4,8 @@
  *
  * - Scans src/components/ui/*.tsx (excluding *.stories.tsx) as registry:ui items.
  * - Scans src/components/blog/*.tsx (excluding *.stories.tsx) as registry:component items.
+ * - Scans src/hooks/*.{ts,tsx} as registry:hook items, and wires them into the
+ *   registryDependencies of any component that imports them via `@/hooks/*`.
  * - Adds the cn util, the dark-theme stylesheet, and the meta `gymnopedies` preset.
  *
  * Run with `npm run registry:build` to also produce public/r/*.json via the shadcn CLI.
@@ -41,6 +43,7 @@ type RegistryItem = {
 const ROOT = process.cwd()
 const UI_DIR = join(ROOT, "src", "components", "ui")
 const BLOG_DIR = join(ROOT, "src", "components", "blog")
+const HOOK_DIR = join(ROOT, "src", "hooks")
 
 // shadcn resolves bare registryDependencies names ("button", "utils", …)
 // against its own default registry. Cross-references within a custom
@@ -86,6 +89,32 @@ const extractExternalDeps = (filePath: string): string[] => {
     deps.add(pkgName)
   }
   return [...deps].sort()
+}
+
+// `.ts` / `.tsx` files under src/hooks, excluding stories.
+const hookFiles = (dir: string) =>
+  readdirSync(dir)
+    .filter(
+      (f) =>
+        (f.endsWith(".ts") || f.endsWith(".tsx")) &&
+        !/\.stories\.tsx?$/.test(f),
+    )
+    .map((f) => ({ name: f.replace(/\.tsx?$/, ""), file: f }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+const HOOK_IMPORT_RE =
+  /(?:^|\n)\s*import\s+(?:[^"';]*?\s+from\s+)?["']@\/hooks\/([^"'/]+)["']/g
+
+// Names of hooks a component pulls in via the `@/hooks/*` alias. These need
+// to ride along as registryDependencies, otherwise `shadcn add` copies the
+// component without the hook it imports.
+const extractHookDeps = (filePath: string): string[] => {
+  const src = readFileSync(filePath, "utf8")
+  const hooks = new Set<string>()
+  for (const match of src.matchAll(HOOK_IMPORT_RE)) {
+    hooks.add(match[1])
+  }
+  return [...hooks].sort()
 }
 
 const utilItem: RegistryItem = {
@@ -155,9 +184,23 @@ const themeItem: RegistryItem = {
   },
 }
 
+const hookItems: RegistryItem[] = hookFiles(HOOK_DIR).map(({ name, file }) => {
+  const filePath = join(HOOK_DIR, file)
+  const dependencies = extractExternalDeps(filePath)
+  return {
+    name,
+    type: "registry:hook",
+    title: toTitle(name),
+    description: `${toTitle(name)} — gymnopédies hook.`,
+    files: [{ path: `src/hooks/${file}`, type: "registry:hook" }],
+    ...(dependencies.length > 0 ? { dependencies } : {}),
+  }
+})
+
 const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => {
   const filePath = join(UI_DIR, `${name}.tsx`)
   const dependencies = extractExternalDeps(filePath)
+  const hookDeps = extractHookDeps(filePath)
   return {
     name,
     type: "registry:ui",
@@ -165,13 +208,14 @@ const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => {
     description: `${toTitle(name)} — gymnopédies-themed shadcn primitive.`,
     files: [{ path: `src/components/ui/${name}.tsx`, type: "registry:ui" }],
     ...(dependencies.length > 0 ? { dependencies } : {}),
-    registryDependencies: [ref("utils")],
+    registryDependencies: [ref("utils"), ...hookDeps.map(ref)],
   }
 })
 
 const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => {
   const filePath = join(BLOG_DIR, `${name}.tsx`)
   const dependencies = extractExternalDeps(filePath)
+  const hookDeps = extractHookDeps(filePath)
   return {
     name,
     type: "registry:component",
@@ -181,7 +225,7 @@ const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => {
       { path: `src/components/blog/${name}.tsx`, type: "registry:component" },
     ],
     ...(dependencies.length > 0 ? { dependencies } : {}),
-    registryDependencies: [ref("utils"), ref("theme")],
+    registryDependencies: [ref("utils"), ref("theme"), ...hookDeps.map(ref)],
   }
 })
 
@@ -196,6 +240,7 @@ const presetItem: RegistryItem = {
     ref("theme"),
     ...uiItems.map((i) => ref(i.name)),
     ...blogItems.map((i) => ref(i.name)),
+    ...hookItems.map((i) => ref(i.name)),
   ],
 }
 
@@ -203,7 +248,14 @@ const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "gymnopedies",
   homepage: "https://github.com/shoota/gymnopedies",
-  items: [utilItem, themeItem, ...uiItems, ...blogItems, presetItem],
+  items: [
+    utilItem,
+    themeItem,
+    ...uiItems,
+    ...blogItems,
+    ...hookItems,
+    presetItem,
+  ],
 }
 
 writeFileSync(
@@ -214,9 +266,10 @@ writeFileSync(
 const counts = {
   ui: uiItems.length,
   blog: blogItems.length,
+  hook: hookItems.length,
   total: registry.items.length,
 }
 
 console.log(
-  `Wrote registry.json with ${counts.total} items (${counts.ui} ui + ${counts.blog} blog + utils + theme + preset).`,
+  `Wrote registry.json with ${counts.total} items (${counts.ui} ui + ${counts.blog} blog + ${counts.hook} hook + utils + theme + preset).`,
 )
