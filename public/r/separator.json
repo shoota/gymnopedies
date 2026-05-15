@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "separator",
   "title": "Separator",
+  "author": "shoota <https://github.com/shoota>",
   "description": "Separator — gymnopédies-themed shadcn primitive.",
   "dependencies": [
     "@base-ui/react"
@@ -15,6 +16,10 @@
       "content": "import { Separator as SeparatorPrimitive } from \"@base-ui/react/separator\"\n\nimport { cn } from \"@/lib/utils\"\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  ...props\n}: SeparatorPrimitive.Props) {\n  return (\n    <SeparatorPrimitive\n      data-slot=\"separator\"\n      orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-border data-horizontal:h-px data-horizontal:w-full data-vertical:w-px data-vertical:self-stretch\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { Separator }\n",
       "type": "registry:ui"
     }
+  ],
+  "categories": [
+    "ui",
+    "shadcn"
   ],
   "type": "registry:ui"
 }

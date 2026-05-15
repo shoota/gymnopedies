@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hero",
   "title": "Hero",
+  "author": "shoota <https://github.com/shoota>",
   "description": "Hero — gymnopédies blog reading primitive.",
   "registryDependencies": [
     "https://gymnopedies.shoota.work/r/utils.json",
@@ -13,6 +14,10 @@
       "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type HeroSize = \"sm\" | \"md\" | \"lg\"\n\ntype HeroSizeConfig = {\n  container: string\n  title: string\n}\n\nconst sizeConfig: Record<HeroSize, HeroSizeConfig> = {\n  sm: {\n    container: \"w-[60vw] max-w-[800px]\",\n    title: \"text-[clamp(4px,4vw,4.5rem)]\",\n  },\n  md: {\n    container: \"w-[75vw] max-w-[1000px]\",\n    title: \"text-[clamp(4px,5vw,4.5rem)]\",\n  },\n  lg: {\n    container: \"w-[90vw] max-w-[1200px]\",\n    title: \"text-[clamp(4px,6vw,4.5rem)]\",\n  },\n}\n\nexport type HeroProps = {\n  cover: string\n  coverTop?: number\n  size?: HeroSize\n  imgProps: React.ImgHTMLAttributes<HTMLImageElement>\n  className?: string\n}\n\nexport function Hero({\n  cover,\n  coverTop = 50,\n  size = \"md\",\n  imgProps,\n  className,\n}: HeroProps) {\n  const { container, title } = sizeConfig[size]\n  const { className: imgClassName, ...restImgProps } = imgProps\n\n  return (\n    <div className={cn(\"flex w-full items-center justify-center\", className)}>\n      <div\n        className={cn(\n          \"relative flex items-center justify-center\",\n          container\n        )}\n      >\n        <div className=\"w-full\">\n          <img\n            {...restImgProps}\n            className={cn(\n              \"block w-full object-cover object-center opacity-60 grayscale animate-lighting\",\n              imgClassName\n            )}\n          />\n        </div>\n        <h1\n          className={cn(\n            \"absolute left-1/2 inline-block w-full -translate-x-1/2 -translate-y-1/2 text-center bg-[rgba(4,37,43,0.45)]\",\n            title\n          )}\n          style={{ top: `${coverTop}%` }}\n        >\n          {cover}\n        </h1>\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
+  ],
+  "categories": [
+    "blog",
+    "reading"
   ],
   "type": "registry:component"
 }
