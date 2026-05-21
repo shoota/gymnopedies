@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo/logo.png" alt="Gymnopédies" width="520">
+</p>
+
 # Gymnopédies
 
 A **shadcn registry** of dark, serif, glow-leaning React components for
