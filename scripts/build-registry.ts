@@ -32,6 +32,8 @@ type RegistryItem = {
   type: RegistryItemType
   title: string
   description: string
+  author: string
+  categories?: string[]
   dependencies?: string[]
   devDependencies?: string[]
   registryDependencies?: string[]
@@ -39,6 +41,8 @@ type RegistryItem = {
   cssVars?: Record<string, Record<string, string>>
   css?: Record<string, unknown>
 }
+
+const AUTHOR = "shoota <https://github.com/shoota>"
 
 const ROOT = process.cwd()
 const UI_DIR = join(ROOT, "src", "components", "ui")
@@ -122,6 +126,8 @@ const utilItem: RegistryItem = {
   type: "registry:lib",
   title: "cn utility",
   description: "Class-name merging helper (clsx + tailwind-merge).",
+  author: AUTHOR,
+  categories: ["utility"],
   dependencies: ["clsx", "tailwind-merge"],
   files: [{ path: "src/lib/utils.ts", type: "registry:lib" }],
 }
@@ -132,6 +138,8 @@ const themeItem: RegistryItem = {
   title: "Gymnopédies Theme",
   description:
     "Dark, serif, glow-leaning theme tokens — the gymnopédies identity layer.",
+  author: AUTHOR,
+  categories: ["theme", "dark", "serif"],
   files: [{ path: "src/styles/globals.css", type: "registry:style" }],
   cssVars: {
     theme: {
@@ -192,6 +200,8 @@ const hookItems: RegistryItem[] = hookFiles(HOOK_DIR).map(({ name, file }) => {
     type: "registry:hook",
     title: toTitle(name),
     description: `${toTitle(name)} — gymnopédies hook.`,
+    author: AUTHOR,
+    categories: ["hook"],
     files: [{ path: `src/hooks/${file}`, type: "registry:hook" }],
     ...(dependencies.length > 0 ? { dependencies } : {}),
   }
@@ -206,6 +216,8 @@ const uiItems: RegistryItem[] = componentFiles(UI_DIR).map((name) => {
     type: "registry:ui",
     title: toTitle(name),
     description: `${toTitle(name)} — gymnopédies-themed shadcn primitive.`,
+    author: AUTHOR,
+    categories: ["ui", "shadcn"],
     files: [{ path: `src/components/ui/${name}.tsx`, type: "registry:ui" }],
     ...(dependencies.length > 0 ? { dependencies } : {}),
     registryDependencies: [ref("utils"), ...hookDeps.map(ref)],
@@ -221,6 +233,8 @@ const blogItems: RegistryItem[] = componentFiles(BLOG_DIR).map((name) => {
     type: "registry:component",
     title: toTitle(name),
     description: `${toTitle(name)} — gymnopédies blog reading primitive.`,
+    author: AUTHOR,
+    categories: ["blog", "reading"],
     files: [
       { path: `src/components/blog/${name}.tsx`, type: "registry:component" },
     ],
@@ -235,6 +249,8 @@ const presetItem: RegistryItem = {
   title: "Gymnopédies — read-only design system",
   description:
     "A dark, serif, glow-leaning shadcn registry preset for long-form reading experiences. Installs the theme tokens, every non-form shadcn primitive, and the bespoke blog components.",
+  author: AUTHOR,
+  categories: ["preset", "blog", "dark", "serif"],
   registryDependencies: [
     ref("utils"),
     ref("theme"),
@@ -247,7 +263,7 @@ const presetItem: RegistryItem = {
 const registry = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "gymnopedies",
-  homepage: "https://github.com/shoota/gymnopedies",
+  homepage: "https://gymnopedies.shoota.work",
   items: [
     utilItem,
     themeItem,

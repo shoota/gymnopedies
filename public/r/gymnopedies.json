@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "gymnopedies",
   "title": "Gymnopédies — read-only design system",
+  "author": "shoota <https://github.com/shoota>",
   "description": "A dark, serif, glow-leaning shadcn registry preset for long-form reading experiences. Installs the theme tokens, every non-form shadcn primitive, and the bespoke blog components.",
   "registryDependencies": [
     "https://gymnopedies.shoota.work/r/utils.json",
@@ -52,6 +53,12 @@
     "https://gymnopedies.shoota.work/r/hero.json",
     "https://gymnopedies.shoota.work/r/picture.json",
     "https://gymnopedies.shoota.work/r/use-mobile.json"
+  ],
+  "categories": [
+    "preset",
+    "blog",
+    "dark",
+    "serif"
   ],
   "type": "registry:style"
 }

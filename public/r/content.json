@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "content",
   "title": "Content",
+  "author": "shoota <https://github.com/shoota>",
   "description": "Content — gymnopédies blog reading primitive.",
   "registryDependencies": [
     "https://gymnopedies.shoota.work/r/utils.json",
@@ -13,6 +14,10 @@
       "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\nexport type ContentProps = React.HTMLAttributes<HTMLDivElement>\n\nexport function Content({ className, children, ...props }: ContentProps) {\n  return (\n    <div\n      className={cn(\n        \"p-4 [&_+_&]:mt-4 [&_img]:mx-auto [&_img]:my-4 [&_img]:rounded-sm [&_img]:shadow-[0_0_1rem_#04252b]\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </div>\n  )\n}\n",
       "type": "registry:component"
     }
+  ],
+  "categories": [
+    "blog",
+    "reading"
   ],
   "type": "registry:component"
 }

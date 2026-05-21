@@ -2,6 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "utils",
   "title": "cn utility",
+  "author": "shoota <https://github.com/shoota>",
   "description": "Class-name merging helper (clsx + tailwind-merge).",
   "dependencies": [
     "clsx",
@@ -13,6 +14,9 @@
       "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
       "type": "registry:lib"
     }
+  ],
+  "categories": [
+    "utility"
   ],
   "type": "registry:lib"
 }
