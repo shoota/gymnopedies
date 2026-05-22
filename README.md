@@ -17,9 +17,11 @@ Forms are intentionally out of scope — gymnopédies is a read-only design syst
 
 ## Quick start
 
-gymnopédies is distributed as a [shadcn registry](https://ui.shadcn.com/docs/registry):
-the CLI copies component **source** straight into your project. There is no
-runtime npm dependency on gymnopédies itself — you own the code once it lands.
+gymnopédies is distributed as a [shadcn registry](https://ui.shadcn.com/docs/registry)
+and listed in the official [shadcn registry directory](https://ui.shadcn.com/registry)
+as **`@gymnopedies`**. The CLI copies component **source** straight into your
+project — there is no runtime npm dependency on gymnopédies itself; you own
+the code once it lands.
 
 Requirements: a React project with **Tailwind CSS v4** and the `@/*` path alias.
 A fresh Vite app set up with shadcn works out of the box:
@@ -29,7 +31,7 @@ A fresh Vite app set up with shadcn works out of the box:
 npx shadcn@latest init -b base -t vite
 
 # 2. install the whole gymnopédies preset
-npx shadcn@latest add https://gymnopedies.shoota.work/r/gymnopedies.json
+npx shadcn@latest add @gymnopedies/gymnopedies
 ```
 
 The preset pulls in the theme tokens, every non-form shadcn primitive, the
@@ -40,9 +42,9 @@ dependencies (`@base-ui/react`, `class-variance-authority`, `lucide-react`,
 Prefer to cherry-pick? Add items one at a time:
 
 ```bash
-npx shadcn@latest add https://gymnopedies.shoota.work/r/theme.json
-npx shadcn@latest add https://gymnopedies.shoota.work/r/hero.json
-npx shadcn@latest add https://gymnopedies.shoota.work/r/article.json
+npx shadcn@latest add @gymnopedies/theme
+npx shadcn@latest add @gymnopedies/hero
+npx shadcn@latest add @gymnopedies/article
 ```
 
 Then compose a page — see the [sample blog](https://gymnopedies.shoota.work/examples/blog/)
@@ -158,7 +160,7 @@ There is no compatibility shim. If you are still on `gymnopedies@0.1.x` (Emotion
 
 1. Remove `gymnopedies` from `dependencies`.
 2. Install Tailwind v4 in your project: `npx shadcn@latest init`.
-3. Adopt the v1 components via `npx shadcn@latest add <url>`.
+3. Adopt the v1 components via `npx shadcn@latest add @gymnopedies/<name>`.
 4. Rewrite call sites — APIs are not source-compatible:
    - The legacy `Card` returns as `blog/Article` with the same Props.
    - `Picture` moved to a compound API (`Picture.Image` / `Picture.Caption`).
