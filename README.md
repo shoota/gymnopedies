@@ -23,12 +23,14 @@ as **`@gymnopedies`**. The CLI copies component **source** straight into your
 project — there is no runtime npm dependency on gymnopédies itself; you own
 the code once it lands.
 
-Requirements: a React project with **Tailwind CSS v4** and the `@/*` path alias.
+Requirements: a React 18+ project with **Tailwind CSS v4** and the `@/*` tsconfig path alias.
 A fresh Vite app set up with shadcn works out of the box:
 
 ```bash
 # 1. scaffold a shadcn-ready Vite app (skip if you already have a project)
-npx shadcn@latest init -b base -t vite
+#    -p nova picks a base preset to skip the interactive prompt;
+#    gymnopédies overrides the theme either way.
+npx shadcn@latest init -b base -t vite -p nova
 
 # 2. install the whole gymnopédies preset
 npx shadcn@latest add @gymnopedies/gymnopedies
