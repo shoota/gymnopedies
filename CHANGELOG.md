@@ -4,6 +4,24 @@ All notable changes to gymnopédies are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/), and the project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [1.1.3] — 2026-06-02
+
+### Added
+
+- **`author` and `categories` metadata on every registry item.** The shadcn
+  `registry-item` schema recommends both fields; they are now emitted for all
+  items, in preparation for listing gymnopédies on the public shadcn registry
+  directory (<https://ui.shadcn.com/registry>).
+
+### Changed
+
+- **`homepage` now points at the hosting domain.** `registry.json` and
+  `package.json` advertised the GitHub repository URL; both now use
+  <https://gymnopedies.shoota.work>, matching where the registry is served.
+- Bumped `tailwind-merge` to `^3.6.0`.
+- Install commands in the README now use the `@gymnopedies` namespace and the
+  quick-start `init` pins the `base` preset to skip the interactive prompt.
+
 ## [1.1.2] — 2026-05-14
 
 ### Fixed
@@ -72,6 +90,7 @@ into consumer projects.
   `src/components/blog`).
 - Ported the legacy bespoke components to Tailwind compound APIs.
 
+[1.1.3]: https://github.com/shoota/gymnopedies/compare/v1.1.2...v1.1.3
 [1.1.2]: https://github.com/shoota/gymnopedies/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/shoota/gymnopedies/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/shoota/gymnopedies/compare/v1.0.0...v1.1.0
